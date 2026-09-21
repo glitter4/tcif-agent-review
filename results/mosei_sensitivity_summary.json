@@ -1,0 +1,47 @@
+{
+  "source": "evidence/mosei_sensitivity_handoff.md",
+  "precision": "Rounded source-report values",
+  "protocol": "fixed eta=0.8; historical exception, not a full eta sweep",
+  "seed": 40,
+  "batch_size": 32,
+  "grad_accum_steps": 8,
+  "checkpoint": "best_acc7_model",
+  "rows": [
+    {
+      "setting": "gate_tau_0.5",
+      "gate_tau": 0.5,
+      "context_weight": 0.1,
+      "acc7": 56.643,
+      "mae": 0.49293,
+      "acc2non0": 87.672,
+      "f1non0": 86.82
+    },
+    {
+      "setting": "gate_tau_1.0",
+      "gate_tau": 1.0,
+      "context_weight": 0.1,
+      "acc7": 55.827,
+      "mae": 0.49282,
+      "acc2non0": 87.755,
+      "f1non0": 86.89
+    },
+    {
+      "setting": "context_weight_0.05",
+      "gate_tau": 0.75,
+      "context_weight": 0.05,
+      "acc7": 55.849,
+      "mae": 0.49977,
+      "acc2non0": 87.204,
+      "f1non0": 86.458
+    },
+    {
+      "setting": "context_weight_0.20",
+      "gate_tau": 0.75,
+      "context_weight": 0.2,
+      "acc7": 55.463,
+      "mae": 0.50689,
+      "acc2non0": 86.186,
+      "f1non0": 85.362
+    }
+  ]
+}

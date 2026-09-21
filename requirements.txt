@@ -1,0 +1,13 @@
+# Versions observed on the source execution environment on 2026-09-22.
+# Install torch/torchvision appropriate to your CUDA/CPU environment first.
+# This is a direct dependency reference, not a complete historical lockfile.
+torch==2.4.0
+torchvision==0.19.0
+transformers==5.1.0
+numpy==1.26.4
+scipy==1.15.3
+Pillow==12.1.0
+tensorboard==2.20.0
+av==17.0.1
+tqdm
+safetensors

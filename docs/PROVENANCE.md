@@ -1,0 +1,42 @@
+# 来源与取舍
+
+整理日期：2026-09-22。面向代码阅读与性能审查；没有修改原实验源码或既有实验树，没有新训练或模型选点。整理完成后，按用户要求将本包发布到独立的GitHub私有仓库；未上传原实验仓库的历史。
+
+## 源码范围
+
+主线为 dl01 上名为 `m4oe-tcif-paper-ablation-20260909` 的实际执行树，2026-09-22通过只读SSH获取明确列出的源码、测试和配置。核心模型/训练/评估/TCIF消融文件与本地同名执行树一致；其余文件的差异仅是换行格式。源执行树有未提交改动，所以本包根据工作区文件获取，不能用旧Git提交来代表它。
+
+选择这个树是因为它同时具有可追溯的MOSEI结果、完整模型、四项消融和测试，比根目录旧server-code或五月快照更适合审查。它不是所有实验分支的合并，也不声称包含MOSI/CH-SIMS最新扩展。跨数据集记录作为数值参考单列。
+
+## 打包变更
+
+- 模型计算、损失、训练循环、评估公式及原测试保留。
+- 机器用户名与绝对路径替换为 `/path/to/...`；配置输出放到 `./outputs/`。
+- `output_layout.py` 与训练汇总根路径改为包内outputs，保留 `M4OE_STRUCTV5_ROOT` 环境覆盖。
+- 移除运行时设置 Python 字典散列种子的语句，以遵守项目禁用散列的约束；随机数、NumPy、Torch seed设置保留。
+- 添加本地 `models`/`datasets` 包标记，避免与同名第三方包冲突。
+- 未使用的 magnitude postprocessing adapter 未包含，主线无对此模块的导入。
+- `mosei_gate_tau05_reference.json` 是按原完整配置及敏感性runner覆写规则重建的参考文件，来源与局限见运行文档。
+
+逐文件来源与字节数见 [source_inventory.json](source_inventory.json)。只使用直接文本/字节比较，没有生成内容摘要。
+
+## 实验证据来源
+
+| 包内文件 | 原工作区记录 |
+|---|---|
+| `results/mosei_ablation_full_sweeps.json` | `analysis/tcif_paper_ablation_results_20260915.json`，逐值保留 |
+| `results/evidence/mosei_ablation_report.md` | `analysis/tcif_ablation_results_handoff_20260915.md`，去掉调度/绝对路径章节 |
+| `results/evidence/mosei_reproduction_audit.md` | `analysis/tcif_reproduction_audit_20260910/REPORT.md` |
+| `results/evidence/mosei_sensitivity_handoff.md` | `analysis/tcif_writing_handoff_20260913.md` |
+| `results/mosi_recent_full_sweeps.json` | `analysis/tcif_mosi_d1_followup_20260920/` 中 D1_reference、all_results、N1_recovered_result，保留配置、points、epoch、状态 |
+| `results/chsims_seed_sweeps.json` | `.codex-jobs/tcif_chsims_seeds_c1_20260919/summary.json`，路径替换 |
+| MOSI/CH-SIMS摘录 | `results_20260921.md`、`chsims_seeds_c1_results_20260919.md` |
+| 早期V7概括 | `analysis/structv7_weekly_total_table_20260430.md`，仅作历史线索 |
+
+报告为已有记录的保真摘录；文中的其他机器或数据集名称是历史背景，不是当前操作指令。
+
+## 没有纳入的内容
+
+数据集、音视频、逐样本文本、embedding cache、checkpoint、TensorBoard、原始训练日志、远程凭据/SSH配置、调度与同步脚本、临时补丁、重复快照、OASIS等探索分支、论文草稿/PDF/专利文件、第三方下载仓库、无明确结论的待运行计划。旧实验用摘要和有来源的结果代表，避免几十个版本造成阅读歧义。
+
+原根目录README主要是HPC同步说明，旧server-code README介绍医学M4OE上游，均不适合作为当前模型入口。当前包改用专门的阅读说明，并在 [ATTRIBUTION.md](../ATTRIBUTION.md) 保留上游背景。

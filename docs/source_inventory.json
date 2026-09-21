@@ -1,0 +1,122 @@
+[
+  {
+    "file": "configs/tcif_paper_single_model.json",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 6010,
+    "packaged_bytes": 5926
+  },
+  {
+    "file": "scripts/tcif_paper_ablation.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 8847,
+    "packaged_bytes": 8847
+  },
+  {
+    "file": "scripts/test_tcif_paper_ablation.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 3599,
+    "packaged_bytes": 3599
+  },
+  {
+    "file": "server-code/datasets/emotion_dataset.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 43729,
+    "packaged_bytes": 43653
+  },
+  {
+    "file": "server-code/eval_all_mosei_maefixed.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 49627,
+    "packaged_bytes": 49550
+  },
+  {
+    "file": "server-code/head_utils.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 4957,
+    "packaged_bytes": 4957
+  },
+  {
+    "file": "server-code/losses.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 3865,
+    "packaged_bytes": 3865
+  },
+  {
+    "file": "server-code/models/models_emotion.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 102084,
+    "packaged_bytes": 102044
+  },
+  {
+    "file": "server-code/models/tcif.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 16016,
+    "packaged_bytes": 16016
+  },
+  {
+    "file": "server-code/output_layout.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 828,
+    "packaged_bytes": 432
+  },
+  {
+    "file": "server-code/tcif_ablation_config.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 2500,
+    "packaged_bytes": 2500
+  },
+  {
+    "file": "server-code/test_expert_load_output.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 30200,
+    "packaged_bytes": 30200
+  },
+  {
+    "file": "server-code/test_optimizer_param_groups.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 2612,
+    "packaged_bytes": 2612
+  },
+  {
+    "file": "server-code/test_sign_structured_heads.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 27672,
+    "packaged_bytes": 27672
+  },
+  {
+    "file": "server-code/test_signed_reg_cls7_head.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 14283,
+    "packaged_bytes": 14283
+  },
+  {
+    "file": "server-code/test_structv6_masking.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 3487,
+    "packaged_bytes": 3487
+  },
+  {
+    "file": "server-code/test_tcif.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 12003,
+    "packaged_bytes": 12003
+  },
+  {
+    "file": "server-code/test_tcif_ablation.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 10303,
+    "packaged_bytes": 10303
+  },
+  {
+    "file": "server-code/test_temporal_kernels_sampler.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 7760,
+    "packaged_bytes": 7760
+  },
+  {
+    "file": "server-code/train_emotion.py",
+    "source": "MOSEI TCIF paper-ablation execution tree",
+    "source_bytes": 261699,
+    "packaged_bytes": 261606
+  }
+]
