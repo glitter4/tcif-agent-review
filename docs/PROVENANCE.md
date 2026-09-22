@@ -50,3 +50,7 @@
 ## 2026-09-22 CH-SIMS结果增补
 
 `results/chsims_gatectx_full_sweeps.json`来自工作区`.codex-jobs/tcif_chsims_gatectx_c1_20260922/summary.json`，保留8组配置与448点原始指标，机器路径替换为`/path/to/...`，添加主/附加口径说明。`results/evidence/chsims_gatectx_report.md`来自`analysis/chsims_gatectx_c1_results_20260922.md`，移除机器访问与绝对路径章节。同步更新结果索引及完整性检查；未同步训练源码、权重或逐样本数据。
+
+## CH-SIMS机制诊断增补
+
+新增cross_dataset/chsims独立执行分支与结果目录results/chsims_diagnostics_20260922，不覆盖MOSEI主线。数据来自本轮C1只读checkpoint导出与既有日志，不重训B0/C003；包含7304条val/test原始预测、224点重建核验、1120点幅度校准、4组逐轮记录。路径脱敏，未含权重/音视频/凭据。此前“无逐样本输出/CH-SIMS执行实现”的范围说明由此处更新；MOSI同期增补范围以其过程诊断说明为准。新梯度路径训练的完成状态单列。

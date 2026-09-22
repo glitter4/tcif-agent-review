@@ -85,7 +85,7 @@ N1完成70轮后发生CUDA内部断言错误，补评完成但不代表完成200
 
 四组所有112点最高Acc5仅47.484，未达49护栏，更未达50/.390/82/81联合目标。此前另一环境seed40的guarded epoch26参考点49.672/.399445/83.505/81.629仍保留；它采用额外受约束checkpoint规则且环境不同，不能当作只改变seed的对照。seed43曾OOM后重试成功，最终不缺评估。
 
-[结果说明](evidence/chsims_seed_report.md)；[四seed完整112点记录](chsims_seed_sweeps.json)。当前快照不包含CH-SIMS五分类/guarded扩展，不可用MOSEI评估器直接重现这些数值。
+[结果说明](evidence/chsims_seed_report.md)；[四seed完整112点记录](chsims_seed_sweeps.json)。现已补入独立[CH-SIMS实际执行实现](../cross_dataset/chsims/README.md)，仍不可混用MOSEI评估器。
 
 ## CH-SIMS：最新门控尺度与context权重配对实验（2026-09-22）
 
@@ -104,7 +104,15 @@ eta=.8相较同seed基线代表点，Acc5提升1.313个百分点、MAE降低.008
 
 保留该点作为低MAE取舍候选；此前另一环境的dl01 CH_L1继续作为均衡候选，不能将跨环境差异全部归因于训练配方。原B0两seed参考点与前轮同机记录一致。
 
-[八组详情及比较表](evidence/chsims_gatectx_report.md)；[完整448点与配置](chsims_gatectx_full_sweeps.json)。网络、forward与回归损失计算未因本次实验改变；仅增加附加checkpoint记录及发现逻辑。此代码快照仍不包含CH-SIMS扩展执行树。
+[八组详情及比较表](evidence/chsims_gatectx_report.md)；[完整448点与配置](chsims_gatectx_full_sweeps.json)。网络、forward与回归损失计算未因本次实验改变；仅增加附加checkpoint记录及发现逻辑。独立CH-SIMS执行树现已补入cross_dataset/chsims。
+
+## CH-SIMS：逐样本输出与机制诊断
+
+已补8个checkpoint的val/test原始回归、logits及TCIF诊断，7304条记录；重建224个历史val/test点，最大逐样本差2.3842e-7，分箱/符号差异0。正比例五档幅度校准共1120点，没有新联合合格点，当前不扩大校准搜索。
+
+已提取4组各50轮loss/LR/temporal覆盖；约68.5% batch无有效时序正样本。C003_S41低MAE点的纯回归仍为.436269，local到posterior融合MAE约.424129→.389766，不能简单归因为回归头更强或邻居有害。
+
+[完整诊断报告](evidence/chsims_diagnostics_report.md)、[输出及校准数据](chsims_diagnostics_20260922/diagnostics.json)、[执行代码](../cross_dataset/chsims/README.md)。新提交两seed邻居detach及5轮head-only/full-continue共6组，训练结果完成后另行增补；未重复既有基线网格。
 
 ## 当前证据缺口
 
@@ -113,5 +121,5 @@ eta=.8相较同seed基线代表点，Acc5提升1.313个百分点、MAE降低.008
 - 最新CH-SIMS有seed40/41小规模配对证据，但没有充分的多seed统计或独立未参与选择的测试结果。
 - 没有完整的速度/显存 profile；不能从训练耗时推导算子瓶颈。
 - 普通融合与TCIF尚缺按极性转折、标签幅度、邻域缺失情况的配对分析。
-- MOSI D1/R1现有脱敏逐样本数值，可重建其eta指标；其他历史批次仍主要为汇总。没有逐样本文本、音视频、权重或缓存，不能据此复现全部原始模型推理。
+- MOSI D1/R1与CH-SIMS指定8个checkpoint现已附逐样本输出，可重建相应读出；CH-SIMS另有少量tokenizer文本样例。其他历史批次主要为汇总，未附权重、原始音视频或缓存。
 - 历史实验不是统一预算的大规模公平排行。对于未附完整配置或源码的旧结果，只作为探索线索。

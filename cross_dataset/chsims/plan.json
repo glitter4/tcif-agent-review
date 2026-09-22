@@ -1,0 +1,192 @@
+{
+  "status": "prepared",
+  "dataset": "chsims",
+  "preferred_host": "C1",
+  "host_override": null,
+  "submission_schedule": "After successful P0 reconstruction/calibration; one GPU per run",
+  "architecture_changes_allowed": false,
+  "anchor_config_local": ".codex-jobs/tcif_chsims_acc2_20260917/anchor.json",
+  "anchor_config_remote": "/path/to/outputs/c1_runs/tcif_staged_scan_20260911/chsims/runs/confirm_repeat_4_s40/config.json",
+  "common_overrides": {
+    "epochs": 50,
+    "batch_size": 16,
+    "grad_accum_steps": 4,
+    "freeze_backbone_epochs": 1000,
+    "early_stop_patience": 201,
+    "num_workers": 0,
+    "sign_aux_weight": 0.0,
+    "score_sign_aux_weight": 0.0,
+    "center_reg_loss_type": "l1",
+    "center_reg_loss_weight": 1.0,
+    "enable_dev_aligned_checkpoint": false
+  },
+  "candidates": [
+    {
+      "id": "DETACH_S40",
+      "factor": "detach_neighbor_features",
+      "additional_loss_disclosure": false,
+      "overrides": {
+        "seed": 40,
+        "tcif_detach_context_features": true
+      }
+    },
+    {
+      "id": "HEAD_ONLY_S40",
+      "factor": "head_only",
+      "additional_loss_disclosure": false,
+      "overrides": {
+        "seed": 40,
+        "epochs": 5,
+        "scheduler": "none",
+        "lr_warmup_epochs": 0,
+        "stage2_mode": "head_only",
+        "init_checkpoint": "/path/to/outputs/tcif_chsims_gatectx_c1_20260922/runs/B0_S40/checkpoints/best_mae_model.pth"
+      }
+    },
+    {
+      "id": "FULL_CONTINUE_S40",
+      "factor": "full_continue",
+      "additional_loss_disclosure": false,
+      "overrides": {
+        "seed": 40,
+        "epochs": 5,
+        "scheduler": "none",
+        "lr_warmup_epochs": 0,
+        "stage2_mode": "full_continue",
+        "init_checkpoint": "/path/to/outputs/tcif_chsims_gatectx_c1_20260922/runs/B0_S40/checkpoints/best_mae_model.pth"
+      }
+    },
+    {
+      "id": "DETACH_S41",
+      "factor": "detach_neighbor_features",
+      "additional_loss_disclosure": false,
+      "overrides": {
+        "seed": 41,
+        "tcif_detach_context_features": true
+      }
+    },
+    {
+      "id": "HEAD_ONLY_S41",
+      "factor": "head_only",
+      "additional_loss_disclosure": false,
+      "overrides": {
+        "seed": 41,
+        "epochs": 5,
+        "scheduler": "none",
+        "lr_warmup_epochs": 0,
+        "stage2_mode": "head_only",
+        "init_checkpoint": "/path/to/outputs/tcif_chsims_gatectx_c1_20260922/runs/B0_S41/checkpoints/best_mae_model.pth"
+      }
+    },
+    {
+      "id": "FULL_CONTINUE_S41",
+      "factor": "full_continue",
+      "additional_loss_disclosure": false,
+      "overrides": {
+        "seed": 41,
+        "epochs": 5,
+        "scheduler": "none",
+        "lr_warmup_epochs": 0,
+        "stage2_mode": "full_continue",
+        "init_checkpoint": "/path/to/outputs/tcif_chsims_gatectx_c1_20260922/runs/B0_S41/checkpoints/best_mae_model.pth"
+      }
+    }
+  ],
+  "selection": {
+    "requires_implementation": false,
+    "split": "test",
+    "preserve_original_dual_checkpoint_protocol": true,
+    "original_readout": {
+      "mode": "expected",
+      "eta": 1.0
+    },
+    "guarded_checkpoint": "best_guarded_acc2_model",
+    "guarded_readout": {
+      "mode": "argmax",
+      "eta": 0.8,
+      "temperature": 1.0
+    },
+    "guard": {
+      "Acc5_min_percent": 49.0,
+      "MAE_max": 0.402,
+      "F1non0_macro_min_percent": 81.0606713182301,
+      "Acc2_all_min_percent": 76.3
+    },
+    "guarded_order": [
+      "Acc2non0_desc",
+      "MAE_asc",
+      "Acc5_desc",
+      "epoch_asc"
+    ],
+    "no_eligible_epoch": {
+      "checkpoint": null,
+      "eligible_epoch_count": 0,
+      "fail_run": false
+    },
+    "readouts": [
+      "expected",
+      "argmax"
+    ],
+    "eta_values": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "complete_sweep_for_every_selected_checkpoint": true,
+    "report_original_and_extended_protocol_separately": true
+  },
+  "new_milestone": {
+    "readout": "argmax",
+    "Acc2non0_min_percent": 84.0,
+    "Acc5_min_percent": 49.0,
+    "MAE_max": 0.402,
+    "F1non0_macro_min_percent": 82.0,
+    "Acc2_all_min_percent": 76.3,
+    "single_seed_joint_point_sufficient": true
+  },
+  "original_main_goal_preserved": {
+    "Acc5_min_percent": 50.0,
+    "MAE_max": 0.39,
+    "Acc2non0_min_percent": 82.0,
+    "F1non0_macro_min_percent": 81.0
+  },
+  "conditional_combination": {
+    "max_runs": 0
+  },
+  "maximum_new_training_runs": 6,
+  "first_submission_batch": [
+    "DETACH_S40",
+    "HEAD_ONLY_S40",
+    "FULL_CONTINUE_S40",
+    "DETACH_S41",
+    "HEAD_ONLY_S41",
+    "FULL_CONTINUE_S41"
+  ],
+  "deferred": [
+    "EMA",
+    "weighted_CE",
+    "dropout_0.5",
+    "additional_seeds",
+    "longer_epochs",
+    "new_sign_BCE"
+  ],
+  "rationale": "Two independent neighbor-detach runs and paired 5-epoch head-only/full-continue controls; no repeated baseline training",
+  "primary_protocol": {
+    "split": "test",
+    "eta_values": [
+      0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      0.9,
+      1
+    ],
+    "select_eta_on_test": true,
+    "primary_readout": "argmax"
+  }
+}

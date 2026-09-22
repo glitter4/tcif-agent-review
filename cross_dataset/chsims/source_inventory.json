@@ -1,0 +1,74 @@
+[
+  {
+    "file": "cross_dataset/chsims/source/server-code/train_emotion.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 271028,
+    "packaged_bytes": 270832
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/eval_all_mosei_maefixed.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 53671,
+    "packaged_bytes": 53584
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/head_utils.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 7994,
+    "packaged_bytes": 7787
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/losses.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 3972,
+    "packaged_bytes": 3865
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/output_layout.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 856,
+    "packaged_bytes": 808
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/chsims_followup_support.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 7659,
+    "packaged_bytes": 7659
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/pathstudy_support.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 1698,
+    "packaged_bytes": 1698
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/models/models_emotion.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 104360,
+    "packaged_bytes": 104320
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/models/tcif.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 11588,
+    "packaged_bytes": 11299
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/datasets/emotion_dataset.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 58746,
+    "packaged_bytes": 57174
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/test_signed_reg_cls7_head.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 14653,
+    "packaged_bytes": 14283
+  },
+  {
+    "file": "cross_dataset/chsims/source/server-code/test_tcif.py",
+    "source": "C1 pathstudy execution tree, 2026-09-22",
+    "source_bytes": 13677,
+    "packaged_bytes": 13292
+  }
+]

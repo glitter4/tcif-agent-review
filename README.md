@@ -2,9 +2,11 @@
 
 这是为**阅读代码、提出模型性能改进建议**整理的研究代码快照。主线为 CMU-MOSEI 上的 **Temporal Context Innovation Filtering (TCIF)**，基于多模态 Shared-Specific Soft-MoE。整理日期：2026-09-22。
 
-源码取自实际执行过完整模型和五组消融的 MOSEI 执行树；保留训练、模型、数据、损失、评估和已有测试。实验摘要覆盖 MOSEI 主结果/消融，以及 MOSI、CH-SIMS 的近期成功与失败尝试。跨数据集扩展的全部实现不在此快照中，见[范围说明](docs/PROVENANCE.md)。
+源码取自实际执行过完整模型和五组消融的 MOSEI 执行树；保留训练、模型、数据、损失、评估和已有测试。实验摘要覆盖 MOSEI 主结果/消融，以及 MOSI、CH-SIMS 的近期成功与失败尝试。新增独立[CH-SIMS执行分支与逐样本诊断](cross_dataset/chsims/README.md)；同期[MOSI过程诊断与执行证据](results/mosi_diagnostics_20260922/README.md)也已补入，见[范围说明](docs/PROVENANCE.md)。
 
 最新CH-SIMS更新：门控/context八组全部完成，context=.03、seed41得到MAE=.389766的取舍点，但未联合达标；[结果说明](results/evidence/chsims_gatectx_report.md)与[完整448点](results/chsims_gatectx_full_sweeps.json)已同步。主结果仍按测试集checkpoint与测试集eta选点。
+
+最新P0诊断已完成：[7304条逐样本记录、重建核验与校准报告](results/evidence/chsims_diagnostics_report.md)。主结果仍使用测试集checkpoint/test eta；新训练状态另列，未将提交当作完成。
 
 ## 给接手 agent 的阅读顺序
 
@@ -36,6 +38,7 @@ configs/              完整消融配置与后续主结果参考配置（路径�
 scripts/              五组消融/双 checkpoint eta sweep；已有协议测试
 docs/                 审查任务、架构、运行口径、来源与打包取舍
 results/              摘要 + 逐 checkpoint/eta 数值证据 + 历史报告摘录
+cross_dataset/chsims/ CH-SIMS实际执行分支、导出/诊断与训练路径测试
 tools/                不需 GPU/数据的上传包完整性检查
 ```
 
