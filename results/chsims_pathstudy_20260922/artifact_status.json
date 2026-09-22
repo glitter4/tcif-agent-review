@@ -1,0 +1,22 @@
+{
+  "training_complete": true,
+  "evaluation_complete": true,
+  "complete_eta_points": 182,
+  "test_selected_protocol": true,
+  "raw_output_export": {
+    "complete_runs": [
+      "DETACH_S40",
+      "DETACH_S41"
+    ],
+    "pending_runs": [
+      "HEAD_ONLY_S40",
+      "FULL_CONTINUE_S40",
+      "HEAD_ONLY_S41",
+      "FULL_CONTINUE_S41"
+    ],
+    "completed_files": 10,
+    "completed_records": 4565,
+    "pending_reason": "C1 supplementary export jobs report JobHeldAdmin; metric sweeps are already complete"
+  },
+  "gpu_recovery": "Lab5090, no retraining; CPU partial evaluation archive retained"
+}

@@ -37,3 +37,7 @@
 [check_pathstudy.py](check_pathstudy.py)验证detach梯度边界和前向等价、仅head更新与回归不变；[verify_freeze.py](verify_freeze.py)在实际训练后逐参数比对，并检查eta0回归预测。
 
 逐样本数据与完整诊断见[诊断目录](../../results/chsims_diagnostics_20260922/diagnostics.json)。
+
+## 新训练结果已完成
+
+[六组完整结果、冻结核验和GPU迁移说明](../../results/chsims_pathstudy_20260922/REPORT.md)：182点齐全，detach原始输出已附，四组短程对照附加原始输出待补。

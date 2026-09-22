@@ -58,3 +58,7 @@
 ## MOSI三项机制训练完成增补
 
 `results/mosi_diagnostics_20260922/study_results.json`来自Lab任务DETACH/HEAD10/FULL10的test/val完整评估、独立输出重建与实际梯度记录，三项均exit_code0。新增12个val/test JSONL共5490条，与既有D1/R1采用同一顺序ID映射；未发布原ID映射。采集脚本及独立标准库检查器一同提供。原始指标逐值保留，移除旧runner旧目标下的best_joint/near_pass等不适用摘要，防止与本轮目标混淆。CH-SIMS记录原样保留。
+
+## CH-SIMS pathstudy结果增补
+
+`results/chsims_pathstudy_20260922/summary.json`来自本地`tcif_chsims_pathstudy_c1_20260922/summary.json`（C1汇总349988），保留六组182点。原始输出10个JSONL取自Lab5090 GPU恢复包，含5个checkpoint的val/test、4565条记录；附18个CPU/GPU预测比较记录及两组冻结验证。只替换机器路径，数值逐值保留；四组短程对照原始输出明确pending，未上传权重或音视频。

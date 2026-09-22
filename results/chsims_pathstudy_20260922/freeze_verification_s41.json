@@ -1,0 +1,38 @@
+[
+  {
+    "checkpoint": "best_acc7_model",
+    "split": "val",
+    "max_regression_delta": 0.0,
+    "changed_parameters": [
+      "head_cls7.weight",
+      "head_cls7.bias"
+    ]
+  },
+  {
+    "checkpoint": "best_acc7_model",
+    "split": "test",
+    "max_regression_delta": 0.0,
+    "changed_parameters": [
+      "head_cls7.weight",
+      "head_cls7.bias"
+    ]
+  },
+  {
+    "checkpoint": "best_mae_model",
+    "split": "val",
+    "max_regression_delta": 0.0,
+    "changed_parameters": [
+      "head_cls7.weight",
+      "head_cls7.bias"
+    ]
+  },
+  {
+    "checkpoint": "best_mae_model",
+    "split": "test",
+    "max_regression_delta": 0.0,
+    "changed_parameters": [
+      "head_cls7.weight",
+      "head_cls7.bias"
+    ]
+  }
+]

@@ -123,3 +123,11 @@ eta=.8相较同seed基线代表点，Acc5提升1.313个百分点、MAE降低.008
 - 普通融合与TCIF尚缺按极性转折、标签幅度、邻域缺失情况的配对分析。
 - MOSI D1/R1与CH-SIMS指定8个checkpoint现已附逐样本输出，可重建相应读出；CH-SIMS另有少量tokenizer文本样例。其他历史批次主要为汇总，未附权重、原始音视频或缓存。
 - 历史实验不是统一预算的大规模公平排行。对于未附完整配置或源码的旧结果，只作为探索线索。
+
+## CH-SIMS：邻居detach与分类头精调六组完成
+
+六组训练与182个test-selected双读出eta点完整。DETACH_S41 best-MAE epoch23、argmax eta=.8：Acc5=50.109%、MAE=.390312、Acc2non0=82.990%、macro-F1non0=81.976%、Acc2(all)=77.899%。通过原guard护栏，但仍未达到MAE≤.390旧联合目标或84%非零二分类新目标。seed40 detach退步，不支持稳定跨seed增益。
+
+两个seed的head-only均优于相应full-continue代表点；实际冻结验证确认仅分类头两个参数变化，回归预测差为0。起点对照与训练预算须一并看，不能把新增5轮的最佳点自动当作超过起点。
+
+[完整报告与比较](chsims_pathstudy_20260922/REPORT.md)、[182点原始汇总](chsims_pathstudy_20260922/summary.json)、[产物状态](chsims_pathstudy_20260922/artifact_status.json)。C1 GPU故障后两组detach在Lab5090补评，CPU/GPU已有预测最大差4.14e-6、符号不变。已有10个detach原始输出文件；四组短程对照附加原始输出仍待补。此前“新训练进行中”由本条更新，不代表附加输出也已全部完成。

@@ -45,3 +45,7 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittes
 ## CH-SIMS诊断数据与训练路径检查
 
 `python tools/check_chsims_diagnostics.py`验证16个JSONL共7304条、224点原预测重建、1120点校准及二分类/F1不变，固定val尺度选择规则与4×50轮过程记录完整。C1上check_pathstudy.py已通过detach前向等价/梯度边界和head-only参数/回归不变测试。模型参数的实际训练后检查由verify_freeze.py执行，运行状态另记，不能将小模型测试代替实际训练结果。
+
+## CH-SIMS六组结果检查
+
+`python tools/check_chsims_pathstudy.py`验证六组182点的checkpoint/readout/eta覆盖、10个原始输出的4565条记录、冻结核验与CPU/GPU对齐证据。指标汇总与本地原始summary直接比较，所有points逐值一致；附加原始输出待补状态单列。

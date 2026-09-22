@@ -1,0 +1,110 @@
+[
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p6/best_mae_model/test_details.csv",
+    "max_abs_delta": 3.6656856536865234e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p6/best_acc7_model/test_details.csv",
+    "max_abs_delta": 3.6954879760742188e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p2/best_mae_model/test_details.csv",
+    "max_abs_delta": 3.159046173095703e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p2/best_acc7_model/test_details.csv",
+    "max_abs_delta": 2.86102294921875e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p0/best_mae_model/test_details.csv",
+    "max_abs_delta": 2.86102294921875e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p0/best_acc7_model/test_details.csv",
+    "max_abs_delta": 2.8014183044433594e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p8/best_acc7_model/test_details.csv",
+    "max_abs_delta": 4.1425228118896484e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p4/best_mae_model/test_details.csv",
+    "max_abs_delta": 3.427267074584961e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S40",
+    "path": "eta_expected/eta_0p4/best_acc7_model/test_details.csv",
+    "max_abs_delta": 3.2782554626464844e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p2/best_guarded_acc2_model/test_details.csv",
+    "max_abs_delta": 2.6226043701171875e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p2/best_mae_model/test_details.csv",
+    "max_abs_delta": 2.6226043701171875e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p2/best_acc7_model/test_details.csv",
+    "max_abs_delta": 2.8386712074279785e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p0/best_guarded_acc2_model/test_details.csv",
+    "max_abs_delta": 2.5033950805664062e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p0/best_mae_model/test_details.csv",
+    "max_abs_delta": 2.5033950805664062e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p0/best_acc7_model/test_details.csv",
+    "max_abs_delta": 2.8014183044433594e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p4/best_guarded_acc2_model/test_details.csv",
+    "max_abs_delta": 2.9206275939941406e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p4/best_mae_model/test_details.csv",
+    "max_abs_delta": 2.9206275939941406e-06,
+    "binary_changes": 0
+  },
+  {
+    "run": "DETACH_S41",
+    "path": "eta_expected/eta_0p4/best_acc7_model/test_details.csv",
+    "max_abs_delta": 3.5762786865234375e-06,
+    "binary_changes": 0
+  }
+]
