@@ -39,6 +39,10 @@
 
 ## 没有纳入的内容
 
+2026-09-22追加MOSI过程诊断：`results/mosi_diagnostics_20260922/`来自独立Lab诊断任务的四checkpoint无梯度输出和现有日志。顺序ID代替真实sample/video ID，保留跨checkpoint连接；原映射不发布。`snapshots/mosi_diagnostics_20260922/`独立保存MOSI实际执行源代码、原训练器和本次受控干预版本；不覆盖根目录MOSEI实现。附标准库读出重建检查。旧wave38/39 EMD结果由已有日志摘录，未重新训练。
+
+以下旧打包排除列表中的“预测文件”对本次新增的脱敏数值诊断作明确例外；仍不包含文本、原始标识、音视频、checkpoint或embedding cache。
+
 数据集、音视频、逐样本文本、embedding cache、checkpoint、TensorBoard、原始训练日志、远程凭据/SSH配置、调度与同步脚本、临时补丁、重复快照、OASIS等探索分支、论文草稿/PDF/专利文件、第三方下载仓库、无明确结论的待运行计划。旧实验用摘要和有来源的结果代表，避免几十个版本造成阅读歧义。
 
 原根目录README主要是HPC同步说明，旧server-code README介绍医学M4OE上游，均不适合作为当前模型入口。当前包改用专门的阅读说明，并在 [ATTRIBUTION.md](../ATTRIBUTION.md) 保留上游背景。

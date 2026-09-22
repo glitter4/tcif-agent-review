@@ -26,6 +26,8 @@
 
 **2026-09-22 MOSI更新：** soft-label tau=.4与router temperature=.15两项均完成200轮及双checkpoint完整eta扫描。前者未改善；后者最低MAE为.730642，同点Acc7/Acc2non0/macro-F1non0为44.314869/83.689024/83.153125，未达联合目标。D1仍为分类优先主点。见[最新结果](results/EXPERIMENTS.md#mosi-2026-09-22更新软标签分布与路由温度)及[完整评估表](results/evidence/mosi_distribution_report.md)。
 
+**新增过程证据：** [MOSI诊断包](results/mosi_diagnostics_20260922/README.md)提供D1/R1四个checkpoint的3660条脱敏数值输出、56个val/test读出重建核验、开发集受限幅度校准和误差分组。四次校准均选a=1，停止扩扫。另附[独立MOSI执行源码](snapshots/mosi_diagnostics_20260922/README.md)；三项训练对照已启动，暂不当作完成结果。
+
 ## 目录
 
 ```text

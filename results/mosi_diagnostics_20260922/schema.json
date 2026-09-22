@@ -1,0 +1,23 @@
+{
+  "format": "UTF-8 JSONL; Python JSON round-trip of float32 tensor outputs",
+  "identifier_policy": "Sequential per-split IDs, stable across D1/R1 and both checkpoints; no text or source identifiers",
+  "fields": {
+    "sample_id": "stable anonymous sample ID",
+    "group_id": "anonymous video group ID",
+    "split": "val or test",
+    "raw_label": "continuous sentiment target",
+    "y_reg_raw": "posterior regression before clamp",
+    "y_reg_clipped": "regression clamped [-3,3] before readout",
+    "cls7_logits": "seven posterior logits, ordered centers -3 through3",
+    "local_y_reg": "pre-TCIF regression",
+    "local_cls7_logits": "pre-TCIF class logits",
+    "prior_y_reg": "neighbor-only prior regression",
+    "prior_cls7_logits": "neighbor-only prior logits",
+    "neighbor_ids": "stable IDs in same split",
+    "neighbor_valid": "valid-slot mask",
+    "neighbor_relative_pos": "actual loader relative positions",
+    "neighbor_labels": "raw labels, ignore invalid slots",
+    "reg_tcif/cls_tcif": "gate, variance means, innovation norm, posterior-local relative feature norm",
+    "token_count": "active tokens only; original pre-truncation length not exported"
+  }
+}
