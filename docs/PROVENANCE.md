@@ -42,3 +42,7 @@
 数据集、音视频、逐样本文本、embedding cache、checkpoint、TensorBoard、原始训练日志、远程凭据/SSH配置、调度与同步脚本、临时补丁、重复快照、OASIS等探索分支、论文草稿/PDF/专利文件、第三方下载仓库、无明确结论的待运行计划。旧实验用摘要和有来源的结果代表，避免几十个版本造成阅读歧义。
 
 原根目录README主要是HPC同步说明，旧server-code README介绍医学M4OE上游，均不适合作为当前模型入口。当前包改用专门的阅读说明，并在 [ATTRIBUTION.md](../ATTRIBUTION.md) 保留上游背景。
+
+## 2026-09-22 CH-SIMS结果增补
+
+`results/chsims_gatectx_full_sweeps.json`来自工作区`.codex-jobs/tcif_chsims_gatectx_c1_20260922/summary.json`，保留8组配置与448点原始指标，机器路径替换为`/path/to/...`，添加主/附加口径说明。`results/evidence/chsims_gatectx_report.md`来自`analysis/chsims_gatectx_c1_results_20260922.md`，移除机器访问与绝对路径章节。同步更新结果索引及完整性检查；未同步训练源码、权重或逐样本数据。

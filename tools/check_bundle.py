@@ -109,6 +109,30 @@ def main():
         for mode, points in run['points'].items():
             check_points(points, 457, 388)
             assert all(p['readout'] == mode for p in points)
+    gatectx = load('results/chsims_gatectx_full_sweeps.json')
+    assert gatectx['incomplete'] == [] and len(gatectx['results']) == 8
+    supplemental = {'best_dev_argmax_acc5_model', 'best_dev_argmax_mae_model'}
+    total = primary = 0
+    assert {r['id'] for r in gatectx['results']} == {f'{v}_S{s}' for v in ('B0','G040','G025','C003') for s in (40,41)}
+    for run in gatectx['results']:
+        assert run['config']['epochs'] == 50
+        assert run['guarded_selection']['eligible_epoch_count'] == 0
+        assert run['guarded_selection']['checkpoint'] is None
+        for mode, points in run['points'].items():
+            assert mode in ('expected','argmax') and len(points) == 28
+            main = [p for p in points if p['checkpoint'] in CHECKPOINTS]
+            check_points(main,457,388)
+            extra = [p for p in points if p['checkpoint'] in supplemental]
+            assert len(extra) == 14
+            for ck in supplemental:
+                assert sorted(p['eta'] for p in extra if p['checkpoint']==ck) == ETAS
+            assert all(p['readout']==mode for p in points)
+            assert all(p['metrics']['num_samples_all']==457 and p['metrics']['num_samples_non0']==388 for p in points)
+            assert all(math.isfinite(p['metrics'][k]) for p in points for k in ('Acc5','MAE','Acc2non0','F1non0'))
+            total += len(points)
+            primary += len(main)
+    assert total == 448 and primary == 224
+    print('PASS: latest CH-SIMS 448 points (224 test-selected + 224 supplementary); total package 700 points.')
     print(f'PASS: {len(python_files)} Python files parsed; local imports and Markdown links resolve.')
     print('PASS: MOSEI 70 + MOSI 70 + CH-SIMS 112 = 252 complete historical sweep points; CSV matches JSON.')
     print('NOTE: four MOSEI sensitivity rows are fixed-eta summaries, not complete sweeps.')

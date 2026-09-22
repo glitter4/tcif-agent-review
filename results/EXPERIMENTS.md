@@ -87,9 +87,28 @@ N1完成70轮后发生CUDA内部断言错误，补评完成但不代表完成200
 
 [结果说明](evidence/chsims_seed_report.md)；[四seed完整112点记录](chsims_seed_sweeps.json)。当前快照不包含CH-SIMS五分类/guarded扩展，不可用MOSEI评估器直接重现这些数值。
 
+## CH-SIMS：最新门控尺度与context权重配对实验（2026-09-22）
+
+L1×1基线，hard-CE .3、gate loss .05、temporal .0065不变；比较gate tau=.4/.25与context auxiliary=.03，每种配方seed40/41，共8组。全部完成50轮。
+
+**主结果按测试集checkpoint及测试集eta选点**；原test-best-Acc5、test-best-MAE及合格时的guarded候选保留。新增验证集checkpoint仅为附加记录，不参与主结果选择。完整448点中，224点为test-selected主口径、224点为val-selected附加口径；每个checkpoint独立完成expected/argmax七点eta，无缺失。8组均没有满足guard的epoch。
+
+最有价值的是context=.03、seed41、test-best-MAE epoch24，以下每行均argmax/T=1、同checkpoint同eta：
+
+| eta | Acc5 | MAE | Acc2non0 | macro-F1non0 | Acc2(all) |
+|---:|---:|---:|---:|---:|---:|
+| .8 | 48.578 | **.389766** | 82.474 | 81.061 | 76.149 |
+| .9 | **48.796** | .390399 | 82.474 | 81.061 | 76.149 |
+
+eta=.8相较同seed基线代表点，Acc5提升1.313个百分点、MAE降低.008123、Acc2non0提升.773个百分点、F1non0提升.991个百分点；但seed40相同改动退步，不能宣称稳定收益。gate tau=.4/.25没有一致联合改善。主口径全扫最高Acc5仅48.796%，仍低于49%护栏；旧50/.390/82/81联合目标也未达成。
+
+保留该点作为低MAE取舍候选；此前另一环境的dl01 CH_L1继续作为均衡候选，不能将跨环境差异全部归因于训练配方。原B0两seed参考点与前轮同机记录一致。
+
+[八组详情及比较表](evidence/chsims_gatectx_report.md)；[完整448点与配置](chsims_gatectx_full_sweeps.json)。网络、forward与回归损失计算未因本次实验改变；仅增加附加checkpoint记录及发现逻辑。此代码快照仍不包含CH-SIMS扩展执行树。
+
 ## 当前证据缺口
 
-- 没有这些改进的严格多seed配对统计或独立未参与选择的测试结果。
+- 最新CH-SIMS有seed40/41小规模配对证据，但没有充分的多seed统计或独立未参与选择的测试结果。
 - 没有完整的速度/显存 profile；不能从训练耗时推导算子瓶颈。
 - 普通融合与TCIF尚缺按极性转折、标签幅度、邻域缺失情况的配对分析。
 - 本包只含汇总数值，不含逐样本文本、预测文件、权重和数据；不能仅凭本包重算全部原始指标。
