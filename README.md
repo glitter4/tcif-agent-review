@@ -22,6 +22,8 @@
 
 这些行来自不同实验设置，第一行不能替换消融对照。结果采用项目既定的 **test-selected** 开发协议；不代表独立留出测试的无偏泛化估计，也不代表跨 seed 显著改进。
 
+**2026-09-22 MOSI更新：** soft-label tau=.4与router temperature=.15两项均完成200轮及双checkpoint完整eta扫描。前者未改善；后者最低MAE为.730642，同点Acc7/Acc2non0/macro-F1non0为44.314869/83.689024/83.153125，未达联合目标。D1仍为分类优先主点。见[最新结果](results/EXPERIMENTS.md#mosi-2026-09-22更新软标签分布与路由温度)及[完整评估表](results/evidence/mosi_distribution_report.md)。
+
 ## 目录
 
 ```text

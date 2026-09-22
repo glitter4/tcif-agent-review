@@ -6,7 +6,7 @@
 |---|---|
 | Python语法、JSON解析、Markdown文件链接、本地导入依赖 | 通过，22个Python文件 |
 | MOSEI消融结果完整性与CSV/JSON逐值一致 | 通过，70点 |
-| MOSI D1/N1/N2双checkpoint七点eta | 通过，42点 |
+| MOSI D1/N1/N2/S1/R1双checkpoint七点eta | 通过，70点 |
 | CH-SIMS四seed×双读出×双checkpoint×七点eta | 通过，112点 |
 | 原有消融协议测试 | 3项通过 |
 | 打包源码的小模型/消融/掩码/分类头测试 | 26项运行，25项通过，1项跳过 |
@@ -34,3 +34,5 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittes
 模型测试覆盖五种变体的前向/反向、初始化、空邻域与padding、参数共享、保存重建、checkpoint元数据、标签映射和文本解冻时禁止cache等。测试使用合成小模型，不等于真实数据完整训练复现；本次没有训练、重新推理历史checkpoint或补跑敏感性eta网格。
 
 结果证据保留原来源的数值和完成状态。对汇总结果的检查证明网格及导出完整，不能代替对未随包提供的逐样本预测、数据及权重的独立审计。
+
+2026-09-22增量仅更新结果与文档及标准库检查器。重新验证新增28点与源结果逐值一致、两项配置各自仅一个字段变化、完成状态/轮次、router scale/temperature数值、Markdown引用及全部252点完整性。未改变模型代码，未重复执行上述旧模型测试。

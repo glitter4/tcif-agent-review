@@ -1,0 +1,46 @@
+{
+  "S1_soft_tau04": {
+    "best_acc7_model": {
+      "shared_specific_layers.0.scale": {
+        "scale": 1.050356388092041,
+        "scale_over_temperature": 10.50356388092041
+      },
+      "shared_specific_layers.1.scale": {
+        "scale": 1.061909794807434,
+        "scale_over_temperature": 10.61909794807434
+      }
+    },
+    "best_mae_model": {
+      "shared_specific_layers.0.scale": {
+        "scale": 1.0827054977416992,
+        "scale_over_temperature": 10.827054977416992
+      },
+      "shared_specific_layers.1.scale": {
+        "scale": 1.0856804847717285,
+        "scale_over_temperature": 10.856804847717285
+      }
+    }
+  },
+  "R1_router_temp015": {
+    "best_acc7_model": {
+      "shared_specific_layers.0.scale": {
+        "scale": 1.080649495124817,
+        "scale_over_temperature": 7.204329967498779
+      },
+      "shared_specific_layers.1.scale": {
+        "scale": 1.0793967247009277,
+        "scale_over_temperature": 7.195978164672852
+      }
+    },
+    "best_mae_model": {
+      "shared_specific_layers.0.scale": {
+        "scale": 1.1170203685760498,
+        "scale_over_temperature": 7.446802457173666
+      },
+      "shared_specific_layers.1.scale": {
+        "scale": 1.1079161167144775,
+        "scale_over_temperature": 7.386107444763184
+      }
+    }
+  }
+}

@@ -54,6 +54,24 @@ N1完成70轮后发生CUDA内部断言错误，补评完成但不代表完成200
 
 [结果说明](evidence/mosi_followup_report.md)；[D1/N1/N2的全部42点及配置](mosi_recent_full_sweeps.json)。每组都分别保留两个 checkpoint 的完整七点 expected/T=1 结果，training_complete 与 evaluation_complete 分开记录。
 
+### MOSI 2026-09-22更新：软标签分布与路由温度
+
+以下两项均从Lab5090 D1配方重新训练，seed123、200轮；每项只改一个字段。S1改`cls7_soft_tau .3→.4`，R1改`router_temperature .1→.15`；CE权重仍.75、router LR仍2e-4，结构与其他设置保持不变。两项完整训练及双checkpoint各7点评估均成功，无自动追加实验。
+
+| 同点结果 | checkpoint / epoch / eta | Acc7 | MAE | Acc2non0 | macro-F1non0 |
+|---|---|---:|---:|---:|---:|
+| D1原主点，保留 | best_acc7 / 59 / 1 | 45.335277 | .736301 | 83.841463 | 83.356311 |
+| S1 soft tau .4，最高Acc7 | best_acc7 / 58 / .6 | 43.731778 | .747584 | 82.774390 | 82.321475 |
+| S1，最低MAE | best_mae / 148 / .6 | 42.274052 | .739492 | 83.536585 | 83.023913 |
+| R1 router temperature .15，最高Acc7 | best_acc7 / 58 / .8 | 45.043732 | .742801 | 82.926829 | 82.469100 |
+| R1，最低MAE | best_mae / 149 / .6 | 44.314869 | .730642 | 83.689024 | 83.153125 |
+
+本次soft-label加宽没有改善已有候选；不能将单seed结果推广为所有软标签调整无效。router温度升高带来低MAE候选（比N2最低MAE再降约.00202），该点二分类质量合格，但Acc7不足。两项均未达到46.1/.740/83.3/83.0联合目标；D1保留为分类优先主点，R1单列为低MAE候选。
+
+[完整28点报告](evidence/mosi_distribution_report.md)；[累计D1/N1/N2/S1/R1共70点与配置](mosi_recent_full_sweeps.json)；[router scale/temperature](mosi_distribution_router_scales.json)。R1的scale/temperature约7.20–7.45，温度作用未被scale完全抵消；这不能单独证明专家负载更均衡或缓解塌缩，也不能用combine求和推断均衡。
+
+以上仍是test-selected、expected/T=1的单seed开发结果；686个全样本MAE、656个nonzero样本macro-F1，eta0仅诊断。后续泛化确认需单独采用固定开发集选点及配对多seed，不改写历史协议。新结果不扩展本仓库MOSEI源码覆盖范围。
+
 ## CH-SIMS：种子复验未重复最佳单点
 
 四个新增 seed 均完成50轮。以下统一 best-Acc5 checkpoint（历史文件名 best_acc7_model）、argmax eta=.8、T=1；训练选 checkpoint 时使用 expected eta=1。

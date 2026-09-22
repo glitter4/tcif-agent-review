@@ -33,6 +33,8 @@
 | MOSI/CH-SIMS摘录 | `results_20260921.md`、`chsims_seeds_c1_results_20260919.md` |
 | 早期V7概括 | `analysis/structv7_weekly_total_table_20260430.md`，仅作历史线索 |
 
+2026-09-22结果增量：`results/mosi_recent_full_sweeps.json`新增S1_soft_tau04与R1_router_temp015，来自`analysis/tcif_mosi_distribution_20260922/all_results.json`；逐值保留28点、checkpoint轮次、配置及完成状态，机器路径沿用包内`/path/to/`占位。`results/evidence/mosi_distribution_report.md`来自该批`results_20260922.md`，仅调整包内证据链接；`results/mosi_distribution_router_scales.json`保留两项的checkpoint尺度诊断。没有加入权重、数据、机器路径、训练源码或调度脚本。
+
 报告为已有记录的保真摘录；文中的其他机器或数据集名称是历史背景，不是当前操作指令。
 
 ## 没有纳入的内容

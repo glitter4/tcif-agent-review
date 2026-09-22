@@ -80,11 +80,28 @@ def main():
             for key in ('acc7', 'mae', 'acc2non0', 'f1non0'):
                 assert float(match[0][key]) == point[key]
     mosi = load('results/mosi_recent_full_sweeps.json')
-    assert len(mosi) == 3
+    assert len(mosi) == 5
+    assert {r['id'] for r in mosi} == {'D1', 'N1_CE090', 'N2_router5e5', 'S1_soft_tau04', 'R1_router_temp015'}
     for run in mosi:
         check_points(run['points'], 686, 656)
         assert run['evaluation_complete'] is True
         assert all(p['readout'] == 'expected' and p['T'] == 1 for p in run['points'])
+    by_id = {r['id']: r for r in mosi}
+    for name, key, value in [('S1_soft_tau04', 'cls7_soft_tau', .4),
+                             ('R1_router_temp015', 'router_temperature', .15)]:
+        run = by_id[name]
+        assert run['config'] == dict(by_id['D1']['config'], **{key: value})
+        assert run['training_complete'] and run['last_complete_epoch'] == 200
+        assert set(run['checkpoint_epochs']) == CHECKPOINTS
+    scales = load('results/mosi_distribution_router_scales.json')
+    for name, checkpoints in scales.items():
+        assert name in ('S1_soft_tau04', 'R1_router_temp015')
+        assert set(checkpoints) == CHECKPOINTS
+        temperature = by_id[name]['config']['router_temperature']
+        for layers in checkpoints.values():
+            assert layers
+            for values in layers.values():
+                assert math.isclose(values['scale'] / temperature, values['scale_over_temperature'])
     chsims = load('results/chsims_seed_sweeps.json')['results']
     assert len(chsims) == 4
     for run in chsims:
@@ -93,7 +110,7 @@ def main():
             check_points(points, 457, 388)
             assert all(p['readout'] == mode for p in points)
     print(f'PASS: {len(python_files)} Python files parsed; local imports and Markdown links resolve.')
-    print('PASS: MOSEI 70 + MOSI 42 + CH-SIMS 112 = 224 complete historical sweep points; CSV matches JSON.')
+    print('PASS: MOSEI 70 + MOSI 70 + CH-SIMS 112 = 252 complete historical sweep points; CSV matches JSON.')
     print('NOTE: four MOSEI sensitivity rows are fixed-eta summaries, not complete sweeps.')
 
 
