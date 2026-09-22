@@ -54,3 +54,7 @@
 ## CH-SIMS机制诊断增补
 
 新增cross_dataset/chsims独立执行分支与结果目录results/chsims_diagnostics_20260922，不覆盖MOSEI主线。数据来自本轮C1只读checkpoint导出与既有日志，不重训B0/C003；包含7304条val/test原始预测、224点重建核验、1120点幅度校准、4组逐轮记录。路径脱敏，未含权重/音视频/凭据。此前“无逐样本输出/CH-SIMS执行实现”的范围说明由此处更新；MOSI同期增补范围以其过程诊断说明为准。新梯度路径训练的完成状态单列。
+
+## MOSI三项机制训练完成增补
+
+`results/mosi_diagnostics_20260922/study_results.json`来自Lab任务DETACH/HEAD10/FULL10的test/val完整评估、独立输出重建与实际梯度记录，三项均exit_code0。新增12个val/test JSONL共5490条，与既有D1/R1采用同一顺序ID映射；未发布原ID映射。采集脚本及独立标准库检查器一同提供。原始指标逐值保留，移除旧runner旧目标下的best_joint/near_pass等不适用摘要，防止与本轮目标混淆。CH-SIMS记录原样保留。

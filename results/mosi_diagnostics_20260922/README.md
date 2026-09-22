@@ -32,8 +32,10 @@ D1 eta=.6：66条弱非零样本中有32条跨符号错误；217条强情感样�
 
 旧MOSI wave38/39已经分别测试softCE+flat-logit CDF/EMD .5、hardCE+CDF/EMD .2，均退化，见[历史摘录](../evidence/mosi_ordinal_history.md)。旧scale/bias/集成校准与本次受限单模型诊断区分，不重跑旧网格。
 
-新训练已经启动：DETACH（D1配方200轮，邻居特征detach）、HEAD10（仅head_cls7精调10轮）、FULL10（相同步数全模型继续训练）。两短臂从D1 epoch59初始化、分类头LR2.25e-5、常数LR、新optimizer；其他设置固定。HEAD10冻结区eval，并每轮覆盖原自动解冻逻辑。当前没有三项最终成绩，状态不写成完成。原test-selected双checkpoint保留，另外单列val-selected双checkpoint及其完整eta扫描；初始化来源的test-selected局限继续披露。
+已完成的训练：DETACH（D1配方200轮，邻居特征detach）、HEAD10（仅head_cls7精调10轮）、FULL10（相同步数全模型继续训练）。两短臂从D1 epoch59初始化、分类头LR2.25e-5、常数LR、新optimizer；其他设置固定。HEAD10冻结区eval，并每轮覆盖原自动解冻逻辑。三项现已全部成功完成；[完整结果、分组与过程诊断](STUDY_RESULTS.md)单列，均未达到联合目标。原test-selected双checkpoint保留，另外单列val-selected双checkpoint及其完整eta扫描；初始化来源的test-selected局限继续披露。
 
 微型测试已验证detach前向逐位相同、邻居特征梯度被切断、中心与gate梯度保留；head-only参数冻结和回归不变、全模型控制参数组无遗漏。实际训练补记裁剪前梯度范数及首个训练batch的router-phi子空间分项梯度；子空间结果不能推广成整个共享编码器的梯度结论。
 
 实际执行分支及干预代码见[源码范围说明](../../snapshots/mosi_diagnostics_20260922/README.md)。
+
+新增训练验收命令：`python tools/check_mosi_studies.py`。`study_results.json`保存84点及过程审计，样本目录新增DETACH/HEAD10/FULL10共5490行；全包MOSI数值输出共9150行。

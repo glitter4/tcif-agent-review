@@ -37,7 +37,7 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittes
 
 2026-09-22增量仅更新结果与文档及标准库检查器。重新验证新增28点与源结果逐值一致、两项配置各自仅一个字段变化、完成状态/轮次、router scale/temperature数值、Markdown引用及全部252点完整性。未改变模型代码，未重复执行上述旧模型测试。
 
-随后新增的MOSI诊断快照另作验证：`python tools/check_mosi_diagnostics.py`通过3660行数值/匿名ID连接、28个测试eta点独立重建、开发集eta选择及符号不变检查；远端另核验56个val/test逐样本重建点与原CSV误差≤1e-5。干预微型测试通过detach前向相同、邻居梯度切断、中心/gate梯度保留、冻结参数范围和回归不变、控制臂参数组完整性。三项真实训练尚未结束，因此不能将这些实现测试写成训练成功或精度改善。
+随后新增的MOSI诊断快照另作验证：`python tools/check_mosi_diagnostics.py`通过3660行数值/匿名ID连接、28个测试eta点独立重建、开发集eta选择及符号不变检查；远端另核验56个val/test逐样本重建点与原CSV误差≤1e-5。干预微型测试通过detach前向相同、邻居梯度切断、中心/gate梯度保留、冻结参数范围和回归不变、控制臂参数组完整性。三项真实训练现已全部正常结束；`python tools/check_mosi_studies.py`进一步验证84个test/val-selected测试eta点、5490条新增输出、HEAD10原始回归不变、仅开发集选择和全部优化器步数。实际训练完成不等于精度改善，三项未联合达标。
 ## 最新CH-SIMS结果同步检查（2026-09-22）
 
 新增8组448点逐checkpoint/读出/eta完整性检查通过，其中224点test-selected主结果、224点附加val结果。与工作区原始汇总直接比较，所有points对象逐值一致；仅机器路径脱敏与来源说明新增。合并同期MOSI增量后，全包700个完整历史/最新评估点检查通过，JSON解析、Python语法、Markdown链接和git diff空白检查通过。本次仅结果与检查脚本更新，未修改或重测模型代码。

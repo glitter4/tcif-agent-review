@@ -116,7 +116,7 @@ eta=.8相较同seed基线代表点，Acc5提升1.313个百分点、MAE降低.008
 
 ## 当前证据缺口
 
-2026-09-22补入[MOSI过程诊断](mosi_diagnostics_20260922/README.md)：D1/R1逐样本输出及源码已补齐，受限尺度校准四次均选1；R1后期两路残差异号样本从77增至106，支持误差互补观察，不证明梯度冲突。已完成的旧flat-logit EMD负结果见[历史记录](evidence/mosi_ordinal_history.md)，本轮不重跑。DETACH/HEAD10/FULL10训练仍在进行，结果待补。
+2026-09-22补入[MOSI过程诊断](mosi_diagnostics_20260922/README.md)：D1/R1逐样本输出及源码已补齐，受限尺度校准四次均选1；R1后期两路残差异号样本从77增至106，支持误差互补观察，不证明梯度冲突。已完成的旧flat-logit EMD负结果见[历史记录](evidence/mosi_ordinal_history.md)，本轮不重跑。[DETACH/HEAD10/FULL10已全部完成](mosi_diagnostics_20260922/STUDY_RESULTS.md)，各自test/val双checkpoint完整eta合计84点。最高Acc7分别44.752187/44.606414/44.897959，均未超过D1；DETACH最低MAE=.730753但同点Acc7=43.294461。HEAD10的非分类头张量及逐样本回归输出保持不变。未触发更多训练。
 
 - 最新CH-SIMS有seed40/41小规模配对证据，但没有充分的多seed统计或独立未参与选择的测试结果。
 - 没有完整的速度/显存 profile；不能从训练耗时推导算子瓶颈。
