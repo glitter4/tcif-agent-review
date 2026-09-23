@@ -10,6 +10,8 @@
 
 ## 给接手 agent 的阅读顺序
 
+新增[MOSI配对梯度诊断](results/mosi_gradprobe_20260923/README.md)：D1/R1既有权重上的12组只读探针，不是新的精度实验；当前没有据此确认持续梯度冲突或提高全局裁剪阈值的收益。
+
 1. [审查任务与交付格式](docs/REVIEW_BRIEF.md)：明确性能目标，先区分事实与假设。
 2. [实验结果与已有尝试](results/EXPERIMENTS.md)：包含收益、退化、失败和比较边界。
 3. [架构与源码导航](docs/ARCHITECTURE.md)：从数据一路追到最终指标。

@@ -49,3 +49,7 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittes
 ## CH-SIMS六组结果检查
 
 `python tools/check_chsims_pathstudy.py`验证六组182点的checkpoint/readout/eta覆盖、10个原始输出的4565条记录、冻结核验与CPU/GPU对齐证据。指标汇总与本地原始summary直接比较，所有points逐值一致；附加原始输出待补状态单列。
+
+## MOSI梯度探针增补
+
+`python tools/check_mosi_gradprobe.py`仅用标准库检查12个无参数更新探针、48个有效batch、同一128条训练样本、D1三组完整/detach配对的回归及logits逐值相等、参数组互不重叠、裁剪系数与分项余弦数值，以及有效邻居覆盖。源12份结果与发布包直接逐值对比（仅原ID及私有路径脱敏）。不重复模型训练或checkpoint评估；已有双checkpoint完整eta协议未改变。

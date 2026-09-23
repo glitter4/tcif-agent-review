@@ -118,6 +118,8 @@ eta=.8相较同seed基线代表点，Acc5提升1.313个百分点、MAE降低.008
 
 2026-09-22补入[MOSI过程诊断](mosi_diagnostics_20260922/README.md)：D1/R1逐样本输出及源码已补齐，受限尺度校准四次均选1；R1后期两路残差异号样本从77增至106，支持误差互补观察，不证明梯度冲突。已完成的旧flat-logit EMD负结果见[历史记录](evidence/mosi_ordinal_history.md)，本轮不重跑。[DETACH/HEAD10/FULL10已全部完成](mosi_diagnostics_20260922/STUDY_RESULTS.md)，各自test/val双checkpoint完整eta合计84点。最高Acc7分别44.752187/44.606414/44.897959，均未超过D1；DETACH最低MAE=.730753但同点Acc7=43.294461。HEAD10的非分类头张量及逐样本回归输出保持不变。未触发更多训练。
 
+2026-09-23补入[固定训练batch的配对梯度诊断](mosi_gradprobe_20260923/README.md)：D1 epoch59的完整邻居与邻居detach在eval和两组dropout种子下，128条相同训练样本的前向逐值相同；router-phi分项回归/分类梯度余弦4个batch中位数分别为−.794/−.783、−.612/−.578、−.452/−.449。R1 epoch58与149的同样4个固定batch显示阶段/随机性差异，不构成稳定梯度冲突证据。12组共48个有效batch，无权重更新或新测试指标。阴性/取舍训练结果仍以既有test-selected表为准。
+
 - 最新CH-SIMS有seed40/41小规模配对证据，但没有充分的多seed统计或独立未参与选择的测试结果。
 - 没有完整的速度/显存 profile；不能从训练耗时推导算子瓶颈。
 - 普通融合与TCIF尚缺按极性转折、标签幅度、邻域缺失情况的配对分析。

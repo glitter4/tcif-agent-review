@@ -1,0 +1,3375 @@
+{
+  "status": "complete",
+  "checkpoints": {
+    "D1": 59,
+    "R1_early": 58,
+    "R1_late": 149
+  },
+  "conditions": [
+    "D1_E_FULL",
+    "D1_E_DETACH",
+    "D1_T123_FULL",
+    "D1_T123_DETACH",
+    "D1_T124_FULL",
+    "D1_T124_DETACH",
+    "R1_E58",
+    "R1_T58_123",
+    "R1_T58_124",
+    "R1_E149",
+    "R1_T149_123",
+    "R1_T149_124"
+  ],
+  "paired_forward_checks": [
+    {
+      "condition": "E",
+      "regression_max_abs_diff": 0.0,
+      "logit_max_abs_diff": 0.0
+    },
+    {
+      "condition": "T123",
+      "regression_max_abs_diff": 0.0,
+      "logit_max_abs_diff": 0.0
+    },
+    {
+      "condition": "T124",
+      "regression_max_abs_diff": 0.0,
+      "logit_max_abs_diff": 0.0
+    }
+  ],
+  "common_sample_count": 128,
+  "diagnostics": {
+    "D1_E_FULL": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.005139638644428232,
+          "cosine_min": -0.050493367500864424,
+          "cosine_max": 0.030671699264987064,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.12419301131571675,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": -0.08381111402955271,
+          "cosine_min": -0.11249178986242953,
+          "cosine_max": -0.02612330636340431,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.0565745413238114,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.07157706488613994,
+          "cosine_min": 0.05219077869783212,
+          "cosine_max": 0.09892580390965652,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.18479134652673507,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": -0.007471145569859787,
+          "cosine_min": -0.04217185218082895,
+          "cosine_max": 0.019736927453712194,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.15391303802563855,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.4677985178003503,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 26.298877195863586,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.04126114879978271,
+          "cosine_min": -0.0009434709723070338,
+          "cosine_max": 0.08783791544747391,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 9.881613526345319,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.12355807471442895,
+          "cosine_min": 0.029443545953308097,
+          "cosine_max": 0.31412495920430783,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.582302325106883,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.7943851234215265,
+          "cosine_min": -0.9406036066360295,
+          "cosine_max": 0.442602972584572,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.04968839729746209,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.3285640700623246,
+          "cosine_min": -0.9906366115795884,
+          "cosine_max": 0.42252941736448174,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.0006617189457746711,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.19279893314677715,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.5202447942761657,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.6497893042342402,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.5193897802524732,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.8510676638148782,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 5.516675294575963,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.3337247112228706,
+          "cosine_min": 0.21065411377846116,
+          "cosine_max": 0.5876801490839265,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.1406299621415767,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.298495909315102,
+          "cosine_min": 0.15957213550797567,
+          "cosine_max": 0.562216217550989,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.55399509019567,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.31108100868434124,
+          "cosine_min": 0.20877382737952857,
+          "cosine_max": 0.6105230452574438,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.522696119945627,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.29807353933895386,
+          "cosine_min": 0.16322356866375765,
+          "cosine_max": 0.5555577955936971,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.5757980534934957,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.26530119260747126,
+          "cosine_min": 0.09939463494619881,
+          "cosine_max": 0.5635284876803432,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.603721809659934,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.24556819340297567,
+          "cosine_min": 0.0295212615245302,
+          "cosine_max": 0.5251250880782893,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.786309829992862,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.31331863075009214,
+          "cosine_min": 0.056659340355865194,
+          "cosine_max": 0.5239435593405366,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.279063908968731,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.31429287883538204,
+          "cosine_min": 0.05498514078329635,
+          "cosine_max": 0.5362644000609893,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.420617972298746,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.24908247934349304,
+          "cosine_min": -0.011374449143370706,
+          "cosine_max": 0.5688296293766035,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 10.569960972577453,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.3229148008430926,
+          "cosine_min": 0.09105141263847674,
+          "cosine_max": 0.6302578480350658,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.155460986685712,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.25303778805628807,
+          "cosine_min": 0.045119563192457225,
+          "cosine_max": 0.578471900968919,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.650029274726176,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.27141944618143515,
+          "cosine_min": 0.16276957885854584,
+          "cosine_max": 0.603414322381599,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.977340763004958,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 37.21732648275095,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "D1_E_DETACH": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": -0.012872909087728434,
+          "cosine_min": -0.06684909794919497,
+          "cosine_max": 0.013090734830654264,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.12357344034909312,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": -0.07000773884384683,
+          "cosine_min": -0.09507440276038007,
+          "cosine_max": -0.04439691052305933,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.05478722871731324,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.05349500168751598,
+          "cosine_min": 0.03728086434707573,
+          "cosine_max": 0.08351323692851928,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.1812709637153854,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": -0.016338597579896988,
+          "cosine_min": -0.05501299409283284,
+          "cosine_max": 0.008844874644768163,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.15304082650785766,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.4677985178003503,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 26.298877195863586,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.024438630949131495,
+          "cosine_min": -0.018616401867289956,
+          "cosine_max": 0.06601002627808795,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 9.716909680320036,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.09754971478654158,
+          "cosine_min": -0.0049254044681863295,
+          "cosine_max": 0.26992760157765183,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.334179321402036,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.782714494143506,
+          "cosine_min": -0.9479335723247039,
+          "cosine_max": 0.47283557184893454,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.05155323812047846,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.33064496160218915,
+          "cosine_min": -0.9980198425460838,
+          "cosine_max": 0.5893104097924433,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.0007488637945149483,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.19077174443908923,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.5192340120388463,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.6497893042342402,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.5193897802524732,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.8510676638148782,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 5.516675294575963,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.36637350411426545,
+          "cosine_min": 0.163008712616312,
+          "cosine_max": 0.593302870560074,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.9695904855371555,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.3360445938702826,
+          "cosine_min": 0.11072588166689408,
+          "cosine_max": 0.5671316141206935,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.273285330337153,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.29005165225477325,
+          "cosine_min": 0.16235759882976392,
+          "cosine_max": 0.5847641111367006,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.155716402210448,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.26164708603737513,
+          "cosine_min": 0.1122014499090804,
+          "cosine_max": 0.5156153971977065,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.306369755354143,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.2709428942279261,
+          "cosine_min": 0.11446964301859572,
+          "cosine_max": 0.5746762085518338,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.16377969656299,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.26439794614842194,
+          "cosine_min": 0.05846260188357652,
+          "cosine_max": 0.5327298161061772,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.274962960929583,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.3368820954613848,
+          "cosine_min": 0.07543712061783849,
+          "cosine_max": 0.5396071971183752,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.735505703947087,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.3346590576108775,
+          "cosine_min": 0.057466933422230436,
+          "cosine_max": 0.5482887225532376,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.778283926227631,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.263025897818405,
+          "cosine_min": -0.01937214259146906,
+          "cosine_max": 0.5837941279031961,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 9.588651789021194,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.33296774416505537,
+          "cosine_min": 0.09755386460561627,
+          "cosine_max": 0.6430243063218471,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.401039236540116,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.2507697196803833,
+          "cosine_min": 0.03418971538899111,
+          "cosine_max": 0.5803708109164321,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.01737426530746,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.26507670468200945,
+          "cosine_min": 0.12245194259646008,
+          "cosine_max": 0.5940191039695379,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.497479175963328,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 36.0080825866969,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "D1_T123_FULL": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.016984429920071972,
+          "cosine_min": -0.0047001457193520885,
+          "cosine_max": 0.05491177510169486,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.14258674405945843,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.011018330285084138,
+          "cosine_min": -0.031947005749528606,
+          "cosine_max": 0.03191187333998202,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.11223504666586324,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.005052509458496928,
+          "cosine_min": -0.008900544953212153,
+          "cosine_max": 0.03047899379543056,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.2138208929355657,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": 0.008761290315856395,
+          "cosine_min": -0.0026215280451589375,
+          "cosine_max": 0.016733729008241584,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.20295540048917787,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.248558472174539,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 19.810685687484064,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.03822709047674755,
+          "cosine_min": 0.00937072689774682,
+          "cosine_max": 0.056759629391468454,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.44373394169186,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.10665393126507505,
+          "cosine_min": 0.06512105182656307,
+          "cosine_max": 0.16076012686322963,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.45135014309007,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.6118820805173557,
+          "cosine_min": -0.745148370599635,
+          "cosine_max": 0.3999787920083332,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.035043586701450594,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.6467928767985344,
+          "cosine_min": -0.9578039749834704,
+          "cosine_max": 0.3631558179931122,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.0006709093423431027,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.198875164648603,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.7307735672850422,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.06269478650288923,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.1917315920035688,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.5917632830913983,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.3629252057571386,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.6513129171580042,
+          "cosine_min": 0.16145590750697147,
+          "cosine_max": 0.6922693924558022,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.178603691106538,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.6670209434153702,
+          "cosine_min": 0.34376238576249996,
+          "cosine_max": 0.703633846069299,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.02853017483266,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.2387362319921238,
+          "cosine_min": 0.020597422243446337,
+          "cosine_max": 0.5726919949126321,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.9441579216117484,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.14760320313957176,
+          "cosine_min": 0.021153573577426314,
+          "cosine_max": 0.41762732499127003,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.4322042376587865,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.6676094994921579,
+          "cosine_min": 0.35396644278551975,
+          "cosine_max": 0.7249532894003349,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.190332064251162,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.625766851124133,
+          "cosine_min": 0.22743733170140873,
+          "cosine_max": 0.7171075390527678,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.997981819814006,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.5966062079496703,
+          "cosine_min": 0.2575218896733515,
+          "cosine_max": 0.6741628775204878,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.78405442325015,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.5899383985673168,
+          "cosine_min": 0.21105980270001826,
+          "cosine_max": 0.6502654974289037,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.46307662804782,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.6086625325956754,
+          "cosine_min": 0.23343663069778522,
+          "cosine_max": 0.7327279889949149,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 9.423126257466095,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.5144641222602359,
+          "cosine_min": 0.36629466325961335,
+          "cosine_max": 0.7632663163085319,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.585483048621738,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.3446547800788173,
+          "cosine_min": 0.1852270034437054,
+          "cosine_max": 0.700632448388177,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.830254095639582,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.2924556098519069,
+          "cosine_min": 0.05482443585371744,
+          "cosine_max": 0.6263314699673896,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.354155077842629,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 29.70861408261588,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "D1_T123_DETACH": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.01603962459593016,
+          "cosine_min": -0.0041626901819818846,
+          "cosine_max": 0.056203566664114295,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.1422393739550179,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.010030245658710631,
+          "cosine_min": -0.0347343243041297,
+          "cosine_max": 0.0260675349055534,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.11148389647882583,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.0037773518170112225,
+          "cosine_min": -0.009205508488390775,
+          "cosine_max": 0.0259336281298245,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.21277530493210456,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": 0.00844763375370958,
+          "cosine_min": -0.0027395898097908812,
+          "cosine_max": 0.016409152159329584,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.20263808434949465,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.248558472174539,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 19.810685687484064,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.033657307271505496,
+          "cosine_min": 0.00805242114643821,
+          "cosine_max": 0.04557607735956062,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.424015984806563,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.09566317690035683,
+          "cosine_min": 0.03836263706849118,
+          "cosine_max": 0.12284285337714097,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.405849560737252,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.5783353039996545,
+          "cosine_min": -0.7607516211242838,
+          "cosine_max": 0.38802318398247493,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.03431549792826058,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.6669575228272928,
+          "cosine_min": -0.9410884660730777,
+          "cosine_max": 0.47671231018584903,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.0008138218894815295,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.19814640026825361,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.7351408474469063,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.06269478650288923,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.1917315920035688,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.5917632830913983,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.3629252057571386,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.644177509740172,
+          "cosine_min": 0.15166143628231454,
+          "cosine_max": 0.684950465021934,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.14711119063928,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.6651460348732908,
+          "cosine_min": 0.3313441066911758,
+          "cosine_max": 0.6882621750796192,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.973828865482739,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.2095034251354938,
+          "cosine_min": 0.002793352708893526,
+          "cosine_max": 0.5287385796488083,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.880305790226795,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.1247167194558644,
+          "cosine_min": 0.01629507202169786,
+          "cosine_max": 0.37453366132657845,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.388015582586969,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.6669214464056656,
+          "cosine_min": 0.34440814567051603,
+          "cosine_max": 0.7050820085460473,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.085498272411204,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.6220527186298159,
+          "cosine_min": 0.22467253681771668,
+          "cosine_max": 0.6987958308935952,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.880752742421655,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.5800753973015483,
+          "cosine_min": 0.2462129082531239,
+          "cosine_max": 0.6593342302836922,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.63129093275092,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.5730268510643699,
+          "cosine_min": 0.19924579734678527,
+          "cosine_max": 0.6301625399459015,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.25373992122464,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.5916506938050463,
+          "cosine_min": 0.20707273790485323,
+          "cosine_max": 0.7008078836410431,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 9.12192945634883,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.4903157781098052,
+          "cosine_min": 0.33498880550827587,
+          "cosine_max": 0.737256190272299,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.347745040740424,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.3126161506950691,
+          "cosine_min": 0.14920227625987326,
+          "cosine_max": 0.6682522120726965,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.660233111198021,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.25969825006505715,
+          "cosine_min": 0.03193517655658019,
+          "cosine_max": 0.5853492692262089,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.250553491154538,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 29.327104617125258,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "D1_T124_FULL": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.014586959980874944,
+          "cosine_min": -0.013939743165283364,
+          "cosine_max": 0.03876981316835672,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.1361343044581348,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.01821560287982718,
+          "cosine_min": 0.004310163423849362,
+          "cosine_max": 0.028220809588428222,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.10508436977603014,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.02063760463885784,
+          "cosine_min": 0.01320665151822742,
+          "cosine_max": 0.022560253562620782,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.1906764927095359,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": 0.007610587891249891,
+          "cosine_min": -0.005503763096193623,
+          "cosine_max": 0.019236459721874922,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.18278669461800817,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.7170682852274757,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 14.207790631264189,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.01634347484512406,
+          "cosine_min": -0.011009192009296747,
+          "cosine_max": 0.03736702161108224,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 5.480658458441713,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.03578024277924204,
+          "cosine_min": -0.003790942425410127,
+          "cosine_max": 0.10176729531184062,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 2.475108568822922,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.4524762232205837,
+          "cosine_min": -0.7938111050219802,
+          "cosine_max": 0.3228538264839727,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.019651808621450162,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.04477016924789401,
+          "cosine_min": -0.9157617190776159,
+          "cosine_max": 0.9170859929825081,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.0018120272975415675,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.24276665855038448,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.2677708729836619,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.060280670438819794,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.21194664029061494,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.22807763097155992,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.6708456728421273,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.46812294658289094,
+          "cosine_min": 0.38598559179887415,
+          "cosine_max": 0.5363119677614963,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.730347472235454,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.4922247195318479,
+          "cosine_min": 0.37912945712168444,
+          "cosine_max": 0.5361861870153558,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.178420063923582,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.2377857506754641,
+          "cosine_min": 0.06427342806838637,
+          "cosine_max": 0.3950116199428812,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.4093696957824733,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.11759049705282178,
+          "cosine_min": -0.003251510567027486,
+          "cosine_max": 0.30108862422602506,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.8193638270258905,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.46451117596114977,
+          "cosine_min": 0.4225094606668444,
+          "cosine_max": 0.5034380524398229,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.854710315208261,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.46274274998546544,
+          "cosine_min": 0.3580917100181656,
+          "cosine_max": 0.4992224506140337,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.434563261653977,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.4488517055404083,
+          "cosine_min": 0.3647902007932018,
+          "cosine_max": 0.5450233537546243,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.323231087538126,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.4669329655117401,
+          "cosine_min": 0.3393264273257303,
+          "cosine_max": 0.573023639773255,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.8646640971509045,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.5616430033530361,
+          "cosine_min": 0.3128181668525978,
+          "cosine_max": 0.6153914300803213,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.268202235891051,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.4640844286299085,
+          "cosine_min": 0.27362163130278777,
+          "cosine_max": 0.6273878640776241,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.1495539983060645,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.35184050559076496,
+          "cosine_min": 0.19680316636038536,
+          "cosine_max": 0.5783902288887567,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.8944241923660896,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.2469498064600687,
+          "cosine_min": 0.08532828957661444,
+          "cosine_max": 0.5015251609336543,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.733615043254874,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 23.6667995616008,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "D1_T124_DETACH": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.014556356656865575,
+          "cosine_min": -0.013620866973805986,
+          "cosine_max": 0.039404572739125274,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.13576795572323458,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.015304543012629587,
+          "cosine_min": 0.0031281850951197683,
+          "cosine_max": 0.03178411333387307,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.1044209838050767,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.019271988919922965,
+          "cosine_min": 0.012782312110740922,
+          "cosine_max": 0.024272357449759713,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.18979337017909387,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": 0.008136278882423055,
+          "cosine_min": -0.006688750876080493,
+          "cosine_max": 0.018845212434600803,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.18239930271508933,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.7170682852274757,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 14.207790631264189,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.015709780755099063,
+          "cosine_min": -0.01091617684005075,
+          "cosine_max": 0.03007415412315007,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 5.4639211799074605,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.026192612602947554,
+          "cosine_min": -0.0041352564046413616,
+          "cosine_max": 0.08984444634780807,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 2.4495965596549474,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.4489675493690767,
+          "cosine_min": -0.7667748948628273,
+          "cosine_max": 0.3081104889984327,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.019919661053848778,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.040937958683791464,
+          "cosine_min": -0.9259684776260517,
+          "cosine_max": 0.8845388771373047,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.0018175583944910639,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.24176921781862054,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.2692759939276526,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.060280670438819794,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.21194664029061494,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.22807763097155992,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.6708456728421273,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.4688388346948831,
+          "cosine_min": 0.3788287003143577,
+          "cosine_max": 0.5364602750500451,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.7185006354484917,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.48708751010234713,
+          "cosine_min": 0.37424879599606026,
+          "cosine_max": 0.5381490019097213,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.164887394351792,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.23120572526059657,
+          "cosine_min": 0.03360145955192278,
+          "cosine_max": 0.3577049747421718,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.3653528606248146,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.11450072605791123,
+          "cosine_min": -0.02864164620366852,
+          "cosine_max": 0.2723108832114249,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.793940624090964,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.4514576592018895,
+          "cosine_min": 0.4198457011253111,
+          "cosine_max": 0.5014988038279661,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.832765250580953,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.4501169781640423,
+          "cosine_min": 0.36066977759388485,
+          "cosine_max": 0.48893754431232467,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.3770466511204305,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.43677572820864763,
+          "cosine_min": 0.37150805514400026,
+          "cosine_max": 0.5345671178235699,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.250053707698585,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.45539153689952727,
+          "cosine_min": 0.3524310683053217,
+          "cosine_max": 0.5541547291747844,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.7327008140441915,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.5445150661390019,
+          "cosine_min": 0.32351717396674345,
+          "cosine_max": 0.6057363155118185,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.097402268502782,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.457963892230285,
+          "cosine_min": 0.27904631098421845,
+          "cosine_max": 0.6010336408875228,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.073476508082868,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.3346380734948955,
+          "cosine_min": 0.1945335099897445,
+          "cosine_max": 0.5500925626633164,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.818908252227594,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.24365377117294226,
+          "cosine_min": 0.05253268558833097,
+          "cosine_max": 0.4696741028437181,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.6868582919026727,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 23.508821324868265,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "R1_E58": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": -0.030525603944285443,
+          "cosine_min": -0.05951887267307759,
+          "cosine_max": 0.012385870586801986,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.16871031183682422,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": -0.07969227673148427,
+          "cosine_min": -0.11903696949120787,
+          "cosine_max": -0.051731678035740136,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.06914573118099465,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.11600350807842479,
+          "cosine_min": 0.08476694218815542,
+          "cosine_max": 0.12205180632592912,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.17921561987554763,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": -0.033913671936987626,
+          "cosine_min": -0.05309607588511818,
+          "cosine_max": -0.0014021374521966494,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.1380169155338725,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.1192470575423483,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 28.850885951293346,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.016734064973834936,
+          "cosine_min": 0.005551519960347777,
+          "cosine_max": 0.07776602685012425,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 10.705984156654111,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.07799642252106578,
+          "cosine_min": 0.04678068474559085,
+          "cosine_max": 0.20462463110113688,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.024893646724168,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.2715540788722923,
+          "cosine_min": -0.6885586779290107,
+          "cosine_max": 0.3546305107832195,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.0252077002028622,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.9397568266516452,
+          "cosine_min": -0.9999633793618871,
+          "cosine_max": -0.7520869673080888,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.001554672282348962,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.18006141645373505,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.931543078194641,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.6693391567466977,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.43221516970784746,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.726251805540069,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 6.2227113128720895,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.16909490731005036,
+          "cosine_min": 0.06516954736469294,
+          "cosine_max": 0.3820086718505324,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.1319119325414837,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.11137698427333524,
+          "cosine_min": -0.015151786789033787,
+          "cosine_max": 0.3892865429972938,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.468488267431533,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.23512074911378364,
+          "cosine_min": 0.19503832167864793,
+          "cosine_max": 0.4214932329543615,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.908894535362318,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.21858700575230147,
+          "cosine_min": 0.18804197364289627,
+          "cosine_max": 0.37342738356281624,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.006000253180808,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.12818098447329185,
+          "cosine_min": -0.16491029043135322,
+          "cosine_max": 0.41482690729505295,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 6.686265164354377,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.1447734434758058,
+          "cosine_min": -0.21943732700992577,
+          "cosine_max": 0.3589159077848467,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 6.8366093699887145,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.1872899073536861,
+          "cosine_min": -0.14802086479883136,
+          "cosine_max": 0.4064345290075836,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 7.267883407029254,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.14523373810874585,
+          "cosine_min": -0.13313342980209572,
+          "cosine_max": 0.4011036992901175,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 8.584811081838728,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.13535381632759913,
+          "cosine_min": -0.12442836852422023,
+          "cosine_max": 0.4104024631967663,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 10.995113012618631,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.24790899769780667,
+          "cosine_min": 0.016774525554242067,
+          "cosine_max": 0.4376662563969878,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.713553547157838,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.18455504854794474,
+          "cosine_min": -0.020757677768476063,
+          "cosine_max": 0.38991474985945407,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 6.823890466818689,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.16869824089889496,
+          "cosine_min": 0.08792089062587569,
+          "cosine_max": 0.3903707184105515,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.214851242890691,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 39.845876066584864,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "R1_T58_123": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.011293169861525754,
+          "cosine_min": -0.0037798261265541235,
+          "cosine_max": 0.025650111164912243,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.1682343936436524,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.013660530637354326,
+          "cosine_min": -0.012849338416680718,
+          "cosine_max": 0.029239615400649226,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.1056924409808743,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.0020989740056044253,
+          "cosine_min": -0.009599833011295121,
+          "cosine_max": 0.04097842102435772,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.19922570351867624,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": 0.006994035582378722,
+          "cosine_min": -0.0004907427746301819,
+          "cosine_max": 0.016180022480833275,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.1568906026277387,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.255256439183624,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 19.351245783093127,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.02213737882083027,
+          "cosine_min": 0.015432785597310646,
+          "cosine_max": 0.0556158862153514,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.4046716816533955,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.07054483026828869,
+          "cosine_min": -0.06761281294930117,
+          "cosine_max": 0.1502008993565453,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.388333972732903,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.23219577149513587,
+          "cosine_min": -0.8423140644753054,
+          "cosine_max": 0.47731320666998317,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.022303726931453247,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.7110469641652686,
+          "cosine_min": -0.9999172240163647,
+          "cosine_max": 0.9451725148308459,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.0024531924323968266,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.21184039208350888,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.7323158400258558,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.08917555977105211,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.1696215991574751,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.760246145232359,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.452150763524563,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.38459901968295374,
+          "cosine_min": 0.21730394634267258,
+          "cosine_max": 0.6522153269445511,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.261285178257273,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.36768673284607,
+          "cosine_min": 0.3368493686047355,
+          "cosine_max": 0.6307402809911608,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.863047591735667,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.045270314884607116,
+          "cosine_min": -0.12072622206099003,
+          "cosine_max": 0.4733723032268259,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 2.9642608203575316,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.015501042057745437,
+          "cosine_min": -0.09476671500721584,
+          "cosine_max": 0.3482382872262612,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 2.458638306993014,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.40547382717546987,
+          "cosine_min": 0.33841219567064784,
+          "cosine_max": 0.617943772599044,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.78210396084155,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.34935748990011084,
+          "cosine_min": 0.25472064896859925,
+          "cosine_max": 0.6514443999826701,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.575737707036359,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.30469232468259244,
+          "cosine_min": 0.15644047967811378,
+          "cosine_max": 0.6231905268227945,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.340076347805329,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.23622963222158336,
+          "cosine_min": 0.10852495765873095,
+          "cosine_max": 0.6225467086494378,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.285564597865598,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.19007247158394247,
+          "cosine_min": 0.13600771123952426,
+          "cosine_max": 0.6653771778135446,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.430135609288676,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.23344508261974467,
+          "cosine_min": 0.07839064684069798,
+          "cosine_max": 0.5938483904717796,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.096802444455196,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.17226404470043372,
+          "cosine_min": -0.0014768892077258486,
+          "cosine_max": 0.6168339521236852,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.7586275920571826,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.09496378472669235,
+          "cosine_min": -0.006423272490415416,
+          "cosine_max": 0.5355531176982333,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.3125328495137882,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 28.363557976765975,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "R1_T58_124": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.004164202781004222,
+          "cosine_min": -0.0009633650686025091,
+          "cosine_max": 0.017352742760228558,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.1716681115898888,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.007412283493977563,
+          "cosine_min": -0.011608738603381463,
+          "cosine_max": 0.04069066200163592,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.11319047381412094,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.02923183002104307,
+          "cosine_min": -0.0006081266017646383,
+          "cosine_max": 0.04599617380863429,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.18310656766308359,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": 0.001904221765849514,
+          "cosine_min": -0.003422513410853591,
+          "cosine_max": 0.012424641432127142,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.16346612774999975,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.593975351639521,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 19.09325719686529,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.011320282529787687,
+          "cosine_min": -0.01286632258550718,
+          "cosine_max": 0.04862989790943369,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 7.37050394292522,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.050540556779249374,
+          "cosine_min": -0.11064410475998271,
+          "cosine_max": 0.22006256228665,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.2302054343421758,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.03730355831623346,
+          "cosine_min": -0.6890914159508014,
+          "cosine_max": 0.008542937703204759,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.017102332448912797,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.14035042806132453,
+          "cosine_min": -0.9974853120126704,
+          "cosine_max": 0.9055578731589377,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.0008961829700986578,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.22224763869162328,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.8924976564758262,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.05203075306336353,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.1944956617680913,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.48689946313177845,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.24769864509497,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.44337086004969556,
+          "cosine_min": 0.2536151766556119,
+          "cosine_max": 0.5180484506382355,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.715698818870326,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.45295448816288864,
+          "cosine_min": 0.26798696162134655,
+          "cosine_max": 0.5854087605889781,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 5.331971652232523,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.08760765862306497,
+          "cosine_min": -0.10709950788108488,
+          "cosine_max": 0.501750354402197,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 3.020985898390331,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.03806771925638182,
+          "cosine_min": -0.07461487189008915,
+          "cosine_max": 0.4117014351049215,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 2.3842425491127335,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.4693051995516573,
+          "cosine_min": 0.2489190540855111,
+          "cosine_max": 0.5813430333530702,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.170894605454601,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.45433507003097773,
+          "cosine_min": 0.22034928613742336,
+          "cosine_max": 0.6396987198364037,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.963342818673553,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.40102889023849475,
+          "cosine_min": 0.23729507102957006,
+          "cosine_max": 0.6353837690199197,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 6.406636297390095,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.39892390541590783,
+          "cosine_min": 0.17590758084359095,
+          "cosine_max": 0.6584312407658721,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 7.194519852832489,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.41429838938941266,
+          "cosine_min": 0.0511545393990066,
+          "cosine_max": 0.7113396408511042,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.190950295526992,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.3545412342740796,
+          "cosine_min": -0.024824179234745024,
+          "cosine_max": 0.7433488881934026,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 6.074773780525626,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.22799451221428416,
+          "cosine_min": -0.022597406461333413,
+          "cosine_max": 0.6654775423854065,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.431352424287783,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.12340402563693136,
+          "cosine_min": -0.07063837495159826,
+          "cosine_max": 0.6033567606154583,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 3.2333134438192226,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 28.327923466195756,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "R1_E149": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": -0.003243735402533758,
+          "cosine_min": -0.021988061631210965,
+          "cosine_max": 0.0194356988813744,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.10179875551586745,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": -0.18580072032871509,
+          "cosine_min": -0.23558768119141565,
+          "cosine_max": -0.17782407661866212,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.0700441392530273,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.13951168466431577,
+          "cosine_min": 0.1271819389993409,
+          "cosine_max": 0.17206454523811787,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.12276080788368836,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": -0.02563734460193342,
+          "cosine_min": -0.04122912249079111,
+          "cosine_max": -0.010120260205389671,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.1465499819579496,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.0519882524901147,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 34.133442110782845,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.03440911627031337,
+          "cosine_min": 0.007528931859840257,
+          "cosine_max": 0.050491982457681606,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 8.271137252515128,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.09068975275099507,
+          "cosine_min": -0.020495320369217605,
+          "cosine_max": 0.154440251333683,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.968632940288432,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.24601967765602556,
+          "cosine_min": -0.7782627463771397,
+          "cosine_max": 0.4993368699147763,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 0.020315633351282305,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.7024988023157206,
+          "cosine_min": -0.9913091309842246,
+          "cosine_max": -0.6418598302440163,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.0006128709694707712,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.12427208265834601,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.7918393625952493,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.6456138580228902,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.5978560099200894,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 8.028590801463345,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 11.38624254381833,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": -0.041348147675156814,
+          "cosine_min": -0.17185876458614105,
+          "cosine_max": 0.10759519503691228,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 2.0976701475775155,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": -0.09195926857664849,
+          "cosine_min": -0.22362057268767827,
+          "cosine_max": 0.11927175312178444,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 3.1020386797090085,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.13980134516711373,
+          "cosine_min": 0.11828541532299633,
+          "cosine_max": 0.254498478666485,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.076446988577985,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.15217045584484237,
+          "cosine_min": 0.0804303366240887,
+          "cosine_max": 0.26655368005834607,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.2000386254241064,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": -0.13640436529716973,
+          "cosine_min": -0.3150168976160342,
+          "cosine_max": 0.08823030471269627,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 4.5957475770253,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": -0.10487077605408673,
+          "cosine_min": -0.27135184498915055,
+          "cosine_max": 0.04190525321992343,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 4.897605239588653,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": -0.049721468743650195,
+          "cosine_min": -0.2034338340099378,
+          "cosine_max": 0.049670146905314606,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 5.101877716641788,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": -0.06616709931685905,
+          "cosine_min": -0.2638151631722813,
+          "cosine_max": 0.025868410314012068,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 6.217362368293367,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": -0.10844971953769297,
+          "cosine_min": -0.25685663885201065,
+          "cosine_max": 0.004084017225215289,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 8.198732312071566,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": -0.0198180198891755,
+          "cosine_min": -0.13814697771780643,
+          "cosine_max": 0.034647623187301524,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 6.565892162191981,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": -0.032711239523359914,
+          "cosine_min": -0.13907584167438453,
+          "cosine_max": 0.04941387559924876,
+          "negative_count": 3,
+          "defined_count": 4,
+          "norm_total_median": 5.6275262544152245,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.03771201538079028,
+          "cosine_min": -0.02113889234349964,
+          "cosine_max": 0.15224645089656086,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.347365023639609,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 42.12441537276119,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "R1_T149_123": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": 0.006551603077055414,
+          "cosine_min": -0.012811438025566734,
+          "cosine_max": 0.024885207420329562,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.0736851503461203,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.01311555570787011,
+          "cosine_min": -0.02851161437671812,
+          "cosine_max": 0.020439681951969327,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.06722968691697917,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": -0.0010170867772225861,
+          "cosine_min": -0.03648666937591266,
+          "cosine_max": 0.03320295411258287,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.11014468226954884,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": -0.000798073731958452,
+          "cosine_min": -0.012245473393608536,
+          "cosine_max": 0.03556603389810965,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.11573571306136912,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.4276850576165196,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 17.586502816915438,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.015093839107564627,
+          "cosine_min": -0.023517967670263967,
+          "cosine_max": 0.0600194632046536,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.8423404682211415,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.0609195133708291,
+          "cosine_min": -0.07094024365059766,
+          "cosine_max": 0.1404632299668108,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.7039506543934613,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": 0.18425741397518414,
+          "cosine_min": -0.4279955872201247,
+          "cosine_max": 0.49075248072739686,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.01378215647657035,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": 0.06421060101585019,
+          "cosine_min": -0.8510765520750312,
+          "cosine_max": 0.9975675893586765,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.002890455929966426,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.10342526345962211,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.9105360073226124,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.03579327154967656,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.13911281449225626,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.21755445907824,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.918444786988021,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.373265219237637,
+          "cosine_min": -0.04778978258082693,
+          "cosine_max": 0.5205588044129464,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 2.052144111567065,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.37902249651451947,
+          "cosine_min": 0.014802574417313865,
+          "cosine_max": 0.47337702659433784,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.887726446580295,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.17754999272360034,
+          "cosine_min": -0.3506669233449812,
+          "cosine_max": 0.3360995691721484,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.7733230648413438,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.13647946463550426,
+          "cosine_min": -0.25834119146739065,
+          "cosine_max": 0.22996498169989352,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.3348008632043094,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.3473833827342061,
+          "cosine_min": -0.131941929090592,
+          "cosine_max": 0.43309700669984735,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.044329787450017,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.3160235788490454,
+          "cosine_min": -0.14172873814014395,
+          "cosine_max": 0.45419815765157096,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.879449292766019,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.24378869947756926,
+          "cosine_min": -0.274578903056435,
+          "cosine_max": 0.3712282204570164,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.8045478582983803,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.20188100978760223,
+          "cosine_min": -0.2732833639672636,
+          "cosine_max": 0.4201724248719326,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.402398679543936,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.15608021145384784,
+          "cosine_min": -0.28710202457191647,
+          "cosine_max": 0.3234968172333634,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.796199906997186,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.20120637550921408,
+          "cosine_min": -0.25764853001620225,
+          "cosine_max": 0.25904676128322346,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.8684361855110105,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.20595590449567783,
+          "cosine_min": -0.3640800456972414,
+          "cosine_max": 0.4512491885666951,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 2.9338965149847436,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.20710426296972387,
+          "cosine_min": -0.3994378243544224,
+          "cosine_max": 0.4146658047816795,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 2.0604743914148083,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 21.69879510742316,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    },
+    "R1_T149_124": {
+      "group_summaries": {
+        "expert_audio": {
+          "cosine_median": -0.0011196529113822597,
+          "cosine_min": -0.01630598202576095,
+          "cosine_max": 0.01562452214062591,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.07701481503206328,
+          "na_reasons": []
+        },
+        "expert_shared": {
+          "cosine_median": 0.005170236026536141,
+          "cosine_min": -0.013150270125942965,
+          "cosine_max": 0.024156425392874742,
+          "negative_count": 2,
+          "defined_count": 4,
+          "norm_total_median": 0.07081453255972252,
+          "na_reasons": []
+        },
+        "expert_text": {
+          "cosine_median": 0.033612563889337074,
+          "cosine_min": 0.002039287989950474,
+          "cosine_max": 0.07719327059096484,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 0.10026567396038857,
+          "na_reasons": []
+        },
+        "expert_vision": {
+          "cosine_median": 0.007208987000193576,
+          "cosine_min": -0.005814603903762341,
+          "cosine_max": 0.013757503530713784,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 0.12032789063807905,
+          "na_reasons": []
+        },
+        "head_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.8937659832204088,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "head_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 14.959075627744692,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "moe_nonexpert": {
+          "cosine_median": 0.03842917038720292,
+          "cosine_min": -0.005066574088612078,
+          "cosine_max": 0.054965831209531975,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.836759157482384,
+          "na_reasons": []
+        },
+        "other_trainable": {
+          "cosine_median": 0.11612600795288311,
+          "cosine_min": -0.01671376434663376,
+          "cosine_max": 0.20185183685967023,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.6225853238266843,
+          "na_reasons": []
+        },
+        "router_phi": {
+          "cosine_median": -0.2944784643541292,
+          "cosine_min": -0.8421820715403875,
+          "cosine_max": -0.08938727497634111,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.009974689500594866,
+          "na_reasons": []
+        },
+        "router_scale": {
+          "cosine_median": -0.6333326225523224,
+          "cosine_min": -0.8913251367291332,
+          "cosine_max": -0.3200359414985433,
+          "negative_count": 4,
+          "defined_count": 4,
+          "norm_total_median": 0.0004346911403631374,
+          "na_reasons": []
+        },
+        "task_pool_classifier": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.12499229379685298,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "task_pool_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.9271325732457458,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_cls_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.0842352313919669,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_ordinal": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 0.20263995682928154,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_reg_gate": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 1.6050043647484373,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "tcif_regression": {
+          "cosine_median": null,
+          "cosine_min": null,
+          "cosine_max": null,
+          "negative_count": 0,
+          "defined_count": 0,
+          "norm_total_median": 2.5505220914958624,
+          "na_reasons": [
+            "missing_gradient_path"
+          ]
+        },
+        "text_layer_0": {
+          "cosine_median": 0.2631340007104698,
+          "cosine_min": -0.06366227913297001,
+          "cosine_max": 0.3557210050199478,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 2.1012977084038136,
+          "na_reasons": []
+        },
+        "text_layer_1": {
+          "cosine_median": 0.3062361374310144,
+          "cosine_min": -0.016578559175496603,
+          "cosine_max": 0.38541432612457993,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 3.087994131315356,
+          "na_reasons": []
+        },
+        "text_layer_10": {
+          "cosine_median": 0.30550661081884223,
+          "cosine_min": -0.014434305386810743,
+          "cosine_max": 0.39278596021165163,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.679132069967793,
+          "na_reasons": []
+        },
+        "text_layer_11": {
+          "cosine_median": 0.23625964594089027,
+          "cosine_min": -0.0274029595269446,
+          "cosine_max": 0.27610349573188797,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 1.2618553390931226,
+          "na_reasons": []
+        },
+        "text_layer_2": {
+          "cosine_median": 0.2750724850146012,
+          "cosine_min": 0.012168974719127881,
+          "cosine_max": 0.44176440937747485,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.244398962343987,
+          "na_reasons": []
+        },
+        "text_layer_3": {
+          "cosine_median": 0.30682112687700325,
+          "cosine_min": -0.04468123658401349,
+          "cosine_max": 0.5397864214269051,
+          "negative_count": 1,
+          "defined_count": 4,
+          "norm_total_median": 4.311802340483972,
+          "na_reasons": []
+        },
+        "text_layer_4": {
+          "cosine_median": 0.3063922598695088,
+          "cosine_min": 0.028462954710783743,
+          "cosine_max": 0.5689476696499943,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.251947013681233,
+          "na_reasons": []
+        },
+        "text_layer_5": {
+          "cosine_median": 0.32550866188794486,
+          "cosine_min": 0.029551117644900576,
+          "cosine_max": 0.5887592043791765,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.751516264971293,
+          "na_reasons": []
+        },
+        "text_layer_6": {
+          "cosine_median": 0.3792673702932867,
+          "cosine_min": 0.2744053864171464,
+          "cosine_max": 0.628086719871053,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 4.886684684113964,
+          "na_reasons": []
+        },
+        "text_layer_7": {
+          "cosine_median": 0.3442094205843488,
+          "cosine_min": 0.20242147189324136,
+          "cosine_max": 0.6238960279192839,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 3.8523108873658325,
+          "na_reasons": []
+        },
+        "text_layer_8": {
+          "cosine_median": 0.347979443277455,
+          "cosine_min": 0.03816525112707342,
+          "cosine_max": 0.5703305440862332,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.9529180546512963,
+          "na_reasons": []
+        },
+        "text_layer_9": {
+          "cosine_median": 0.3142563762238867,
+          "cosine_min": 0.01731540058980479,
+          "cosine_max": 0.46551447736917023,
+          "negative_count": 0,
+          "defined_count": 4,
+          "norm_total_median": 2.0218049943827827,
+          "na_reasons": []
+        }
+      },
+      "global_preclip_median": 19.909654762258363,
+      "valid_neighbor_slots": 247,
+      "sample_count": 128
+    }
+  },
+  "caveat": "Four fixed effective train batches, not optimizer history or performance gain",
+  "condition_results": [
+    "D1_E_DETACH",
+    "D1_E_FULL",
+    "D1_T123_DETACH",
+    "D1_T123_FULL",
+    "D1_T124_DETACH",
+    "D1_T124_FULL",
+    "R1_E149",
+    "R1_E58",
+    "R1_T149_123",
+    "R1_T149_124",
+    "R1_T58_123",
+    "R1_T58_124"
+  ],
+  "sample_coverage": {
+    "samples": 128,
+    "zero_labels": 7,
+    "nonzero_positive": 64,
+    "nonzero_negative": 57,
+    "no_valid_neighbor": 0,
+    "with_opposite_nonzero_neighbor": 53,
+    "with_same_nonzero_neighbor": 102,
+    "valid_neighbor_slots": 247,
+    "valid_opposite_slots": 64,
+    "valid_same_slots": 157
+  },
+  "first_dispatch_failure": {
+    "stage": "R1 epoch149 first concurrent attempt",
+    "cause": "GPU memory contention",
+    "checkpoint_mutated": false,
+    "recovery": "three missing probes completed in isolated retry directory"
+  }
+}
