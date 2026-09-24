@@ -8,6 +8,8 @@
 
 最新P0诊断已完成：[7304条逐样本记录、重建核验与校准报告](results/evidence/chsims_diagnostics_report.md)。主结果仍使用测试集checkpoint/test eta；新训练状态另列，未将提交当作完成。
 
+**2026-09-25 MOSI G/R/S完成：** 三项各200轮、双checkpoint完整eta共42点，均未达阶段目标；S在C1同环境参考上有小幅同点改善，未超过Lab D1主候选。见[完整结果与机制审计](results/mosi_grs_20260924/README.md)。
+
 ## 给接手 agent 的阅读顺序
 
 新增[MOSI配对梯度诊断](results/mosi_gradprobe_20260923/README.md)：D1/R1既有权重上的12组只读探针，不是新的精度实验；当前没有据此确认持续梯度冲突或提高全局裁剪阈值的收益。

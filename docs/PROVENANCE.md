@@ -66,3 +66,7 @@
 ## CH-SIMS pathstudy结果增补
 
 `results/chsims_pathstudy_20260922/summary.json`来自本地`tcif_chsims_pathstudy_c1_20260922/summary.json`（C1汇总349988），保留六组182点。原始输出10个JSONL取自Lab5090 GPU恢复包，含5个checkpoint的val/test、4565条记录；附18个CPU/GPU预测比较记录及两组冻结验证。只替换机器路径，数值逐值保留；四组短程对照原始输出明确pending，未上传权重或音视频。
+
+## MOSI G/R/S完成增量
+
+`results/mosi_grs_20260924/`来源于C1任务350778三项200轮训练的result.json、checkpoint元数据及grs_steps.jsonl。保留全部42点与24600次更新记录；私有路径替换占位。`c1_D1_reference.json`来自旧C1 D1恢复结果而非Lab。`snapshots/mosi_grs_20260924/`包含实际干预模块、训练器及精确小补丁、机制测试与验收脚本；无网络结构改变。测试脚本导入路径作可移植调整，训练器按包约束移除字典散列种子设置。未包含权重、样本数据、缓存或凭据。

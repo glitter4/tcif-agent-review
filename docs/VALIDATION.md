@@ -53,3 +53,7 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittes
 ## MOSI梯度探针增补
 
 `python tools/check_mosi_gradprobe.py`仅用标准库检查12个无参数更新探针、48个有效batch、同一128条训练样本、D1三组完整/detach配对的回归及logits逐值相等、参数组互不重叠、裁剪系数与分项余弦数值，以及有效邻居覆盖。源12份结果与发布包直接逐值对比（仅原ID及私有路径脱敏）。不重复模型训练或checkpoint评估；已有双checkpoint完整eta协议未改变。
+
+## MOSI G/R/S验收
+
+`python tools/check_mosi_grs.py`通过3×200轮、42点评估、24600个有效更新记录、A*/macro-F*来源、G投影系数/条件和R/S损失权重及空mask检查。原始结果points与包内逐值一致；checkpoint epoch/GRS模式核对通过。C1实际环境已运行机制测试，验证累积后投影、非phi/辅助项保持、读出损失梯度和有限符号裕量边界。`check_bundle.py`通过新增源码语法和链接检查；本批未重复旧模型测试或训练。

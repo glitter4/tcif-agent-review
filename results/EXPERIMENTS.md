@@ -133,3 +133,11 @@ eta=.8相较同seed基线代表点，Acc5提升1.313个百分点、MAE降低.008
 两个seed的head-only均优于相应full-continue代表点；实际冻结验证确认仅分类头两个参数变化，回归预测差为0。起点对照与训练预算须一并看，不能把新增5轮的最佳点自动当作超过起点。
 
 [完整报告与比较](chsims_pathstudy_20260922/REPORT.md)、[182点原始汇总](chsims_pathstudy_20260922/summary.json)、[产物状态](chsims_pathstudy_20260922/artifact_status.json)。C1 GPU故障后两组detach在Lab5090补评，CPU/GPU已有预测最大差4.14e-6、符号不变。已有10个detach原始输出文件；四组短程对照附加原始输出仍待补。此前“新训练进行中”由本条更新，不代表附加输出也已全部完成。
+
+## MOSI：G/R/S三项200轮单因素完成（2026-09-25）
+
+C1同环境D1配方seed123：G只做router-phi分类优先投影，R增加双读出L1(.2)，S增加弱非零符号裕量(.05)。三项均完整200轮、8200次更新及双checkpoint完整14点，无训练失败。最高Acc7分别43.148688/43.440233/43.440233；S同点MAE=.760816、A*=83.384146、F*=82.980709，较C1 D1最高Acc7点分类净增1条，但未超过独立环境Lab D1。阶段46.1/85/85/.730和最终严格48.50/86.95/86.94/.697均未达标，不组合或扩扫。
+
+A*=同点Acc2与Acc2non0最大，F*=同点两列macro-F1最大，来源列明确保存，weighted-F1不混入。G在4779/8200次有效更新投影；R/S新增损失均生效，S的1611个无有效弱标签microbatch新增loss为0。机制生效不等于预测收益。
+
+[报告与同点比较](mosi_grs_20260924/README.md)、[42点原始配置/结果](mosi_grs_20260924/results.json)、[机制审计摘要](mosi_grs_20260924/audit_summary.json)。单seed、test-selected开发结果，Lab参考不得混同为配对对照。

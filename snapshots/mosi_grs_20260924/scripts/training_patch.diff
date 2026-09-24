@@ -1,0 +1,53 @@
+--- baseline/train_emotion.py
++++ grs/train_emotion.py
+@@ -1690,6 +1690,9 @@
+         "reg_cls_mag_consistency_mode",
+         REG_CLS_MAG_CONSISTENCY_MODE,
+     )
++    payload["grs_mode"] = getattr(args, "grs_mode", "baseline")
++    payload["grs_readout_eta"] = 0.8
++    payload["grs_loss_weight"] = {"R":0.2,"S":0.05}.get(getattr(args,"grs_mode","baseline"),0.)
+     if checkpoint_epoch is not None:
+         payload["checkpoint_epoch"] = int(checkpoint_epoch)
+     json_path = os.path.splitext(path)[0] + ".json"
+@@ -2991,6 +2994,8 @@
+             for group in param_groups
+         )
+     )
++    from grs_controls import Controller, extra_loss
++    grs = Controller(model, args)
+     optimizer = optim.AdamW(param_groups, weight_decay=args.weight_decay)
+     scheduler = _build_lr_scheduler(optimizer, args)
+ 
+@@ -3438,15 +3443,23 @@
+                     * loss_tcif_transition_gate
+                     + eff_alpha * tc_loss
+                 )
++            if args.grs_mode in ("R", "S"):
++                extra, grs_stats = extra_loss(args.grs_mode, y_reg, cls7_logits, raw_valence, _signed_centers(args, device=cls7_logits.device, dtype=cls7_logits.dtype))
++                loss_raw = loss_raw + extra
++            else:
++                grs_stats = {}
+             if not torch.isfinite(loss_raw):
+                 if (step_idx + 1) % max(1, args.log_every) == 0:
+                     loop.set_postfix(loss=float("nan"), tc_loss=tc_loss.item())
+                 continue
+             loss = loss_raw / max(1, args.grad_accum_steps)
+ 
++            grs.observe(loss_reg, args.cls7_loss_weight * loss_cls7, max(1,args.grad_accum_steps))
++            grs.micro.append(grs_stats)
+             loss.backward()
+             do_step = ((step_idx + 1) % max(1, args.grad_accum_steps) == 0) or (step_idx + 1 == len(train_loader))
+             if do_step:
++                grs.before_clip(epoch, step_idx)
+                 if args.clip_grad_norm > 0:
+                     grad_norm = clip_grad_norm_(
+                         [p for group in optimizer.param_groups for p in group["params"]],
+@@ -5097,6 +5110,7 @@
+     parser.add_argument("--dropout", type=float, default=0.3)
+     parser.add_argument("--attention_dropout", type=float, default=0.0)
+ 
++    parser.add_argument("--grs_mode", choices=["baseline","G","R","S"], default="baseline")
+     args = parser.parse_args()
+     if args.dataset == "chsims":
+         if args.dataset_root == "/path/to/user/datasets/MER-unibench/cmumosei-process-complete-20260408":
