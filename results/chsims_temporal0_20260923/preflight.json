@@ -1,0 +1,28 @@
+{
+  "host": "Lab5090",
+  "gpu": [
+    "NVIDIA GeForce RTX 5090",
+    "NVIDIA GeForce RTX 5090"
+  ],
+  "torch": "2.7.1+cu128",
+  "cache_coverage": {
+    "train": {
+      "labels": 1368,
+      "cached_ids": 1368,
+      "missing": 0
+    },
+    "val": {
+      "labels": 456,
+      "cached_ids": 456,
+      "missing": 0
+    },
+    "test": {
+      "labels": 457,
+      "cached_ids": 457,
+      "missing": 0
+    }
+  },
+  "source_check": "passed",
+  "pairwise_single_factor": "passed",
+  "cuda_required": true
+}

@@ -1,0 +1,7 @@
+{
+  "node": "admin123-System-Product-Name",
+  "torch": "2.7.1+cu128",
+  "cuda_visible_devices": "0",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "visible_count": 1
+}

@@ -41,3 +41,5 @@
 ## 新训练结果已完成
 
 [六组完整结果、冻结核验和GPU迁移说明](../../results/chsims_pathstudy_20260922/REPORT.md)：182点齐全，detach原始输出已附，四组短程对照附加原始输出待补。
+
+CH-SIMS时序辅助监督归零对照已完成：[两seed四组完整结果](../../results/chsims_temporal0_20260923/REPORT.md)。C1提交时不可达，使用Lab5090同机B0进行配对。

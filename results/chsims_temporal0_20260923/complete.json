@@ -1,0 +1,12 @@
+{
+  "host": "Lab5090",
+  "runs": [
+    "B0_S40",
+    "T0_S40",
+    "B0_S41",
+    "T0_S41"
+  ],
+  "training_and_evaluation_complete": true,
+  "same_host_paired_controls": true,
+  "training_repeated_only_for_environment_control": true
+}

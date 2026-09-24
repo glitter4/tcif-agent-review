@@ -1,0 +1,5 @@
+# CH-SIMS two-seed temporal-loss ablation (Lab5090)
+
+C1/4090 was unreachable when this controlled experiment was submitted. Use an isolated synced Git worktree on Lab5090 with complete CH-SIMS dataset/cache and the same Lab5090 backbone paths. The code was pulled earlier from the verified C1 CH-SIMS execution snapshot; model/forward and data loader are unchanged. Lab5090 B0 seed40/41 are necessary same-host controls, not claimed as new discoveries. Each T0 differs from its corresponding B0 only in temporal_contrast_weight=.0065->0. Keep enable_temporal_contrast_loss=True and the projection module, TCIF/L1/hard-CE/context/gate/scheduler/splits otherwise fixed. Run 50 epochs, seed40/41.
+
+Select target best-Acc5/best-MAE on test per project protocol, retain guarded test-argmax eta=.8 candidate when eligible, separately sweep each actually saved checkpoint for expected/argmax eta=0,.2,.4,.6,.8,.9,1. No fixed-eta substitute. This is test-selected development evidence, not an independent held-out test. No cancellation or rerun of previous C1 B0 experiments. GPU inference must be confirmed and CPU fallback is forbidden.
