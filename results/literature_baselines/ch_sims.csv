@@ -1,0 +1,10 @@
+model,acc2_percent,f1_percent,acc5_percent,mae,citation_key,numeric_source,source_detail
+LF-DNN,78.87,79.87,41.62,,lfdnn,TCIF paper CH-SIMS comparison table,secondary comparison; no MAE in selected table
+MFN,78.87,79.87,39.47,,mfn,TCIF paper CH-SIMS comparison table,aligned input; secondary comparison; no MAE in selected table
+LMF,77.77,77.88,40.53,,liu2018efficient,TCIF paper CH-SIMS comparison table,secondary comparison; no MAE in selected table
+TFN,78.38,78.62,39.30,,zadeh2017tensor,TCIF paper CH-SIMS comparison table,secondary comparison; no MAE in selected table
+MulT,78.38,78.62,37.94,,tsai2019mult,TCIF paper CH-SIMS comparison table,aligned input; secondary comparison; no MAE in selected table
+Self-MM,80.04,80.44,41.53,,selfmm,TCIF paper CH-SIMS comparison table,secondary comparison; no MAE in selected table
+ConFEDE,82.23,82.08,46.30,,yang2023confede,TCIF paper CH-SIMS comparison table,secondary comparison; no MAE in selected table
+Coupled Mamba,81.8,81.3,42.1,,coupledmamba,TCIF paper CH-SIMS comparison table,secondary comparison; no MAE in selected table
+FINE,82.28,82.22,41.79,,fine,TCIF paper CH-SIMS comparison table,secondary comparison; no MAE in selected table

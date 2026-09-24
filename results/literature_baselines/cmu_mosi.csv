@@ -1,0 +1,21 @@
+model,acc2_percent,f1_percent,acc7_percent,mae,citation_key,numeric_source,source_detail
+EF-LSTM,73.6,74.5,31.0,1.420,eflstm,EMOE 2025 Table 1,unaligned reproduction
+LF-DNN,78.2,78.3,32.5,0.987,lfdnn,EMOE 2025 Table 1,unaligned reproduction
+TFN,77.1,77.9,,0.870,zadeh2017tensor,TFN 2017 Table 1,original paper reports five-class accuracy but not seven-class accuracy
+LMF,76.4,75.7,32.8,0.912,liu2018efficient,LMF 2018 Table 2,original paper
+MFN,77.4,77.3,34.1,0.965,mfn,MFN 2018 Table 2,original paper
+Graph-MFN,79.4,79.2,34.4,0.930,zadeh2018multimodal,EMOE 2025 Table 1,unaligned reproduction
+MFM,78.1,78.1,36.2,0.951,mfm,MFM 2019 Figure 3 and Table 2,all three modalities present
+MulT,81.1,81.0,39.1,0.889,tsai2019mult,MulT 2019 Table 1,unaligned setting
+MISA,83.4,83.6,42.3,0.783,hazarika2020misa,MISA 2020 Table 1,aligned BERT setting; nonzero binary convention
+Self-MM,85.98,85.95,,0.713,selfmm,Self-MM 2021 Table 1,nonzero binary convention; weighted F1 in source
+MMIN,84.6,84.4,44.8,,mmin,EUAR 2024 Table 2,full-modality reproduction; no MAE in selected source
+DMD,86.0,86.0,45.6,,dmd2023,DMD 2023 Table 1,aligned BERT setting; no MAE in selected source
+CubeMLP,85.6,85.5,45.5,0.770,sun2022cubemlp,CubeMLP 2022 Table 1,original paper
+BBFN,84.3,84.3,45.0,0.776,han2021bbfn,BBFN 2021 Table 1,original paper; zero ground-truth labels excluded for binary metric
+C-MIB,85.2,85.2,48.2,0.728,cmib2022,C-MIB 2023 Table I,original paper
+MSG,85.7,85.6,45.3,,lin2024msg,FINE 2026 Table 1,quoted MSG row; original article not independently checked
+ConFEDE,85.52,85.52,42.27,0.742,yang2023confede,ConFEDE 2023 Table 2,nonzero binary convention; weighted F1 in source
+EUAR,86.3,86.3,46.1,,gao2024euar,EUAR 2024 Table 1,original paper; no MAE in selected source
+EMOE,85.4,85.3,47.8,0.697,emoe,EMOE 2025 Table 1,unaligned BERT setting
+FINE,86.95,86.94,48.50,,fine,FINE 2026 Table 1,original paper; no MAE in selected source
