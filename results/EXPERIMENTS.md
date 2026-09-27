@@ -141,3 +141,13 @@ C1同环境D1配方seed123：G只做router-phi分类优先投影，R增加双读
 A*=同点Acc2与Acc2non0最大，F*=同点两列macro-F1最大，来源列明确保存，weighted-F1不混入。G在4779/8200次有效更新投影；R/S新增损失均生效，S的1611个无有效弱标签microbatch新增loss为0。机制生效不等于预测收益。
 
 [报告与同点比较](mosi_grs_20260924/README.md)、[42点原始配置/结果](mosi_grs_20260924/results.json)、[机制审计摘要](mosi_grs_20260924/audit_summary.json)。单seed、test-selected开发结果，Lab参考不得混同为配对对照。
+
+## MOSI：同构MOSEI监督迁移（额外训练数据）
+
+源固定4轮、目标D1配方200轮完整完成；源train/val原视频ID与MOSI val/test零交集，source test不评估/选点，固定第4轮加载795个张量且严格相等，新建optimizer。目标双test-selected checkpoint各完整七点eta。
+
+推荐均衡点best-Acc7 epoch58、eta=.8：Acc7=46.209913、MAE=.709394、A*=84.146341、F*=83.769175（均为nonzero来源），四项均优于原Lab D1主点。最高Acc7点为eta=.6的46.647230/.710216/83.689024/83.339623；最低MAE点为best-MAE epoch41、eta=.6的45.043732/.706311/83.993902/83.486410。不能拼行。
+
+通过旧46.1/.740/83.3/83.0门槛，未通过最新46.1/85/85/.730或最终48.50/86.95/86.94/.697。原D1训练中断、当前额外源数据和两种视觉缓存域差异都需披露；单seed且test-selected，不能声称相同监督数据下公平领先。
+
+[14点报告](mosei_to_mosi_20260927/README.md)、[完整原始结果](mosei_to_mosi_20260927/result.json)、[初始化审计](mosei_to_mosi_20260927/initialization_audit.json)。本轮停止，不自动追加轮数或seed。

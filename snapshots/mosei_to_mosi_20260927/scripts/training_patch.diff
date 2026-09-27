@@ -1,0 +1,49 @@
+--- D1/train_emotion.py
++++ transfer/train_emotion.py
+@@ -1690,6 +1690,8 @@
+         "reg_cls_mag_consistency_mode",
+         REG_CLS_MAG_CONSISTENCY_MODE,
+     )
++    payload["transfer_phase"] = getattr(args,"transfer_phase","none")
++    payload["transfer_initialization"] = "fixed source epoch4" if getattr(args,"transfer_phase","none")=="target" else "pretrained backbones"
+     if checkpoint_epoch is not None:
+         payload["checkpoint_epoch"] = int(checkpoint_epoch)
+     json_path = os.path.splitext(path)[0] + ".json"
+@@ -1713,6 +1715,10 @@
+     return cand_key < best_key
+ 
+ def _update_best_checkpoints(model, save_dir, epoch, val_metrics, test_metrics, best_records, args=None):
++    if getattr(args, "transfer_phase", "none") == "source":
++        import transfer_support
++        transfer_support.epoch_record(args,epoch,val_metrics)
++        return []
+     promoted = []
+     selection_split = str(getattr(args, "checkpoint_selection_split", "test"))
+     acc7_key = f"best_{selection_split}_acc7"
+@@ -2707,7 +2713,7 @@
+             temporal_context_mode=args.tcif_context_mode,
+             temporal_context_seed=args.seed,
+         )
+-        test_dataset = CMUMOSEIProcessDataset(
++        test_dataset = val_dataset if args.transfer_phase == "source" else CMUMOSEIProcessDataset(
+             root=args.dataset_root,
+             split="test",
+             transform=transform,
+@@ -2983,6 +2989,8 @@
+     gating_collector = _GatingStatsCollector()
+     gating_handles = _register_gating_hooks(model, gating_collector)
+ 
++    import transfer_support
++    transfer_support.initialize(model,args)
+     param_groups = _build_optimizer_param_groups(model, contrast_head, args)
+     print(
+         "Optimizer groups: "
+@@ -5097,6 +5105,8 @@
+     parser.add_argument("--dropout", type=float, default=0.3)
+     parser.add_argument("--attention_dropout", type=float, default=0.0)
+ 
++    parser.add_argument("--transfer_phase", choices=["none","source","target"], default="none")
++    parser.add_argument("--transfer_init_checkpoint", type=str, default="")
+     args = parser.parse_args()
+     if args.dataset == "chsims":
+         if args.dataset_root == "/path/to/user/datasets/MER-unibench/cmumosei-process-complete-20260408":

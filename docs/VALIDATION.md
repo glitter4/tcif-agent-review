@@ -57,3 +57,7 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittes
 ## MOSI G/R/S验收
 
 `python tools/check_mosi_grs.py`通过3×200轮、42点评估、24600个有效更新记录、A*/macro-F*来源、G投影系数/条件和R/S损失权重及空mask检查。原始结果points与包内逐值一致；checkpoint epoch/GRS模式核对通过。C1实际环境已运行机制测试，验证累积后投影、非phi/辅助项保持、读出损失梯度和有限符号裕量边界。`check_bundle.py`通过新增源码语法和链接检查；本批未重复旧模型测试或训练。
+
+## MOSEI→MOSI迁移验收
+
+python tools/check_mosi_transfer.py通过固定源4轮/目标200轮、源test评估关闭、795张量及394229721元素加载检查、目标仅初始化变化、数据/cache及14点完整性、同点A*/macro-F*来源与门槛验收。发布points与源result逐值一致；check_bundle通过源码语法/文档链接。未重训或增加任何评估网格，新增结果使用额外监督数据的局限独立披露。

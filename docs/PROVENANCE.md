@@ -70,3 +70,7 @@
 ## MOSI G/R/S完成增量
 
 `results/mosi_grs_20260924/`来源于C1任务350778三项200轮训练的result.json、checkpoint元数据及grs_steps.jsonl。保留全部42点与24600次更新记录；私有路径替换占位。`c1_D1_reference.json`来自旧C1 D1恢复结果而非Lab。`snapshots/mosi_grs_20260924/`包含实际干预模块、训练器及精确小补丁、机制测试与验收脚本；无网络结构改变。测试脚本导入路径作可移植调整，训练器按包约束移除字典散列种子设置。未包含权重、样本数据、缓存或凭据。
+
+## 2026-09-27同构MOSEI→MOSI完成增量
+
+results/mosei_to_mosi_20260927来自Lab独立迁移任务：固定源4轮val轨迹及checkpoint元数据、795张量严格迁移审计、目标200轮及14点评估、数据/cache检查。snapshots/mosei_to_mosi_20260927为对应训练器增量及默认关闭的transfer逻辑。路径脱敏，测试导入路径适配包布局；未上传模型权重、原数据、cache或任何内容摘要。源数据额外监督单列，原视频ID级检查不能证明内容级无转载。
