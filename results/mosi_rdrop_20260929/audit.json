@@ -1,0 +1,59 @@
+{
+  "C1": {
+    "epochs": 200,
+    "updates": 8200,
+    "microbatches": 16200,
+    "training_forward_calls": 32400,
+    "model_center_exposures": 513600,
+    "training_wall_seconds": 8831.733764591161,
+    "peak_allocated_bytes": 22141298688,
+    "peak_reserved_bytes": 22601007104,
+    "mean_kl_first10": 0.2308125719497694,
+    "mean_kl_last10": 0.0542677726010528,
+    "same_inputs_all": true,
+    "reference_order_all": true,
+    "finite_losses_all": true,
+    "exact_KL_weight_all": true,
+    "dropout_logits_differ_all": true,
+    "initialization": {
+      "status": "passed",
+      "source_epoch": 4,
+      "source_dataset": "cmumosei",
+      "target_dataset": "cmumosi",
+      "loaded_tensor_count": 795,
+      "loaded_elements": 394229721,
+      "exact_tensor_equality": true,
+      "optimizer_restored": false,
+      "source_selection": "fixed epoch4, no test/val checkpoint selection"
+    }
+  },
+  "C2": {
+    "epochs": 200,
+    "updates": 8200,
+    "microbatches": 16200,
+    "training_forward_calls": 32400,
+    "model_center_exposures": 513600,
+    "training_wall_seconds": 9531.423550467938,
+    "peak_allocated_bytes": 22141299200,
+    "peak_reserved_bytes": 22601007104,
+    "mean_kl_first10": 0.2240872838438671,
+    "mean_kl_last10": 0.048544480992231596,
+    "same_inputs_all": true,
+    "reference_order_all": true,
+    "finite_losses_all": true,
+    "exact_KL_weight_all": true,
+    "dropout_logits_differ_all": true,
+    "initialization": {
+      "status": "passed",
+      "source_epoch": 4,
+      "source_dataset": "cmumosei",
+      "target_dataset": "cmumosi",
+      "loaded_tensor_count": 795,
+      "loaded_elements": 394229721,
+      "exact_tensor_equality": true,
+      "optimizer_restored": false,
+      "source_selection": "fixed epoch4, no test/val checkpoint selection"
+    }
+  },
+  "paired_order_equal": 16200
+}

@@ -1,0 +1,540 @@
+{
+  "rows": [
+    {
+      "run": "C1",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.0,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.3119533527696774,
+        "MAE": 0.011354968565415735,
+        "A_star": 1.6768292682926784,
+        "F_star": 1.5710827869100825
+      },
+      "validation_delta": {
+        "Acc7": 3.930131004366821,
+        "MAE": 0.03783018631641,
+        "A_star": -0.4629629629629619,
+        "F_star": -0.4033896821149199
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.2,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.4577259475218654,
+        "MAE": 0.009202835002083187,
+        "A_star": 1.524390243902431,
+        "F_star": 1.3495739107914488
+      },
+      "validation_delta": {
+        "Acc7": 3.493449781659386,
+        "MAE": 0.03439332711546961,
+        "A_star": 1.3888888888888857,
+        "F_star": 1.4374850863026012
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.4,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -0.8746355685131206,
+        "MAE": 0.007674332615802637,
+        "A_star": 1.0670731707317032,
+        "F_star": 0.8502042599110524
+      },
+      "validation_delta": {
+        "Acc7": 0.8733624454148483,
+        "MAE": 0.03138412051228201,
+        "A_star": 0.9259259259259238,
+        "F_star": 0.9429226235949102
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.6,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -1.0204081632653015,
+        "MAE": 0.008088528585916244,
+        "A_star": 0.15243902439024737,
+        "F_star": -0.09690103360874502
+      },
+      "validation_delta": {
+        "Acc7": -4.803493449781655,
+        "MAE": 0.02976936988500012,
+        "A_star": 1.8518518518518619,
+        "F_star": 1.883501918381583
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.8,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -0.43731778425655676,
+        "MAE": 0.009588890778221226,
+        "A_star": -0.3048780487804805,
+        "F_star": -0.5882233079872918
+      },
+      "validation_delta": {
+        "Acc7": -3.493449781659386,
+        "MAE": 0.029713695299482312,
+        "A_star": 1.3888888888889,
+        "F_star": 1.4312350784854004
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.9,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -1.3119533527696774,
+        "MAE": 0.010547277045846126,
+        "A_star": 0.0,
+        "F_star": -0.24391468601703536
+      },
+      "validation_delta": {
+        "Acc7": -4.366812227074234,
+        "MAE": 0.0313002487774694,
+        "A_star": 1.3888888888889,
+        "F_star": 1.4312350784854004
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_acc7_model",
+      "eta": 1.0,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -1.4577259475218654,
+        "MAE": 0.011457212622285606,
+        "A_star": -0.6097560975609753,
+        "F_star": -0.8794429534502086
+      },
+      "validation_delta": {
+        "Acc7": -4.366812227074234,
+        "MAE": 0.03353378781845473,
+        "A_star": 1.3888888888889,
+        "F_star": 1.4312350784854004
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_mae_model",
+      "eta": 0.0,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -2.186588921282798,
+        "MAE": 0.0029002252651199045,
+        "A_star": -0.4573170731707279,
+        "F_star": -0.3396556220092606
+      },
+      "validation_delta": {
+        "Acc7": 2.620087336244538,
+        "MAE": 0.02187569196209893,
+        "A_star": -0.9259259259259238,
+        "F_star": -0.9395389299695438
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_mae_model",
+      "eta": 0.2,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -2.040816326530617,
+        "MAE": 0.0006838165591511736,
+        "A_star": -0.4573170731707279,
+        "F_star": -0.35824682693682064
+      },
+      "validation_delta": {
+        "Acc7": 2.620087336244538,
+        "MAE": 0.021108820863621203,
+        "A_star": -1.3888888888888857,
+        "F_star": -1.389009651371623
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_mae_model",
+      "eta": 0.4,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -2.332361516034986,
+        "MAE": -0.00010340419834153902,
+        "A_star": -0.6097560975609753,
+        "F_star": -0.5233496084862708
+      },
+      "validation_delta": {
+        "Acc7": 3.0567685589519655,
+        "MAE": 0.02089676007172947,
+        "A_star": -0.9259259259259238,
+        "F_star": -0.9395389299695438
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_mae_model",
+      "eta": 0.6,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -2.332361516034986,
+        "MAE": -0.0003299326866691432,
+        "A_star": 0.0,
+        "F_star": 0.07001443271363428
+      },
+      "validation_delta": {
+        "Acc7": 3.0567685589519655,
+        "MAE": 0.019568483776303047,
+        "A_star": 0.0,
+        "F_star": 0.0
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_mae_model",
+      "eta": 0.8,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -0.7288629737609327,
+        "MAE": 0.000755190310331888,
+        "A_star": -0.15243902439023316,
+        "F_star": -0.09517038879492645
+      },
+      "validation_delta": {
+        "Acc7": 1.7467248908296895,
+        "MAE": 0.01568625060085005,
+        "A_star": 0.0,
+        "F_star": 0.0
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_mae_model",
+      "eta": 0.9,
+      "guard_pass": false,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": -0.7288629737609327,
+        "MAE": 0.0011048750556820197,
+        "A_star": -0.3048780487804805,
+        "F_star": -0.2250734498819611
+      },
+      "validation_delta": {
+        "Acc7": 0.8733624454148412,
+        "MAE": 0.014060887475559114,
+        "A_star": 0.0,
+        "F_star": 0.0
+      }
+    },
+    {
+      "run": "C1",
+      "checkpoint": "best_mae_model",
+      "eta": 1.0,
+      "guard_pass": true,
+      "polarity_gain": false,
+      "test_delta": {
+        "Acc7": 0.2915451895043759,
+        "MAE": 0.0015215361572302744,
+        "A_star": -0.3048780487804805,
+        "F_star": -0.2234962940305536
+      },
+      "validation_delta": {
+        "Acc7": 1.310043668122269,
+        "MAE": 0.01279174503931313,
+        "A_star": 0.0,
+        "F_star": 0.0
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.0,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.4577259475218654,
+        "MAE": 0.006070155634085972,
+        "A_star": 1.8292682926829258,
+        "F_star": 1.6873870847562955
+      },
+      "validation_delta": {
+        "Acc7": 0.8733624454148554,
+        "MAE": 0.04430239840398442,
+        "A_star": 0.9259259259259238,
+        "F_star": 1.028973192715867
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.2,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -2.040816326530603,
+        "MAE": 0.005296569716717547,
+        "A_star": 2.2865853658536537,
+        "F_star": 2.177393433752897
+      },
+      "validation_delta": {
+        "Acc7": 1.310043668122269,
+        "MAE": 0.03573225195393559,
+        "A_star": 2.3148148148148238,
+        "F_star": 2.4183488122643553
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.4,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.8950437317784292,
+        "MAE": 0.004953605522002524,
+        "A_star": 2.2865853658536537,
+        "F_star": 2.2262423993616096
+      },
+      "validation_delta": {
+        "Acc7": -0.8733624454148483,
+        "MAE": 0.03077869726076532,
+        "A_star": 1.3888888888888857,
+        "F_star": 1.471906727023125
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.6,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.8950437317784221,
+        "MAE": 0.004850223402522613,
+        "A_star": 1.6768292682926784,
+        "F_star": 1.6636630226452809
+      },
+      "validation_delta": {
+        "Acc7": -3.9301310043668067,
+        "MAE": 0.02856584345946278,
+        "A_star": 0.4629629629629619,
+        "F_star": 0.4070375630598022
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.8,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -0.43731778425655676,
+        "MAE": 0.006354424227490663,
+        "A_star": 0.4573170731707421,
+        "F_star": 0.47565585301560986
+      },
+      "validation_delta": {
+        "Acc7": -2.620087336244538,
+        "MAE": 0.02572644466949081,
+        "A_star": 0.4629629629629619,
+        "F_star": 0.4070375630598022
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_acc7_model",
+      "eta": 0.9,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -0.43731778425655676,
+        "MAE": 0.007352318102222366,
+        "A_star": 0.7621951219512226,
+        "F_star": 0.8346369152243653
+      },
+      "validation_delta": {
+        "Acc7": -3.493449781659386,
+        "MAE": 0.025421707520838943,
+        "A_star": 0.4629629629629619,
+        "F_star": 0.4070375630598022
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_acc7_model",
+      "eta": 1.0,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -0.2915451895043688,
+        "MAE": 0.008563712353304997,
+        "A_star": 0.30487804878049474,
+        "F_star": 0.40395934008735424
+      },
+      "validation_delta": {
+        "Acc7": -3.930131004366814,
+        "MAE": 0.02553996824411331,
+        "A_star": 0.4629629629629619,
+        "F_star": 0.36056328558041173
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_mae_model",
+      "eta": 0.0,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.3119533527696774,
+        "MAE": 0.011034037931428542,
+        "A_star": 0.30487804878049474,
+        "F_star": 0.49498129321510476
+      },
+      "validation_delta": {
+        "Acc7": 2.620087336244538,
+        "MAE": 0.004361962875164216,
+        "A_star": 0.0,
+        "F_star": 0.0
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_mae_model",
+      "eta": 0.2,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.3119533527696845,
+        "MAE": 0.006446808893586509,
+        "A_star": 0.3048780487804805,
+        "F_star": 0.4471243634430948
+      },
+      "validation_delta": {
+        "Acc7": 2.183406113537117,
+        "MAE": 0.0031946960503161925,
+        "A_star": 0.0,
+        "F_star": 0.0
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_mae_model",
+      "eta": 0.4,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.4577259475218725,
+        "MAE": 0.0037332436595242102,
+        "A_star": 0.4573170731707279,
+        "F_star": 0.5806887632058704
+      },
+      "validation_delta": {
+        "Acc7": 1.7467248908296966,
+        "MAE": 0.0031503826526184664,
+        "A_star": 0.0,
+        "F_star": 0.0
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_mae_model",
+      "eta": 0.6,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.3119533527696774,
+        "MAE": 0.0018539841106275379,
+        "A_star": 1.3719512195121837,
+        "F_star": 1.4560625786546098
+      },
+      "validation_delta": {
+        "Acc7": 1.310043668122269,
+        "MAE": 0.003739640328170979,
+        "A_star": 0.9259259259259238,
+        "F_star": 0.9395389299695438
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_mae_model",
+      "eta": 0.8,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.1661807580174965,
+        "MAE": 0.000668270489657119,
+        "A_star": 1.0670731707317174,
+        "F_star": 1.1429606768891887
+      },
+      "validation_delta": {
+        "Acc7": 1.310043668122269,
+        "MAE": 0.0014501877828586585,
+        "A_star": 0.4629629629629619,
+        "F_star": 0.48982777318767035
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_mae_model",
+      "eta": 0.9,
+      "guard_pass": false,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": -1.1661807580174894,
+        "MAE": 0.0002434635076687952,
+        "A_star": 0.7621951219512226,
+        "F_star": 0.8479165893695892
+      },
+      "validation_delta": {
+        "Acc7": 2.183406113537117,
+        "MAE": 0.0007517555439804369,
+        "A_star": 0.9259259259259238,
+        "F_star": 0.9003825997290136
+      }
+    },
+    {
+      "run": "C2",
+      "checkpoint": "best_mae_model",
+      "eta": 1.0,
+      "guard_pass": true,
+      "polarity_gain": true,
+      "test_delta": {
+        "Acc7": 0.2915451895043759,
+        "MAE": 0.00013290253351105896,
+        "A_star": 0.91463414634147,
+        "F_star": 1.014962190638684
+      },
+      "validation_delta": {
+        "Acc7": 1.310043668122269,
+        "MAE": 0.0002977690907545183,
+        "A_star": 0.0,
+        "F_star": -0.04297526013617414
+      }
+    }
+  ],
+  "primary_checkpoint": "best_acc7_model",
+  "primary_eta": 0.8,
+  "data_order_equal_microbatches": 16200,
+  "conclusion_scope": "single seed, test-selected; validation changes reported, no automatic KL grid"
+}

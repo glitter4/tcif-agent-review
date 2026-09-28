@@ -65,3 +65,7 @@ python tools/check_mosi_transfer.py通过固定源4轮/目标200轮、源test评
 ## 迁移四组实验完成验收
 
 python tools/check_transfer_followup.py通过七项200轮/98点、两源2044步/65304暴露、输入张量规模相等、checkpoint元数据、A*/macro-F*来源、52张量重置和743张量继承、普通融合活跃参数差.08403%、弱符号修复的Acc7前后状态、source/target验证split数、router变化量和全部14个2×2交互行。发布metrics.points与源文件逐值一致，新增源码语法、链接及私有路径排除检查通过。未再次训练、未加入新的eta/参数搜索。
+
+## R-Drop完成验收
+
+运行 `python tools/check_mosi_rdrop.py` 验证42 test+42 val点、两个200轮完整trace、初始化/预算/KL/同点对比和脱敏。机制测试已在Lab运行通过；`snapshots/mosi_rdrop_20260929/test_rdrop.py` 需要PyTorch，覆盖KL值与双边梯度、无直接回归KL、双随机视图及独立采样器。

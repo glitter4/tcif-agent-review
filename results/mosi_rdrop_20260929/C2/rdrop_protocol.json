@@ -1,0 +1,11 @@
+{
+  "views": 2,
+  "kl_weight": 0.1,
+  "kl": "mean batch, half sum of KL(p||q) and KL(q||p)",
+  "active_base_losses": "L1 + .75 softCE + .05 gate; average both views",
+  "same_input_tensors": true,
+  "reference_sampler": "seed123 DataLoader with dedicated generator and1284 IDs",
+  "validation_inference": "one deterministic eval forward",
+  "training_accuracy_log": "first stochastic view",
+  "training_loss_parts_log": "mean of the two supervised views; KL separately in rdrop_steps.jsonl"
+}

@@ -161,3 +161,7 @@ A*=同点Acc2与Acc2non0最大，F*=同点两列macro-F1最大，来源列明确
 计算量匹配的额外MOSI训练COMPUTE_T固定best-Acc7/eta=.8为43.148688/.772295/83.536585/83.206281，弱于原MOSEI迁移C-ST；本seed支持源监督不等于重复目标训练，但不推广为多seed稳定结论。
 
 [完整同点表与解释](transfer_followup_20260928/README.md)、[2×2所有eta交互](transfer_followup_20260928/factorial.json)、[总完成回执](transfer_followup_20260928/complete.json)、[源/目标验证表现](transfer_followup_20260928/validation_comparison.json)。各run文件保留全部原始指标和A*/macro-F*来源，普通融合不可用方差诊断不冒充模型NaN。
+
+## MOSI输出级R-Drop增补
+
+[三臂完整结果](mosi_rdrop_20260929/README.md)：完整迁移C0复用，C1/C2各200轮，双checkpoint各七eta并附验证指标。主点C2相对C1极性与MAE改善，但相对C0的Acc7与MAE均越过保护线；单seed/test-selected，未继续扩KL。

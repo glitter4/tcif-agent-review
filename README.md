@@ -64,3 +64,7 @@ python -m unittest discover -s scripts -p 'test_tcif_paper_ablation.py' -v
 GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/tcif-agent-review)。本目录内容作为仓库根目录；现有实验工作区的旧 Git 历史、SSH 配置、数据、权重、论文草稿和调度脚本均未纳入。接手 agent 需要获得该私有仓库的读取权限。
 
 最新CH-SIMS六组对照结果已完成：[182点完整eta与结果报告](results/chsims_pathstudy_20260922/REPORT.md)。DETACH_S41得到Acc5=50.109%、MAE=.390312的取舍点，严格联合目标尚未达成。已附两组detach原始输出；四组短程对照的附加原始输出待补。
+
+## MOSI R-Drop完成结果
+
+[输出级R-Drop三臂对照](results/mosi_rdrop_20260929/README.md)：C0复用、C1/C2各200轮；完整42 test + 42 val点，主点未通过相对C0保护线，保留取舍结果，不自动扩网格。

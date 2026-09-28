@@ -1,0 +1,94 @@
+--- transfer_C0/train_emotion.py
++++ rdrop/train_emotion.py
+@@ -1690,6 +1690,8 @@
+         "reg_cls_mag_consistency_mode",
+         REG_CLS_MAG_CONSISTENCY_MODE,
+     )
++    payload["rdrop_views"] = getattr(args,"rdrop_views",1)
++    payload["rdrop_kl_weight"] = getattr(args,"rdrop_kl_weight",0.)
+     payload["transfer_phase"] = getattr(args,"transfer_phase","none")
+     payload["transfer_initialization"] = "fixed source epoch4" if getattr(args,"transfer_phase","none")=="target" else "pretrained backbones"
+     if checkpoint_epoch is not None:
+@@ -2991,6 +2993,8 @@
+ 
+     import transfer_support
+     transfer_support.initialize(model,args)
++    import rdrop_support
++    rdrop_control = rdrop_support.Controller(args,train_dataset.ids) if args.rdrop_views==2 else None
+     param_groups = _build_optimizer_param_groups(model, contrast_head, args)
+     print(
+         "Optimizer groups: "
+@@ -3169,6 +3173,7 @@
+         writer.add_histogram("config/polarity_weights", polarity_weights_t.detach().float().cpu(), 0)
+ 
+     for epoch in range(args.epochs):
++        if rdrop_control:rdrop_control.begin_epoch()
+         train_group_dispatch = {}
+         freeze_backbone = epoch < args.freeze_backbone_epochs
+         base_model = _unwrap_model(model)
+@@ -3278,15 +3283,11 @@
+             audio_attention_mask = batch["audio_attention_mask"].to(device)
+ 
+             gating_collector.clear()
+-            model_out = model(
+-                images,
+-                input_ids,
+-                attention_mask,
+-                audio_values,
+-                audio_attention_mask,
+-                **_embedding_cache_kwargs(batch, device, use_text_cache=args.use_text_cache),
+-                **_tcif_context_kwargs(batch, device, use_text_cache=args.use_text_cache),
+-            )
++            forward_args=(images,input_ids,attention_mask,audio_values,audio_attention_mask)
++            forward_kwargs=dict(_embedding_cache_kwargs(batch,device,use_text_cache=args.use_text_cache),
++                **_tcif_context_kwargs(batch,device,use_text_cache=args.use_text_cache))
++            input_versions=rdrop_support.versions(forward_args,forward_kwargs) if rdrop_control else None
++            model_out = model(*forward_args,**forward_kwargs)
+             if args.output_head_mode == "legacy":
+                 out_intensity, out_polarity, tc_loss = model_out
+                 loss_intensity = compute_intensity_loss(out_intensity, intensity, args.intensity_loss_type)
+@@ -3446,6 +3447,19 @@
+                     * loss_tcif_transition_gate
+                     + eff_alpha * tc_loss
+                 )
++            if rdrop_control:
++                rdrop_support.assert_unchanged(input_versions)
++                second_output=model(*forward_args,**forward_kwargs)
++                rdrop_support.assert_unchanged(input_versions)
++                second_base,second_parts=rdrop_support.second_task(second_output,batch,raw_valence,args,
++                    compute_regression_loss,_compute_cls7_loss,_compute_tcif_transition_gate_loss,
++                    _signed_centers(args,device=cls7_logits.device,dtype=cls7_logits.dtype),cls7_class_weights_t)
++                assert torch.allclose(loss_raw.detach(),(loss_reg+args.cls7_loss_weight*loss_cls7+args.tcif_transition_gate_loss_weight*loss_tcif_transition_gate).detach(),atol=1e-7,rtol=1e-5)
++                first_base=loss_raw
++                loss_raw,rdrop_kl=rdrop_support.combine(first_base,second_base,cls7_logits,second_output["cls7_logits"],args.rdrop_kl_weight)
++                rdrop_control.record(batch,first_base,second_base,rdrop_kl,cls7_logits,second_output["cls7_logits"],epoch,step_idx)
++                loss_reg=.5*(loss_reg+second_parts[0]);loss_cls7=.5*(loss_cls7+second_parts[1])
++                loss_tcif_transition_gate=.5*(loss_tcif_transition_gate+second_parts[2]);loss_intensity=loss_reg
+             if not torch.isfinite(loss_raw):
+                 if (step_idx + 1) % max(1, args.log_every) == 0:
+                     loop.set_postfix(loss=float("nan"), tc_loss=tc_loss.item())
+@@ -3463,6 +3477,7 @@
+                     grad_norm_sum += float(grad_norm)
+                     grad_norm_steps += 1
+                 optimizer.step()
++                if rdrop_control:rdrop_control.step()
+                 optimizer.zero_grad()
+ 
+             total_loss += loss_raw.item()
+@@ -3821,6 +3836,7 @@
+                 f"{_format_msoe_group_dispatch_shares(train_group_dispatch)}"
+             )
+ 
++        if rdrop_control:rdrop_control.end_epoch(epoch)
+         val_acc, val_loss, val_macro_f1, val_prec, val_rec, val_rmse, val_mae, val_pearson, val_spearman, val_final_acc2, val_final_acc7, val_final_macro_f1, val_loss_parts = validate(
+             model,
+             val_loader,
+@@ -5107,6 +5123,8 @@
+ 
+     parser.add_argument("--transfer_phase", choices=["none","source","target"], default="none")
+     parser.add_argument("--transfer_init_checkpoint", type=str, default="")
++    parser.add_argument("--rdrop_views",type=int,choices=[1,2],default=1)
++    parser.add_argument("--rdrop_kl_weight",type=float,default=0.)
+     args = parser.parse_args()
+     if args.dataset == "chsims":
+         if args.dataset_root == "/path/to/user/datasets/MER-unibench/cmumosei-process-complete-20260408":

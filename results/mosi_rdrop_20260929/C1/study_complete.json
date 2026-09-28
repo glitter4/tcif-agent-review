@@ -1,0 +1,6 @@
+{
+  "status": "complete",
+  "epochs": 200,
+  "optimizer_steps": 8200,
+  "training_forward_calls": 32400
+}
