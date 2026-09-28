@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "source_epochs": 4,
+  "optimizer_steps": 2044,
+  "examples": 65304,
+  "trace": [
+    {
+      "epoch": 1,
+      "optimizer_steps": 511,
+      "total_optimizer_steps": 511,
+      "microbatches": 1021,
+      "examples": 16326,
+      "training_wall_seconds": 391.26880376180634,
+      "input_elements": {
+        "input_ids": 2089728,
+        "cached_vision": 29640701952,
+        "cached_audio": 3748972032,
+        "tcif_context_input_ids": 4179456,
+        "tcif_context_cached_vision": 59281403904,
+        "tcif_context_cached_audio": 7497944064
+      },
+      "mean_S_weighted_loss": 0.0,
+      "weak_positive_exposures": 0,
+      "weak_negative_exposures": 0,
+      "empty_weak_batches": 0
+    },
+    {
+      "epoch": 2,
+      "optimizer_steps": 511,
+      "total_optimizer_steps": 1022,
+      "microbatches": 1021,
+      "examples": 16326,
+      "training_wall_seconds": 357.78793869400397,
+      "input_elements": {
+        "input_ids": 2089728,
+        "cached_vision": 29640701952,
+        "cached_audio": 3748972032,
+        "tcif_context_input_ids": 4179456,
+        "tcif_context_cached_vision": 59281403904,
+        "tcif_context_cached_audio": 7497944064
+      },
+      "mean_S_weighted_loss": 0.0,
+      "weak_positive_exposures": 0,
+      "weak_negative_exposures": 0,
+      "empty_weak_batches": 0
+    },
+    {
+      "epoch": 3,
+      "optimizer_steps": 511,
+      "total_optimizer_steps": 1533,
+      "microbatches": 1021,
+      "examples": 16326,
+      "training_wall_seconds": 357.47116776695475,
+      "input_elements": {
+        "input_ids": 2089728,
+        "cached_vision": 29640701952,
+        "cached_audio": 3748972032,
+        "tcif_context_input_ids": 4179456,
+        "tcif_context_cached_vision": 59281403904,
+        "tcif_context_cached_audio": 7497944064
+      },
+      "mean_S_weighted_loss": 0.0,
+      "weak_positive_exposures": 0,
+      "weak_negative_exposures": 0,
+      "empty_weak_batches": 0
+    },
+    {
+      "epoch": 4,
+      "optimizer_steps": 511,
+      "total_optimizer_steps": 2044,
+      "microbatches": 1021,
+      "examples": 16326,
+      "training_wall_seconds": 357.98858095612377,
+      "input_elements": {
+        "input_ids": 2089728,
+        "cached_vision": 29640701952,
+        "cached_audio": 3748972032,
+        "tcif_context_input_ids": 4179456,
+        "tcif_context_cached_vision": 59281403904,
+        "tcif_context_cached_audio": 7497944064
+      },
+      "mean_S_weighted_loss": 0.0,
+      "weak_positive_exposures": 0,
+      "weak_negative_exposures": 0,
+      "empty_weak_batches": 0
+    }
+  ]
+}

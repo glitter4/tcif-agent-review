@@ -1,0 +1,5 @@
+{
+  "status": "complete",
+  "optimizer_steps": 8200,
+  "examples": 256800
+}

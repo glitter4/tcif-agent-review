@@ -1,0 +1,97 @@
+--- transfer_baseline/train_emotion.py
++++ followup/train_emotion.py
+@@ -1690,6 +1690,10 @@
+         "reg_cls_mag_consistency_mode",
+         REG_CLS_MAG_CONSISTENCY_MODE,
+     )
++    payload["context_fusion"] = getattr(args,"context_fusion","tcif")
++    payload["transfer_reset_tcif"] = getattr(args,"transfer_reset_tcif",False)
++    payload["transfer_use_s"] = getattr(args,"transfer_use_s",False)
++    payload["source_compute_control"] = getattr(args,"source_compute_control",False)
+     payload["transfer_phase"] = getattr(args,"transfer_phase","none")
+     payload["transfer_initialization"] = "fixed source epoch4" if getattr(args,"transfer_phase","none")=="target" else "pretrained backbones"
+     if checkpoint_epoch is not None:
+@@ -2774,7 +2778,7 @@
+             temporal_context_mode=args.tcif_context_mode,
+             temporal_context_seed=args.seed,
+         )
+-        test_dataset = CMUMOSIProcessDataset(
++        test_dataset = val_dataset if args.transfer_phase == "source" else CMUMOSIProcessDataset(
+             root=args.dataset_root,
+             split="test",
+             transform=transform,
+@@ -2908,7 +2912,9 @@
+     train_loader_generator.manual_seed(args.seed)
+     val_loader_generator = torch.Generator()
+     val_loader_generator.manual_seed(args.seed + 1)
++    import transfer_support
+     train_loader = _make_train_loader(train_dataset, args, train_loader_generator)
++    train_loader = transfer_support.train_loader(train_loader,train_dataset,args)
+     val_loader = DataLoader(
+         val_dataset,
+         batch_size=args.batch_size,
+@@ -2976,7 +2982,7 @@
+         tcif_latent_dim=args.tcif_latent_dim,
+         tcif_output_mode=args.tcif_output_mode,
+         tcif_context_temperature=args.tcif_context_temperature,
+-        tcif_enable_transition_gate=args.tcif_enable_transition_gate,
++        tcif_enable_transition_gate=(args.tcif_enable_transition_gate or args.context_fusion == "standard"),
+         tcif_transition_gate_hidden_dim=args.tcif_transition_gate_hidden_dim,
+         tcif_transition_gate_init_bias=args.tcif_transition_gate_init_bias,
+     ).to(device)
+@@ -2991,6 +2997,7 @@
+ 
+     import transfer_support
+     transfer_support.initialize(model,args)
++    study_trace = transfer_support.Trace(args)
+     param_groups = _build_optimizer_param_groups(model, contrast_head, args)
+     print(
+         "Optimizer groups: "
+@@ -3169,6 +3176,7 @@
+         writer.add_histogram("config/polarity_weights", polarity_weights_t.detach().float().cpu(), 0)
+ 
+     for epoch in range(args.epochs):
++        study_trace.begin_epoch()
+         train_group_dispatch = {}
+         freeze_backbone = epoch < args.freeze_backbone_epochs
+         base_model = _unwrap_model(model)
+@@ -3446,6 +3454,12 @@
+                     * loss_tcif_transition_gate
+                     + eff_alpha * tc_loss
+                 )
++            extra_stats = None
++            if args.transfer_use_s:
++                from grs_controls import extra_loss
++                extra, extra_stats = extra_loss("S", y_reg, cls7_logits, raw_valence, _signed_centers(args,device=cls7_logits.device,dtype=cls7_logits.dtype))
++                loss_raw = loss_raw + extra
++            study_trace.batch(batch,extra_stats)
+             if not torch.isfinite(loss_raw):
+                 if (step_idx + 1) % max(1, args.log_every) == 0:
+                     loop.set_postfix(loss=float("nan"), tc_loss=tc_loss.item())
+@@ -3463,6 +3477,7 @@
+                     grad_norm_sum += float(grad_norm)
+                     grad_norm_steps += 1
+                 optimizer.step()
++                study_trace.step()
+                 optimizer.zero_grad()
+ 
+             total_loss += loss_raw.item()
+@@ -3821,6 +3836,7 @@
+                 f"{_format_msoe_group_dispatch_shares(train_group_dispatch)}"
+             )
+ 
++        study_trace.end_epoch(epoch)
+         val_acc, val_loss, val_macro_f1, val_prec, val_rec, val_rmse, val_mae, val_pearson, val_spearman, val_final_acc2, val_final_acc7, val_final_macro_f1, val_loss_parts = validate(
+             model,
+             val_loader,
+@@ -5107,6 +5123,10 @@
+ 
+     parser.add_argument("--transfer_phase", choices=["none","source","target"], default="none")
+     parser.add_argument("--transfer_init_checkpoint", type=str, default="")
++    parser.add_argument("--context_fusion", choices=["tcif","standard"],default="tcif")
++    parser.add_argument("--transfer_reset_tcif", action=argparse.BooleanOptionalAction,default=False)
++    parser.add_argument("--transfer_use_s", action=argparse.BooleanOptionalAction,default=False)
++    parser.add_argument("--source_compute_control", action=argparse.BooleanOptionalAction,default=False)
+     args = parser.parse_args()
+     if args.dataset == "chsims":
+         if args.dataset_root == "/path/to/user/datasets/MER-unibench/cmumosei-process-complete-20260408":

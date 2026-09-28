@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "name": "E1_ROUTER",
+      "exit_code": 0
+    },
+    {
+      "name": "E3_RESET",
+      "exit_code": 0
+    },
+    {
+      "name": "B_T",
+      "exit_code": 0
+    },
+    {
+      "name": "COMPUTE_T",
+      "exit_code": 0
+    },
+    {
+      "name": "E2_S",
+      "exit_code": 0
+    },
+    {
+      "name": "C_T",
+      "exit_code": 0
+    },
+    {
+      "name": "B_ST",
+      "exit_code": 0
+    }
+  ],
+  "automatic_expansion": false
+}

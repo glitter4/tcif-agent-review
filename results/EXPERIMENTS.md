@@ -151,3 +151,13 @@ A*=同点Acc2与Acc2non0最大，F*=同点两列macro-F1最大，来源列明确
 通过旧46.1/.740/83.3/83.0门槛，未通过最新46.1/85/85/.730或最终48.50/86.95/86.94/.697。原D1训练中断、当前额外源数据和两种视觉缓存域差异都需披露；单seed且test-selected，不能声称相同监督数据下公平领先。
 
 [14点报告](mosei_to_mosi_20260927/README.md)、[完整原始结果](mosei_to_mosi_20260927/result.json)、[初始化审计](mosei_to_mosi_20260927/initialization_audit.json)。本轮停止，不自动追加轮数或seed。
+
+## MOSI：迁移后四组实验与计算量对照（2026-09-29完成）
+
+7个新目标均200轮、8200次更新、完整双checkpoint七点eta，共98点；B_SOURCE与COMPUTE_SOURCE均4逻辑轮、2044更新/65304暴露，原C-ST及TCIF源4轮复用。全部正常退出，不扩扫。降router确实减小phi相对源变化，但无明确同点胜出；原S在best-MAE/eta=.8净修复4条非零符号和5条Acc7错误，MAE由.707052微升到.707711，另一checkpoint类型却退步；重置TCIF未形成全面优势。
+
+2×2固定best-Acc7、eta=.8：C-ST四项优于B-ST，但Acc7交互为−.291545个百分点；改为best-MAE/eta=.8时B-ST四项都优于C-ST，分类交互仍−.291545。不能声称TCIF稳定地更适合迁移。B-ST最低MAE同点为44.314869/.701917/84.756098/84.331410（best-MAE epoch58、eta=.6），仍未联合达标。
+
+计算量匹配的额外MOSI训练COMPUTE_T固定best-Acc7/eta=.8为43.148688/.772295/83.536585/83.206281，弱于原MOSEI迁移C-ST；本seed支持源监督不等于重复目标训练，但不推广为多seed稳定结论。
+
+[完整同点表与解释](transfer_followup_20260928/README.md)、[2×2所有eta交互](transfer_followup_20260928/factorial.json)、[总完成回执](transfer_followup_20260928/complete.json)、[源/目标验证表现](transfer_followup_20260928/validation_comparison.json)。各run文件保留全部原始指标和A*/macro-F*来源，普通融合不可用方差诊断不冒充模型NaN。

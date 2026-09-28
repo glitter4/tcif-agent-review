@@ -1,0 +1,17 @@
+{
+  "phase": "source",
+  "context_fusion": "standard",
+  "optimizer_restored": false,
+  "parameter_count": 394834589,
+  "context_variant": {
+    "variant": "standard",
+    "tcif_reference_params_per_branch": 1525666,
+    "standard_active_posterior_params_per_branch": 1526948,
+    "standard_total_params_per_branch": 1828100,
+    "relative_active_difference": 0.0008402887656931465,
+    "context_projection_usage": "diagnostic prior only; context_aux=0"
+  },
+  "status": "source_fresh",
+  "source_fixed_epochs": 4,
+  "compute_control": false
+}

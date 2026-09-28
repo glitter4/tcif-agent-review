@@ -1,0 +1,113 @@
+{
+  "counts": {
+    "mosei": {
+      "train": 16326,
+      "val": 1871,
+      "test": 4659
+    },
+    "mosi": {
+      "train": 1284,
+      "val": 229,
+      "test": 686
+    }
+  },
+  "source_target_overlap": {
+    "train": {
+      "protected_target_video_count": 0,
+      "protected_target_sample_count": 0
+    },
+    "val": {
+      "protected_target_video_count": 0,
+      "protected_target_sample_count": 0
+    }
+  },
+  "cache_coverage": {
+    "mosei_train": {
+      "required": 16326,
+      "present": 16326,
+      "missing": 0
+    },
+    "mosei_val": {
+      "required": 1871,
+      "present": 1871,
+      "missing": 0
+    },
+    "mosi_train": {
+      "required": 1284,
+      "present": 1284,
+      "missing": 0
+    },
+    "mosi_val": {
+      "required": 229,
+      "present": 229,
+      "missing": 0
+    },
+    "mosi_test": {
+      "required": 686,
+      "present": 686,
+      "missing": 0
+    }
+  },
+  "cache_configs": {
+    "mosei": {
+      "version": 1,
+      "created_at": "2026-05-16T04:26:48",
+      "cache_kind": "raw_backbone_last_hidden_state",
+      "dtype": "float16",
+      "dataset": "cmumosei",
+      "dataset_root": "/path/to/user/datasets/MER-unibench/cmumosei-process-complete-20260408",
+      "code_root": "/path/to/user/m4oe/embedding_cache/cmumosei_v752_nf4_vctx02_fp16_20260515/code/server-code",
+      "world_size": 4,
+      "settings": {
+        "num_frames": 4,
+        "vit_context_ratio": 0.2,
+        "max_length": 128,
+        "audio_sample_rate": 16000,
+        "audio_max_seconds": 6.0,
+        "audio_denoise": true
+      },
+      "models": {
+        "vit": "/path/to/user/models/vit-base-patch16-224-in21k",
+        "bert": "/path/to/user/models/AI-ModelScope_roberta-base",
+        "tokenizer": "/path/to/user/models/AI-ModelScope_roberta-base",
+        "hubert": "/path/to/user/models/hubert-base-ls960"
+      }
+    },
+    "mosi": {
+      "dataset": "cmumosi",
+      "dataset_root": "/path/to/user/datasets/MER-unibench/cmumosi-process",
+      "output_root": "/path/to/user/m4oe/embedding_cache/cmumosi_faceonly_nf4_vctx02_fp16_20260518",
+      "chsims_valence_scale": 3.0,
+      "chsimsv2_valence_scale": 3.0,
+      "tokenizer_path": "/path/to/user/models/AI-ModelScope_roberta-base",
+      "bert_backbone_path": "/path/to/user/models/AI-ModelScope_roberta-base",
+      "vit_backbone_path": "/path/to/user/models/vit-base-patch16-224-in21k",
+      "hubert_model_path": "/path/to/user/models/hubert-base-ls960",
+      "vision_backbone_path": "/path/to/user/models/resnet-18",
+      "max_length": 128,
+      "frame_policy": "middle",
+      "num_frames": 4,
+      "vit_context_ratio": 0.2,
+      "audio_sample_rate": 16000,
+      "audio_max_seconds": 6.0,
+      "audio_frame_ms": 25.0,
+      "audio_hop_ms": 10.0,
+      "disable_audio_denoise": false,
+      "batch_size": 8,
+      "num_workers": 4,
+      "cache_dtype": "float16",
+      "splits": [
+        "train",
+        "val",
+        "test"
+      ],
+      "overwrite": true,
+      "media_source_policy": "face",
+      "visual_feature_source": "openface_face_npy",
+      "face_track_format": "npy_t_h_w_c_uint8_112",
+      "created_at": "2026-05-18T00:15:58+0800",
+      "code_root": "/path/to/user/workspaces/m4oe-structv7.7.1-exp/server-code"
+    }
+  },
+  "source_internal_train_val_video_overlap": 0
+}

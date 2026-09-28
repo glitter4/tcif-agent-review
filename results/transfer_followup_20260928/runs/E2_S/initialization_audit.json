@@ -1,0 +1,16 @@
+{
+  "phase": "target",
+  "context_fusion": "tcif",
+  "optimizer_restored": false,
+  "parameter_count": 394229721,
+  "context_variant": null,
+  "status": "passed",
+  "source_epoch": 4,
+  "source_dataset": "cmumosei",
+  "strict_shapes": true,
+  "inherited_tensor_count": 795,
+  "reset_tensor_names": [],
+  "inherited_tensors_exact": true,
+  "reset_matches_fresh_seeded_initialization": false,
+  "output_projection_zero": false
+}

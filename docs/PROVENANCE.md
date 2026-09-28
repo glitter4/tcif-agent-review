@@ -74,3 +74,7 @@
 ## 2026-09-27同构MOSEI→MOSI完成增量
 
 results/mosei_to_mosi_20260927来自Lab独立迁移任务：固定源4轮val轨迹及checkpoint元数据、795张量严格迁移审计、目标200轮及14点评估、数据/cache检查。snapshots/mosei_to_mosi_20260927为对应训练器增量及默认关闭的transfer逻辑。路径脱敏，测试导入路径适配包布局；未上传模型权重、原数据、cache或任何内容摘要。源数据额外监督单列，原视频ID级检查不能证明内容级无转载。
+
+## 迁移后四组与计算量对照增补
+
+results/transfer_followup_20260928来自Lab独立任务的七项目标及两源阶段，含完整98点、初始化审计、router相对源漂移、源/目标固定验证诊断、旧模型逐样本配对修复聚合、精确更新/暴露/输入规模和训练墙钟。C_ST_reused.json明确复用前轮结果；2×2不使用中断的旧D1充当完整C-T。snapshots/transfer_followup_20260928是对应执行增量，普通融合从已有实现移植并按MOSI context_aux=0适配活跃参数匹配。所有路径脱敏，无权重/cache/原始样本数据；数值只对不可用非有限诊断转null，转换列表在availability.json。本批核心结果无非有限值，不修改有限指标。

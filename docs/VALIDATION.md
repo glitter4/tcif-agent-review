@@ -61,3 +61,7 @@ CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python -m unittes
 ## MOSEI→MOSI迁移验收
 
 python tools/check_mosi_transfer.py通过固定源4轮/目标200轮、源test评估关闭、795张量及394229721元素加载检查、目标仅初始化变化、数据/cache及14点完整性、同点A*/macro-F*来源与门槛验收。发布points与源result逐值一致；check_bundle通过源码语法/文档链接。未重训或增加任何评估网格，新增结果使用额外监督数据的局限独立披露。
+
+## 迁移四组实验完成验收
+
+python tools/check_transfer_followup.py通过七项200轮/98点、两源2044步/65304暴露、输入张量规模相等、checkpoint元数据、A*/macro-F*来源、52张量重置和743张量继承、普通融合活跃参数差.08403%、弱符号修复的Acc7前后状态、source/target验证split数、router变化量和全部14个2×2交互行。发布metrics.points与源文件逐值一致，新增源码语法、链接及私有路径排除检查通过。未再次训练、未加入新的eta/参数搜索。

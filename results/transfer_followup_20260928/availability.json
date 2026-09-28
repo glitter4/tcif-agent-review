@@ -1,0 +1,5 @@
+{
+  "nonfinite_values_converted_to_null": [],
+  "ordinary_variance_and_innovation": "not defined; no probabilistic filter",
+  "source_validation": "fixed eta.8 additional diagnostic only"
+}

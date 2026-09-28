@@ -1,0 +1,54 @@
+{
+  "best_acc7_model": {
+    "shared_specific_layers.0.phi": {
+      "source_norm": 2.6819976432029815,
+      "delta_norm": 0.3654282711779505,
+      "relative_delta": 0.13625227154987382,
+      "cosine": 0.9907377535265673
+    },
+    "shared_specific_layers.0.scale": {
+      "source_norm": 0.9978437423706055,
+      "delta_norm": 0.02099752426147461,
+      "relative_delta": 0.021042898171179745,
+      "cosine": 1.0
+    },
+    "shared_specific_layers.1.phi": {
+      "source_norm": 2.686538995850894,
+      "delta_norm": 0.49780736687755445,
+      "relative_delta": 0.18529690715310132,
+      "cosine": 0.9827584305496049
+    },
+    "shared_specific_layers.1.scale": {
+      "source_norm": 1.0218331813812256,
+      "delta_norm": 0.022229909896850586,
+      "relative_delta": 0.02175493055214782,
+      "cosine": 1.0
+    }
+  },
+  "best_mae_model": {
+    "shared_specific_layers.0.phi": {
+      "source_norm": 2.6819976432029815,
+      "delta_norm": 0.3381509064649158,
+      "relative_delta": 0.12608173139964143,
+      "cosine": 0.9920670933991744
+    },
+    "shared_specific_layers.0.scale": {
+      "source_norm": 0.9978437423706055,
+      "delta_norm": 0.018837690353393555,
+      "relative_delta": 0.018878397041025126,
+      "cosine": 1.0
+    },
+    "shared_specific_layers.1.phi": {
+      "source_norm": 2.686538995850894,
+      "delta_norm": 0.45531305675393413,
+      "relative_delta": 0.16947941476261938,
+      "cosine": 0.9855810463445218
+    },
+    "shared_specific_layers.1.scale": {
+      "source_norm": 1.0218331813812256,
+      "delta_norm": 0.019382715225219727,
+      "relative_delta": 0.01896857097457031,
+      "cosine": 1.0
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "phase": "source",
+  "context_fusion": "tcif",
+  "optimizer_restored": false,
+  "parameter_count": 394229721,
+  "context_variant": null,
+  "status": "source_fresh",
+  "source_fixed_epochs": 4,
+  "compute_control": true
+}

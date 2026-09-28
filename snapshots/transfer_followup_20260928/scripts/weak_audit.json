@@ -1,0 +1,110 @@
+[
+  {
+    "checkpoint": "best_acc7_model",
+    "eta": 0.6,
+    "groups": {
+      "weak_pos": {
+        "n": 37,
+        "sign_errors": 17
+      },
+      "weak_neg": {
+        "n": 29,
+        "sign_errors": 13
+      },
+      "nonweak_nonzero": {
+        "n": 590,
+        "sign_errors": 77
+      }
+    }
+  },
+  {
+    "checkpoint": "best_acc7_model",
+    "eta": 0.8,
+    "groups": {
+      "weak_pos": {
+        "n": 37,
+        "sign_errors": 17
+      },
+      "weak_neg": {
+        "n": 29,
+        "sign_errors": 13
+      },
+      "nonweak_nonzero": {
+        "n": 590,
+        "sign_errors": 74
+      }
+    }
+  },
+  {
+    "checkpoint": "best_acc7_model",
+    "eta": 1.0,
+    "groups": {
+      "weak_pos": {
+        "n": 37,
+        "sign_errors": 18
+      },
+      "weak_neg": {
+        "n": 29,
+        "sign_errors": 12
+      },
+      "nonweak_nonzero": {
+        "n": 590,
+        "sign_errors": 74
+      }
+    }
+  },
+  {
+    "checkpoint": "best_mae_model",
+    "eta": 0.6,
+    "groups": {
+      "weak_pos": {
+        "n": 37,
+        "sign_errors": 21
+      },
+      "weak_neg": {
+        "n": 29,
+        "sign_errors": 11
+      },
+      "nonweak_nonzero": {
+        "n": 590,
+        "sign_errors": 73
+      }
+    }
+  },
+  {
+    "checkpoint": "best_mae_model",
+    "eta": 0.8,
+    "groups": {
+      "weak_pos": {
+        "n": 37,
+        "sign_errors": 21
+      },
+      "weak_neg": {
+        "n": 29,
+        "sign_errors": 11
+      },
+      "nonweak_nonzero": {
+        "n": 590,
+        "sign_errors": 72
+      }
+    }
+  },
+  {
+    "checkpoint": "best_mae_model",
+    "eta": 1.0,
+    "groups": {
+      "weak_pos": {
+        "n": 37,
+        "sign_errors": 22
+      },
+      "weak_neg": {
+        "n": 29,
+        "sign_errors": 9
+      },
+      "nonweak_nonzero": {
+        "n": 590,
+        "sign_errors": 73
+      }
+    }
+  }
+]
