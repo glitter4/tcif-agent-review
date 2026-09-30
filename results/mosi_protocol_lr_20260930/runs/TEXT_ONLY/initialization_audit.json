@@ -1,0 +1,7 @@
+{
+  "source_supervised_pretraining": false,
+  "backbone": "same original RoBERTa as MOSI-only D1",
+  "frozen_embeddings": true,
+  "encoder_layers_trainable": 12,
+  "optimizer_restored": false
+}

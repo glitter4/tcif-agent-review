@@ -68,3 +68,7 @@ GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/t
 ## MOSI R-Drop完成结果
 
 [输出级R-Drop三臂对照](results/mosi_rdrop_20260929/README.md)：C0复用、C1/C2各200轮；完整42 test + 42 val点，主点未通过相对C0保护线，保留取舍结果，不自动扩网格。
+
+## MOSI口径与分组学习率结果（2026-10-01）
+
+[完整结果与审计](results/mosi_protocol_lr_20260930/README.md)：B/文本-only完成200轮，A第168轮中断但存量权重补评完成；42测试+42验证点、867份固定预测文件双取整审计、优化器与数据顺序验收。保持test-selected，旧/最近偶数Acc7及macro/weighted F1分列。

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "host": "lab-gpu-host",
+  "torch": "2.7.1+cu128",
+  "runs": [
+    "A_FUSION_LR",
+    "B_TEXT_LR",
+    "TEXT_ONLY"
+  ],
+  "seed": 123,
+  "epochs": 200,
+  "source_epoch": 4,
+  "selection": "test-selected legacyAcc7 at eta.85; dual complete7eta; nearest-even supplementary",
+  "no_automatic_expansion": true
+}

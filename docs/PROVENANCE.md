@@ -82,3 +82,7 @@ results/transfer_followup_20260928来自Lab独立任务的七项目标及两源�
 ## MOSI R-Drop结果增补
 
 results/mosi_rdrop_20260929来自Lab已完成C1/C2及复用C0。42测试点、42验证点，200轮/臂与16200微批次/臂完整trace、严格795张量源初始化。逐批仅数据集位置索引，不含真实ID。机器路径替换占位；有限数值未改。snapshots/mosi_rdrop_20260929包含实际训练器、R-Drop及transfer支持模块、精确干预补丁和机制测试；测试导入适配目录、移除字典随机种子环境设置。无权重/缓存/原数据。C0历史采样顺序仅由源码/配置重建，无原逐批ID日志。
+
+## MOSI protocol/LR增补
+
+results/mosi_protocol_lr_20260930来源于Lab三项授权实验、其完整优化器/微批次日志及存量CSV的867份固定点指标审计（Lab727，dl01仅MOSEI消融140）。保存42新test和42val点；A SIGSEGV11、167完整轮/6886更新，补评不改变训练失败状态。B/TEXT各200轮/8200更新。只发布位置索引和类别变化，不含真实样本ID/文本/媒体/权重/cache。路径脱敏，input_audit原媒体不可用时原计数占位0明确改为null，并保留缺失数量；训练指标有限值原样保存。source快照来自实际执行树，测试/脚本路径为snapshot布局作适配，算法不变。原source剩余模块沿用随附基线；独立UpdateAudit机制测试验证不扰动参数与RNG。

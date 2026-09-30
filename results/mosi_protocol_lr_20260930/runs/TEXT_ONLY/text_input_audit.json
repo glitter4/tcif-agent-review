@@ -1,0 +1,20 @@
+{
+  "train": {
+    "n": 1284,
+    "empty_attention": 0,
+    "max_length": 128,
+    "transcript_column": "same CMUMOSIProcessDataset column2 fallback1"
+  },
+  "val": {
+    "n": 229,
+    "empty_attention": 0,
+    "max_length": 128,
+    "transcript_column": "same CMUMOSIProcessDataset column2 fallback1"
+  },
+  "test": {
+    "n": 686,
+    "empty_attention": 0,
+    "max_length": 128,
+    "transcript_column": "same CMUMOSIProcessDataset column2 fallback1"
+  }
+}

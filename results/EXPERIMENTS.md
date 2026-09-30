@@ -165,3 +165,7 @@ A*=同点Acc2与Acc2non0最大，F*=同点两列macro-F1最大，来源列明确
 ## MOSI输出级R-Drop增补
 
 [三臂完整结果](mosi_rdrop_20260929/README.md)：完整迁移C0复用，C1/C2各200轮，双checkpoint各七eta并附验证指标。主点C2相对C1极性与MAE改善，但相对C0的Acc7与MAE均越过保护线；单seed/test-selected，未继续扩KL。
+
+## MOSI评测口径与学习率干预
+
+[结果、完整sweep与诊断](mosi_protocol_lr_20260930/README.md)。提高文本LR的B在固定best-Acc7/eta.8取得46.647230%旧Acc7，但MAE .735879与极性退步；文本-only未超过同监督C_T。A第168轮SIGSEGV保留失败，已有权重补评完整，不当作200轮。双口径审计固定旧点不重选，C0旧46.209913%→nearest-even45.918367%，MOSEI full旧56.321099%→56.342563%。

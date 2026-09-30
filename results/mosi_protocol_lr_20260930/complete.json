@@ -1,0 +1,20 @@
+{
+  "status": "completed_with_failures",
+  "results": [
+    {
+      "run": "A_FUSION_LR",
+      "exit_code": 1,
+      "gpu": 0
+    },
+    {
+      "run": "TEXT_ONLY",
+      "exit_code": 0,
+      "gpu": 0
+    },
+    {
+      "run": "B_TEXT_LR",
+      "exit_code": 0,
+      "gpu": 1
+    }
+  ]
+}

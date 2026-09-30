@@ -1,0 +1,48 @@
+{
+  "A_FUSION_LR": {
+    "training_complete": false,
+    "updates": 6886,
+    "microbatch_records": 13607,
+    "fully_completed_epochs": 167,
+    "first_update_samples": 168,
+    "clipping_fraction": 1.0,
+    "mean_preclip_norm": 24.467489131203994,
+    "mean_sampled_relative_update": {
+      "head": 0.00014896665779660928,
+      "tcif_transition_gate": 6.940679942618477e-05,
+      "router": 0.0007338840775906905,
+      "bert_last_layers": 9.17340795821762e-06,
+      "backbone": 0.0
+    }
+  },
+  "B_TEXT_LR": {
+    "training_complete": true,
+    "updates": 8200,
+    "microbatch_records": 16200,
+    "fully_completed_epochs": 200,
+    "first_update_samples": 200,
+    "clipping_fraction": 1.0,
+    "mean_preclip_norm": 18.167730684047793,
+    "mean_sampled_relative_update": {
+      "head": 3.309708632844353e-05,
+      "tcif_transition_gate": 6.260613312963213e-05,
+      "router": 0.0006004933350753436,
+      "bert_last_layers": 2.9423119240233938e-05,
+      "backbone": 0.0
+    }
+  },
+  "TEXT_ONLY": {
+    "training_complete": true,
+    "updates": 8200,
+    "microbatch_records": 16200,
+    "fully_completed_epochs": 200,
+    "first_update_samples": 200,
+    "clipping_fraction": 1.0,
+    "mean_preclip_norm": 23.983639633917228,
+    "mean_sampled_relative_update": {
+      "bert_last_layers": 8.435891168365263e-06,
+      "head": 4.283523643989597e-05
+    }
+  },
+  "data_order": "B/TEXT exact16200; A matches first13607 logged batches (last entered batch not necessarily completed)"
+}

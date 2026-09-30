@@ -69,3 +69,7 @@ python tools/check_transfer_followup.py通过七项200轮/98点、两源2044步/
 ## R-Drop完成验收
 
 运行 `python tools/check_mosi_rdrop.py` 验证42 test+42 val点、两个200轮完整trace、初始化/预算/KL/同点对比和脱敏。机制测试已在Lab运行通过；`snapshots/mosi_rdrop_20260929/test_rdrop.py` 需要PyTorch，覆盖KL值与双边梯度、无直接回归KL、双随机视图及独立采样器。
+
+## MOSI protocol/LR验收
+
+`python tools/check_mosi_protocol.py`验证42新test+42val、A中断与B/TEXT完整预算、三项共同数据顺序、逐步裁剪与抽样参数变化、固定点取整变化恒等式、配置差异及隐私路径。`python snapshots/mosi_protocol_lr_20260930/test_metric_protocol.py`通过5项NumPy指标测试；远程test_new已验证Torch映射、UpdateAudit不扰动、文本冻结与梯度/eval。全包check_bundle同时通过。各检查器的历史固定计数不包含新实验时，以专项检查器为准。

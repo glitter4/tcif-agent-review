@@ -1,0 +1,47 @@
+--- previous/train_emotion.py
++++ protocol/train_emotion.py
+@@ -70,7 +70,6 @@
+ 
+ def _set_seed(seed, deterministic=False):
+     random.seed(seed)
+-    os.environ["PYTHONHASHSEED"] = str(seed)
+     if np is not None:
+         np.random.seed(seed)
+     torch.manual_seed(seed)
+@@ -3004,6 +3003,10 @@
+         )
+     )
+     optimizer = optim.AdamW(param_groups, weight_decay=args.weight_decay)
++    from pathlib import Path
++    from update_audit import UpdateAudit
++    update_audit = UpdateAudit(model, optimizer, Path(args.save_dir).parent)
++    update_position = {str(s): i for i, s in enumerate(train_dataset.ids)}
+     scheduler = _build_lr_scheduler(optimizer, args)
+ 
+     train_labels_t = _collect_train_polarity_labels(train_dataset)
+@@ -3273,6 +3276,9 @@
+         loop = tqdm(train_loader, desc=f"Epoch {epoch+1}/{args.epochs}")
+         optimizer.zero_grad()
+         for step_idx, batch in enumerate(loop):
++            with (Path(args.save_dir).parent / 'data_order.jsonl').open('a') as order_file:
++                order_file.write(json.dumps(dict(epoch=epoch + 1, micro_step=step_idx + 1,
++                    positions=[update_position[str(s)] for s in batch['id']])) + '\n')
+             images = batch['image'].to(device)
+             input_ids = batch['input_ids'].to(device)
+             attention_mask = batch['attention_mask'].to(device)
+@@ -3469,6 +3475,7 @@
+             loss.backward()
+             do_step = ((step_idx + 1) % max(1, args.grad_accum_steps) == 0) or (step_idx + 1 == len(train_loader))
+             if do_step:
++                update_audit.before(epoch + 1)
+                 if args.clip_grad_norm > 0:
+                     grad_norm = clip_grad_norm_(
+                         [p for group in optimizer.param_groups for p in group["params"]],
+@@ -3477,6 +3484,7 @@
+                     grad_norm_sum += float(grad_norm)
+                     grad_norm_steps += 1
+                 optimizer.step()
++                update_audit.after(epoch + 1, grad_norm, args.clip_grad_norm)
+                 if rdrop_control:rdrop_control.step()
+                 optimizer.zero_grad()
+ 
