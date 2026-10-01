@@ -77,3 +77,7 @@ python tools/check_transfer_followup.py通过七项200轮/98点、两源2044步/
 ## MOSI regularization检查
 
 `python tools/check_mosi_regularization.py`核验3x8200更新、3x16200同序微批次、56test+56val、EMA8159更新及test选点、mask比例、plateau逐epoch独立重放、分组汇总与预测评估一致，以及禁传文件/私有路径。`test_regularization.py`已在Lab通过，涵盖EMA递推/冻结state/权重和RNG恢复/paired raw轨迹、loader generator恢复、drop mask对prior/variance/gate及监督无泄漏、全无效fallback与梯度、plateau patience。全包check_bundle通过，历史固定计数以专项检查器补充。
+
+## MOSI two-hot首阶段检查
+
+`python tools/check_mosi_twohot.py`检查初始28test+28val、配对顺序/mask、验证门槛、31视频组bootstrap和隐私路径。远程two-hot测试覆盖CPU/GPU float32/64非负/归一/期望/边界/越界拒绝/梯度，旧distance损失逐值不变；bootstrap测试验证相同模型零CI、指标相等、配对交换反号。check_bundle通过。整个多seed任务仍在进行。

@@ -1,0 +1,27 @@
+{
+  "weak_positive": {
+    "n": 15,
+    "final_sign_errors": 5,
+    "class_expectation_sign_errors": 5
+  },
+  "weak_negative": {
+    "n": 19,
+    "final_sign_errors": 6,
+    "class_expectation_sign_errors": 8
+  },
+  "other_nonzero": {
+    "n": 182,
+    "final_sign_errors": 25,
+    "class_expectation_sign_errors": 24
+  },
+  "zero": {
+    "n": 13,
+    "final_sign_errors": 7,
+    "class_expectation_sign_errors": 6
+  },
+  "strong": {
+    "n": 82,
+    "final_sign_errors": 8,
+    "class_expectation_sign_errors": 8
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "results": [
+    {
+      "run": "V2_STANDARD_DROP",
+      "exit_code": 0,
+      "gpu": 0
+    },
+    {
+      "run": "V3_TCIF_TWOHOT",
+      "exit_code": 0,
+      "gpu": 1
+    }
+  ],
+  "next": "read validation decision before matched baseline or fixedseed follow-up; no automatic new stage in this launcher"
+}

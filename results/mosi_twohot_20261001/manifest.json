@@ -1,0 +1,64 @@
+{
+  "initial_new_runs": [
+    "V2_STANDARD_DROP",
+    "V3_TCIF_TWOHOT"
+  ],
+  "reused": {
+    "V0": "original C0 full transfer; do not replace with best historical RAW",
+    "V1": "completed NEIGHBOR_DROP"
+  },
+  "seed": 123,
+  "target_epochs": 200,
+  "source": "reuse matching TCIF/B_SOURCE fixed4; fresh target optimizer; no target checkpoint continuation",
+  "selection": "test-selected legacyAcc7/MAE at eta.85, each7eta; validation diagnostic only",
+  "primary_reporting_point": {
+    "checkpoint": "best_mae_model",
+    "eta": 0.4
+  },
+  "secondary_reporting_point": {
+    "checkpoint": "best_acc7_model",
+    "eta": 0.8
+  },
+  "confirmation_scope": "continued test-selected development; not independent validation-selected confirmation",
+  "additional_target_seeds": [
+    40,
+    41
+  ],
+  "source_seed_scope": "same fixed source seed123 checkpoints across target seeds; target-training seed variability only",
+  "twohot_expansion_gate": {
+    "split": "val",
+    "checkpoint": "best_mae_model",
+    "eta": 0.4,
+    "requirements": [
+      "classification expectation MAE strictly decreases vs V1",
+      "final MAE strictly decreases and final oldAcc7 no more than .3 percentage-point drop vs V1",
+      "weak-positive and weak-negative sign error counts each no greater than V1, with combined strict decrease"
+    ],
+    "action_if_pass": "one matching standard+drop+twohot target200 seed123, then V3/matching baseline targetseeds40/41",
+    "action_if_fail": "no twohot baseline expansion; V1/V2 targetseeds40/41"
+  },
+  "target_run_budget": {
+    "initial": 2,
+    "conditional_twohot_baseline": 1,
+    "paired_additional_seeds": 4,
+    "conditional_reweight": 1
+  },
+  "reweight_trigger": "after first comparisons: val weak-positive and weak-negative sign error rates each greater than other-nonzero rate; both n>=10; no test-triggered launch",
+  "reweight": "one trial only, trainmean-normalized1.5 for0<abs(y)<.5 on regression+classification; gate unchanged; mechanism evidence, not automatically new final-method selection",
+  "bootstrap": {
+    "replicates": 10000,
+    "rng_seed": 20261001,
+    "unit": "original video group",
+    "pairing": "same sampled videos for method/control",
+    "report": "perseed paired differences,3-seed mean/SD; conditional-on-test-selected predictions"
+  },
+  "input_branch": "not queued; original media or provenance needed first; use train/val only, no new downloads/cache rebuild without evidence",
+  "excluded": [
+    "EMA grid",
+    "plateau grid",
+    "larger LR or clip grid",
+    "CDF/EMD repeats",
+    "text ablation",
+    "new sign margin"
+  ]
+}

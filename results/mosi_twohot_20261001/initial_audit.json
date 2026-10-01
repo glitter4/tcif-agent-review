@@ -1,0 +1,25 @@
+{
+  "V2_STANDARD_DROP": {
+    "epochs": 200,
+    "updates": 8200,
+    "microbatches": 16200,
+    "strict_tensors": 767,
+    "clip_fraction": 1.0
+  },
+  "V3_TCIF_TWOHOT": {
+    "epochs": 200,
+    "updates": 8200,
+    "microbatches": 16200,
+    "strict_tensors": 795,
+    "clip_fraction": 1.0
+  },
+  "mask_and_order_equal_to_V1": true,
+  "twohot_expansion": false,
+  "decision_conditions": {
+    "classification_MAE_improves": true,
+    "final_MAE_improves": true,
+    "Acc7_guard": false,
+    "each_weak_sign_error_not_worse": false,
+    "combined_weak_sign_error_improves": false
+  }
+}

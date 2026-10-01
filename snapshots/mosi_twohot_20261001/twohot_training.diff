@@ -1,0 +1,73 @@
+--- regularization/train_emotion.py
++++ twohot/train_emotion.py
+@@ -306,6 +306,7 @@
+     low_abs_weight: float = 1.0,
+     class_weights=None,
+     centers=None,
++    soft_target="distance",
+ ):
+     centers = (
+         get_cls7_centers(device=logits.device, dtype=logits.dtype)
+@@ -325,7 +326,15 @@
+         loss = F.cross_entropy(logits, target, weight=ce_weights, reduction="none")
+         return _weighted_mean_loss(loss, sample_weights), target
+     if loss_type == "soft_ce":
+-        target_probs = continuous_to_cls7_soft(raw_valence, centers=centers, tau=soft_tau)
++        if soft_target == 'two_hot':
++            if class_weights is not None:
++                raise ValueError('two_hot trial does not combine class reweighting')
++            from soft_targets import two_hot
++            target_probs = two_hot(raw_valence, centers)
++        elif soft_target == 'distance':
++            target_probs = continuous_to_cls7_soft(raw_valence, centers=centers, tau=soft_tau)
++        else:
++            raise ValueError(soft_target)
+         hard_target = continuous_to_cls7_hard(raw_valence, centers=centers)
+         if class_weights is not None:
+             target_probs = target_probs * class_weights.to(device=logits.device, dtype=target_probs.dtype).view(1, -1)
+@@ -2977,7 +2986,7 @@
+         tcif_latent_dim=args.tcif_latent_dim,
+         tcif_output_mode=args.tcif_output_mode,
+         tcif_context_temperature=args.tcif_context_temperature,
+-        tcif_enable_transition_gate=args.tcif_enable_transition_gate,
++        tcif_enable_transition_gate=(args.tcif_enable_transition_gate or args.context_fusion == "standard"),
+         tcif_transition_gate_hidden_dim=args.tcif_transition_gate_hidden_dim,
+         tcif_transition_gate_init_bias=args.tcif_transition_gate_init_bias,
+     ).to(device)
+@@ -2991,6 +3000,11 @@
+     gating_handles = _register_gating_hooks(model, gating_collector)
+ 
+     import transfer_support
++    if args.cls7_soft_target == 'two_hot':
++        assert args.dataset == 'cmumosi' and args.transfer_phase == 'target'
++        assert args.cls7_loss_type == 'soft_ce' and args.cls7_class_weight_mode == 'none'
++        assert args.cls7_low_abs_sample_weight == 1. and args.cls7_low_abs_sample_weight_threshold == 0.
++        assert args.rdrop_views == 1
+     transfer_support.initialize(model,args)
+     import rdrop_support
+     rdrop_control = rdrop_support.Controller(args,train_dataset.ids) if args.rdrop_views==2 else None
+@@ -3349,6 +3363,7 @@
+                     args.cls7_low_abs_sample_weight_threshold,
+                     args.cls7_low_abs_sample_weight,
+                     cls7_class_weights_t,
++                    soft_target=args.cls7_soft_target,
+                     centers=_signed_centers(
+                         args, device=cls7_logits.device, dtype=cls7_logits.dtype
+                     ),
+@@ -4484,6 +4499,7 @@
+                 args.cls7_low_abs_sample_weight_threshold,
+                 args.cls7_low_abs_sample_weight,
+                 getattr(args, "_cls7_class_weights_t", None),
++                soft_target=args.cls7_soft_target,
+                 centers=_signed_centers(
+                     args, device=cls7_logits.device, dtype=cls7_logits.dtype
+                 ),
+@@ -5144,6 +5160,8 @@
+     parser.add_argument("--transfer_init_checkpoint", type=str, default="")
+     parser.add_argument("--enable_ema", action=argparse.BooleanOptionalAction, default=False)
+     parser.add_argument("--ema_decay", type=float, default=.99)
++    parser.add_argument("--context_fusion", choices=["tcif","standard"], default="tcif")
++    parser.add_argument("--cls7_soft_target", choices=["distance","two_hot"], default="distance")
+     parser.add_argument("--neighbor_dropout", type=float, choices=[0.,.2], default=0.)
+     parser.add_argument("--rdrop_views",type=int,choices=[1,2],default=1)
+     parser.add_argument("--rdrop_kl_weight",type=float,default=0.)

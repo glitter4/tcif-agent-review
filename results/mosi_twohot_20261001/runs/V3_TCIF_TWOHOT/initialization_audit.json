@@ -1,0 +1,13 @@
+{
+  "context_fusion": "tcif",
+  "context_variant": null,
+  "status": "passed",
+  "source_epoch": 4,
+  "source_dataset": "cmumosei",
+  "target_dataset": "cmumosi",
+  "loaded_tensor_count": 795,
+  "loaded_elements": 394229721,
+  "exact_tensor_equality": true,
+  "optimizer_restored": false,
+  "source_selection": "fixed epoch4, no test/val checkpoint selection"
+}

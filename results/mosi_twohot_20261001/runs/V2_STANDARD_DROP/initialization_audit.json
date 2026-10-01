@@ -1,0 +1,20 @@
+{
+  "context_fusion": "standard",
+  "context_variant": {
+    "variant": "standard",
+    "tcif_reference_params_per_branch": 1525666,
+    "standard_active_posterior_params_per_branch": 1526948,
+    "standard_total_params_per_branch": 1828100,
+    "relative_active_difference": 0.0008402887656931465,
+    "context_projection_usage": "diagnostic prior only; context_aux=0"
+  },
+  "status": "passed",
+  "source_epoch": 4,
+  "source_dataset": "cmumosei",
+  "target_dataset": "cmumosi",
+  "loaded_tensor_count": 767,
+  "loaded_elements": 394834589,
+  "exact_tensor_equality": true,
+  "optimizer_restored": false,
+  "source_selection": "fixed epoch4, no test/val checkpoint selection"
+}

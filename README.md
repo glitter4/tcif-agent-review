@@ -76,3 +76,7 @@ GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/t
 ## MOSI EMA、邻居dropout与plateau（2026-10-01）
 
 [完整实验与机制验收](results/mosi_regularization_20261001/README.md)：三项200轮，56test+56val点；EMA同run raw配对、邻域修复/新增错误、valMAE调度重放。邻居dropout候选46.793003%/.706336913/84.756098%/84.363082%，验证MAE有取舍，未达到阶段联合目标。
+
+## MOSI two-hot与普通融合：首阶段
+
+[首阶段结果与验证决策](results/mosi_twohot_20261001/README.md)：V2/V3完整200轮、28test+28val；two-hot未通过预先固定val扩展门槛，不运行V4。V1/V2的seeds40/41仍在Lab5090执行，整个任务尚未结束。

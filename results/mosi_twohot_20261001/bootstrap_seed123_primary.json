@@ -1,0 +1,119 @@
+{
+  "n": 686,
+  "video_groups": 31,
+  "replicates": 10000,
+  "rng_seed": 20261001,
+  "metrics": {
+    "MAE": {
+      "method": 0.7063369134579495,
+      "control": 0.7027800290549375,
+      "delta": 0.0035568844030119395,
+      "interval95_percentile": [
+        -0.013583971798193475,
+        0.0202408074736924
+      ],
+      "finite_replicates": 10000
+    },
+    "Acc7_legacy": {
+      "method": 46.79300291545189,
+      "control": 44.16909620991253,
+      "delta": 2.623906705539362,
+      "interval95_percentile": [
+        0.37488425925925944,
+        5.035997868371969
+      ],
+      "finite_replicates": 10000
+    },
+    "Acc7_nearest_even": {
+      "method": 46.50145772594752,
+      "control": 43.87755102040816,
+      "delta": 2.623906705539355,
+      "interval95_percentile": [
+        0.37488425925925944,
+        5.035997868371969
+      ],
+      "finite_replicates": 10000
+    },
+    "Acc2_all": {
+      "method": 82.79883381924198,
+      "control": 82.94460641399417,
+      "delta": -0.14577259475218796,
+      "interval95_percentile": [
+        -1.7981570782400733,
+        1.7217261168554854
+      ],
+      "finite_replicates": 10000
+    },
+    "macro_F1_all": {
+      "method": 82.48379250949944,
+      "control": 82.41545893719805,
+      "delta": 0.06833357230138404,
+      "interval95_percentile": [
+        -1.6148258080685725,
+        2.0309661261290493
+      ],
+      "finite_replicates": 10000
+    },
+    "weighted_F1_all": {
+      "method": 82.7303465779936,
+      "control": 82.73561539374697,
+      "delta": -0.005268815753368017,
+      "interval95_percentile": [
+        -1.6568309833983579,
+        1.9078074239668543
+      ],
+      "finite_replicates": 10000
+    },
+    "Acc2_nonzero": {
+      "method": 84.7560975609756,
+      "control": 85.51829268292683,
+      "delta": -0.7621951219512226,
+      "interval95_percentile": [
+        -2.3474178403755985,
+        0.9600715268225656
+      ],
+      "finite_replicates": 10000
+    },
+    "macro_F1_nonzero": {
+      "method": 84.3630816170862,
+      "control": 84.95438271202562,
+      "delta": -0.5913010949394248,
+      "interval95_percentile": [
+        -2.222828231554588,
+        1.1578702922352337
+      ],
+      "finite_replicates": 10000
+    },
+    "weighted_F1_nonzero": {
+      "method": 84.74853956205466,
+      "control": 85.40728678314314,
+      "delta": -0.6587472210884755,
+      "interval95_percentile": [
+        -2.220390903939529,
+        1.058125978275228
+      ],
+      "finite_replicates": 10000
+    },
+    "A_star": {
+      "method": 84.7560975609756,
+      "control": 85.51829268292683,
+      "delta": -0.7621951219512226,
+      "interval95_percentile": [
+        -2.3474178403755985,
+        0.9600715268225656
+      ],
+      "finite_replicates": 10000
+    },
+    "F_star": {
+      "method": 84.3630816170862,
+      "control": 84.95438271202562,
+      "delta": -0.5913010949394248,
+      "interval95_percentile": [
+        -2.222828231554588,
+        1.1578702922352337
+      ],
+      "finite_replicates": 10000
+    }
+  },
+  "interpretation": "descriptive paired-video uncertainty conditional on selected weights/eta; does not correct test-selection or source-seed uncertainty"
+}

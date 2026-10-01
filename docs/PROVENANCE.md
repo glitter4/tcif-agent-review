@@ -90,3 +90,7 @@ results/mosi_protocol_lr_20260930来源于Lab三项授权实验、其完整优�
 ## MOSI regularization增补
 
 results/mosi_regularization_20261001来自Lab三项200轮独立训练、EMA同run原始/平均权重的各双checkpoint、完整56test+56val、优化器/顺序/mask/EMA/调度trace与位置对齐的分支诊断聚合。邻居分支原始预测仅用于离线核验，公开包不含逐样本标签/logits、原ID、权重/cache/媒体；公开微批次仅dataset位置索引。所有有限数值保留，机器路径占位替换。snapshots/mosi_regularization_20261001保存执行核心与机制测试，测试导入适配snapshot目录。严格初始化与EMA恢复由执行断言、轨迹记录及机制测试共同支持，并非保存每步权重后重算全部EMA的独立审计。
+
+## MOSI two-hot首阶段增补
+
+results/mosi_twohot_20261001来自Lab初始V2/V3的28test+28val、8200更新/16200微批次各两组、strict767/795源初始化、固定验证条件决策、目标分布数学审计和seed123原视频组bootstrap。V0/V1复用既有记录。数值逐值保留，仅机器路径脱敏。无权重、cache、原数据/真实ID；视频组只用位置对应的顺序整数。源码快照含two_hot、普通融合接入、分支/视频组分析和测试，测试路径适配snapshot目录。seed40/41和后续条件重加权尚未完成，不将阶段发布当作任务终结。
