@@ -86,3 +86,7 @@ results/mosi_rdrop_20260929来自Lab已完成C1/C2及复用C0。42测试点、42
 ## MOSI protocol/LR增补
 
 results/mosi_protocol_lr_20260930来源于Lab三项授权实验、其完整优化器/微批次日志及存量CSV的867份固定点指标审计（Lab727，dl01仅MOSEI消融140）。保存42新test和42val点；A SIGSEGV11、167完整轮/6886更新，补评不改变训练失败状态。B/TEXT各200轮/8200更新。只发布位置索引和类别变化，不含真实样本ID/文本/媒体/权重/cache。路径脱敏，input_audit原媒体不可用时原计数占位0明确改为null，并保留缺失数量；训练指标有限值原样保存。source快照来自实际执行树，测试/脚本路径为snapshot布局作适配，算法不变。原source剩余模块沿用随附基线；独立UpdateAudit机制测试验证不扰动参数与RNG。
+
+## MOSI regularization增补
+
+results/mosi_regularization_20261001来自Lab三项200轮独立训练、EMA同run原始/平均权重的各双checkpoint、完整56test+56val、优化器/顺序/mask/EMA/调度trace与位置对齐的分支诊断聚合。邻居分支原始预测仅用于离线核验，公开包不含逐样本标签/logits、原ID、权重/cache/媒体；公开微批次仅dataset位置索引。所有有限数值保留，机器路径占位替换。snapshots/mosi_regularization_20261001保存执行核心与机制测试，测试导入适配snapshot目录。严格初始化与EMA恢复由执行断言、轨迹记录及机制测试共同支持，并非保存每步权重后重算全部EMA的独立审计。

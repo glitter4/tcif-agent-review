@@ -169,3 +169,7 @@ A*=同点Acc2与Acc2non0最大，F*=同点两列macro-F1最大，来源列明确
 ## MOSI评测口径与学习率干预
 
 [结果、完整sweep与诊断](mosi_protocol_lr_20260930/README.md)。提高文本LR的B在固定best-Acc7/eta.8取得46.647230%旧Acc7，但MAE .735879与极性退步；文本-only未超过同监督C_T。A第168轮SIGSEGV保留失败，已有权重补评完整，不当作200轮。双口径审计固定旧点不重选，C0旧46.209913%→nearest-even45.918367%，MOSEI full旧56.321099%→56.342563%。
+
+## MOSI EMA/邻居dropout/plateau
+
+[本轮完整报告](mosi_regularization_20261001/README.md)包含56测试与56验证点，三项均完成200轮，无重训。EMA平均权重主点弱于同次RAW，14个同类型/eta比较均未通过Acc7/MAE工程保护线。邻居dropout在best-MAE epoch58/eta.4得46.793003%/.706336913/84.756098%/84.363082%，相对历史C0同点测试四项改善，但验证MAE变差、非零二分类净多对1条，不能宣称稳定联合突破。Plateau在epoch34/40/54/60/66/72降低LR，仍存在分类/强度取舍。全部保留test-selected、额外MOSEI监督与单seed限制。

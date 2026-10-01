@@ -1,0 +1,59 @@
+--- protocol/train_emotion.py
++++ regularization/train_emotion.py
+@@ -3008,6 +3008,8 @@
+     update_audit = UpdateAudit(model, optimizer, Path(args.save_dir).parent)
+     update_position = {str(s): i for i, s in enumerate(train_dataset.ids)}
+     scheduler = _build_lr_scheduler(optimizer, args)
++    from regularization_support import Controller
++    regularization = Controller(args, model)
+ 
+     train_labels_t = _collect_train_polarity_labels(train_dataset)
+     polarity_weights = compute_inverse_freq_weights(train_labels_t, num_classes=num_polarity_classes)
+@@ -3276,6 +3278,7 @@
+         loop = tqdm(train_loader, desc=f"Epoch {epoch+1}/{args.epochs}")
+         optimizer.zero_grad()
+         for step_idx, batch in enumerate(loop):
++            batch = regularization.training_batch(batch, epoch + 1, step_idx + 1)
+             with (Path(args.save_dir).parent / 'data_order.jsonl').open('a') as order_file:
+                 order_file.write(json.dumps(dict(epoch=epoch + 1, micro_step=step_idx + 1,
+                     positions=[update_position[str(s)] for s in batch['id']])) + '\n')
+@@ -3484,6 +3487,7 @@
+                     grad_norm_sum += float(grad_norm)
+                     grad_norm_steps += 1
+                 optimizer.step()
++                regularization.after_step(model, epoch + 1)
+                 update_audit.after(epoch + 1, grad_norm, args.clip_grad_norm)
+                 if rdrop_control:rdrop_control.step()
+                 optimizer.zero_grad()
+@@ -4311,6 +4315,8 @@
+             best_records=best_checkpoint_records,
+             args=args,
+         )
++        regularization.after_epoch(model, epoch + 1, validate_signed_reg_cls7,
++            _update_best_checkpoints, val_loader, test_loader, device, eff_alpha, contrast_head)
+         if args.save_latest_checkpoint:
+             latest_ckpt_dir = os.path.join(args.save_dir, "recovery")
+             os.makedirs(latest_ckpt_dir, exist_ok=True)
+@@ -4344,7 +4350,12 @@
+                     f"{selection_split}_acc7={candidate[f'{selection_split}_acc7']:.4f}"
+                 )
+ 
++        lr_before = {g['name']:g['lr'] for g in optimizer.param_groups}
+         _step_lr_scheduler(scheduler, args, val_loss, val_mae)
++        from regularization_support import append as append_regularization
++        append_regularization(Path(args.save_dir).parent/'scheduler_epochs.jsonl',
++            dict(epoch=epoch+1,monitor='val_mae' if args.scheduler=='plateau' else 'epoch',
++                 val_mae=val_mae,before=lr_before,after={g['name']:g['lr'] for g in optimizer.param_groups}))
+ 
+         if args.early_stop_metric == "val_loss":
+             stop_value = val_loss
+@@ -5131,6 +5142,9 @@
+ 
+     parser.add_argument("--transfer_phase", choices=["none","source","target"], default="none")
+     parser.add_argument("--transfer_init_checkpoint", type=str, default="")
++    parser.add_argument("--enable_ema", action=argparse.BooleanOptionalAction, default=False)
++    parser.add_argument("--ema_decay", type=float, default=.99)
++    parser.add_argument("--neighbor_dropout", type=float, choices=[0.,.2], default=0.)
+     parser.add_argument("--rdrop_views",type=int,choices=[1,2],default=1)
+     parser.add_argument("--rdrop_kl_weight",type=float,default=0.)
+     args = parser.parse_args()

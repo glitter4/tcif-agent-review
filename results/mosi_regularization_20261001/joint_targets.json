@@ -1,0 +1,18 @@
+{
+  "EMA_RAW": {
+    "stage_points": [],
+    "final_points": []
+  },
+  "EMA_AVERAGED": {
+    "stage_points": [],
+    "final_points": []
+  },
+  "NEIGHBOR_DROP": {
+    "stage_points": [],
+    "final_points": []
+  },
+  "PLATEAU": {
+    "stage_points": [],
+    "final_points": []
+  }
+}

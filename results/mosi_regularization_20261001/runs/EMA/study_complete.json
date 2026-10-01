@@ -1,0 +1,6 @@
+{
+  "status": "complete",
+  "epochs": 200,
+  "updates": 8200,
+  "checkpoint_count": 4
+}

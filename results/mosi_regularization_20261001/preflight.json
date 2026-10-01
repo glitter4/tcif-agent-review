@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "names": [
+    "EMA",
+    "NEIGHBOR_DROP",
+    "PLATEAU"
+  ],
+  "epochs": 200,
+  "seed": 123,
+  "source_epoch": 4,
+  "selection": "test-best legacyAcc7/MAE, eta.85; every selected checkpoint separate7eta",
+  "expected_EMA_updates": 8159,
+  "torch": "2.7.1+cu128",
+  "no_automatic_expansion": true
+}

@@ -73,3 +73,7 @@ python tools/check_transfer_followup.py通过七项200轮/98点、两源2044步/
 ## MOSI protocol/LR验收
 
 `python tools/check_mosi_protocol.py`验证42新test+42val、A中断与B/TEXT完整预算、三项共同数据顺序、逐步裁剪与抽样参数变化、固定点取整变化恒等式、配置差异及隐私路径。`python snapshots/mosi_protocol_lr_20260930/test_metric_protocol.py`通过5项NumPy指标测试；远程test_new已验证Torch映射、UpdateAudit不扰动、文本冻结与梯度/eval。全包check_bundle同时通过。各检查器的历史固定计数不包含新实验时，以专项检查器为准。
+
+## MOSI regularization检查
+
+`python tools/check_mosi_regularization.py`核验3x8200更新、3x16200同序微批次、56test+56val、EMA8159更新及test选点、mask比例、plateau逐epoch独立重放、分组汇总与预测评估一致，以及禁传文件/私有路径。`test_regularization.py`已在Lab通过，涵盖EMA递推/冻结state/权重和RNG恢复/paired raw轨迹、loader generator恢复、drop mask对prior/variance/gate及监督无泄漏、全无效fallback与梯度、plateau patience。全包check_bundle通过，历史固定计数以专项检查器补充。

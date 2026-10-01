@@ -72,3 +72,7 @@ GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/t
 ## MOSI口径与分组学习率结果（2026-10-01）
 
 [完整结果与审计](results/mosi_protocol_lr_20260930/README.md)：B/文本-only完成200轮，A第168轮中断但存量权重补评完成；42测试+42验证点、867份固定预测文件双取整审计、优化器与数据顺序验收。保持test-selected，旧/最近偶数Acc7及macro/weighted F1分列。
+
+## MOSI EMA、邻居dropout与plateau（2026-10-01）
+
+[完整实验与机制验收](results/mosi_regularization_20261001/README.md)：三项200轮，56test+56val点；EMA同run raw配对、邻域修复/新增错误、valMAE调度重放。邻居dropout候选46.793003%/.706336913/84.756098%/84.363082%，验证MAE有取舍，未达到阶段联合目标。
