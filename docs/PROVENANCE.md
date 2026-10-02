@@ -98,3 +98,7 @@ results/mosi_twohot_20261001来自Lab初始V2/V3的28test+28val、8200更新/162
 ## c1过程补充包来源
 
 results/mosi_c1_process_20261002从c1已完成运行的显式文件清单只读取得，三项为REWEIGHT1P5、C1_V1_S40、C1_V1_S41。JSON/JSONL数值保持原值，仅机器路径脱敏。epoch_metrics由train.log白名单逐轮记录解析，保留打印精度和0–1单位，不重算精确选模；原始日志不上传。另有Slurm只读记账，空值不当0、job/step不相加。无权重/cache/原媒体/真实ID/原预测CSV。弱重加权源码和已有机制测试一并保存，未在本次同步中重训或运行GPU实验。
+
+## MOSI原媒体输入审计补充
+
+results/mosi_input_audit_20261002的聚合数值来自2026-10-02对dl01的只读审计输出，经转录整理：train/val WAV长度与原波形尾段能量、人脸数组形状/中心像素、tokenizer长度及缓存mask检查；test仅可用性和cache ID覆盖。summary.json明确抽样范围和未验证项目，未附原ID/文本/媒体/特征或机器私有路径。此前Lab/c1媒体不可用的历史记录不改写，本补充说明dl01有完整音频/轨迹。未提交GPU任务、修改缓存或实验配置；聚合一致性检查不等于重新审计原数据。

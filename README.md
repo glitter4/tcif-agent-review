@@ -88,3 +88,7 @@ GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/t
 ## c1 MOSI重要过程数据补充（2026-10-02）
 
 [过程记录与核验](results/mosi_c1_process_20261002/README.md)：三项各200轮/8200更新/16200微批次，逐轮train/val/test曲线、裁剪/组LR/抽样更新、邻居mask、帧融合权重、弱重加权损失与选模元数据；保留完整42test+42val及跨环境限制。只归档已完成数据，不修改主任务或监控状态。
+
+## MOSI 原始输入覆盖审计（2026-10-02）
+
+[dl01只读审计](results/mosi_input_audit_20261002/README.md)：原媒体齐备；训练/验证超6秒音频占17.45%/15.28%，音频mask长度逐条一致；少量全黑人脸采样帧、文本仅1条训练样本超过128 tokens。未重建缓存或训练，12秒覆盖数字不是性能结果。

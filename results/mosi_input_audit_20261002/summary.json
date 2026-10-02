@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-02",
+  "dataset": "CMU-MOSI",
+  "environment": "dl01",
+  "mode": "read-only metadata and bounded input inspection; no training, cache rebuild or GPU inference",
+  "provenance": "Aggregate outputs transcribed from the executed read-only audit. No original identifiers, transcripts, waveforms, images or feature arrays are published.",
+  "environment_versions": {"python": "3.10.20", "torch": "2.4.0+cu121", "transformers": "5.1.0", "numpy": "1.26.4", "scipy": "1.15.3", "torchaudio_installed": false},
+  "cache_recipe": {"audio_sample_rate": 16000, "audio_max_seconds": 6.0, "audio_denoise": true, "num_frames": 4, "vit_context_ratio": 0.2, "max_text_length": 128, "dtype": "float16", "visual_source": "openface_face_npy"},
+  "availability": {
+    "audio_files": 2199,
+    "face_track_files": 2199,
+    "subvideo_files": 686,
+    "cache_coverage": {"train": {"labels": 1284, "covered": 1284, "missing": 0}, "val": {"labels": 229, "covered": 229, "missing": 0}, "test": {"labels": 686, "covered": 686, "missing": 0}},
+    "note": "Test split was checked for availability/cache ID coverage only; content/length/label-group audit below uses train and val. File counts alone do not establish test media alignment."
+  },
+  "splits": {
+    "train": {
+      "n": 1284,
+      "audio": {
+        "readable": 1284, "missing": 0, "unreadable": 0,
+        "sample_rate_counts": {"16000": 1284}, "channel_counts": {"1": 1284}, "dtype_counts": {"int16": 1284},
+        "duration_seconds": {"median": 3.121625, "p90": 7.46375, "max": 52.4408125},
+        "over6": 224, "over12": 24,
+        "total_seconds": 5098.669124999999,
+        "discarded_seconds_at6": 662.5550625000003,
+        "discarded_seconds_at12": 129.87818750000002,
+        "discarded_fraction_at6": 0.1299466677002698,
+        "discarded_fraction_at12": 0.02547295859289556,
+        "over6_tail_energy_fraction": {"n": 224, "median": 0.16050685261106365, "p90": 0.5086877692306093, "max": 0.8811622230918117},
+        "over6_tail_to_head_rms_ratio": {"n": 224, "median": 0.8042418251678659, "p90": 1.2227739915008764, "max": 2.4421385054946856},
+        "nonfinite_long_audio": 0,
+        "groups": {"weak_nonzero": {"n": 172, "over6": 29}, "other_nonzero": {"n": 1059, "over6": 187}, "zero": {"n": 53, "over6": 8}, "strong": {"n": 346, "over6": 58}}
+      },
+      "cache": {
+        "audio_mask_difference_from_expected_token_count": {"0": 1284},
+        "invalid_audio_masks": 0, "nonprefix_audio_masks": 0, "allzero_audio_masks": 0, "duplicate_ids": 0,
+        "finite_feature_sample": {"audio": {"rows": 6, "nonfinite_rows": 0}, "vision": {"rows": 6, "nonfinite_rows": 0}}
+      },
+      "vision": {
+        "readable_tracks": 1284, "missing_tracks": 0, "invalid_tracks": 0,
+        "layout": "T x112 x112 x3 uint8",
+        "frame_count": {"min": 7, "median": 94.0, "p90": 225.0, "max": 1575},
+        "repeated_uniform4_center_indices": 0,
+        "unique_indices_in12_context_slots": {"10": 1282, "4": 1, "8": 1},
+        "clips_with_identical_pixel_center_pair": 3,
+        "sampled_center_frames": 5136, "allblack_center_frames": 14, "pixel_std_under1_center_frames": 14,
+        "clips_with_black_centers": 8, "clips_all4_centers_black": 1,
+        "black_centers_per_affected_clip": [1, 4, 2, 1, 1, 1, 1, 3],
+        "affected_label_groups": {"zero": 0, "weak_nonzero": 1, "strong": 4}
+      },
+      "text": {
+        "missing": 0, "empty": 0, "texts_with_CJK": 0, "tokenizer_class": "RobertaTokenizer",
+        "token_length_median": 17.5, "token_length_max": 186, "over128": 1, "cached_mask_length_mismatches": 0
+      }
+    },
+    "val": {
+      "n": 229,
+      "audio": {
+        "readable": 229, "missing": 0, "unreadable": 0,
+        "sample_rate_counts": {"16000": 229}, "channel_counts": {"1": 229}, "dtype_counts": {"int16": 229},
+        "duration_seconds": {"median": 3.02875, "p90": 6.720725000000006, "max": 14.8941875},
+        "over6": 35, "over12": 6,
+        "total_seconds": 882.8531875,
+        "discarded_seconds_at6": 106.84418750000002,
+        "discarded_seconds_at12": 7.241062499999998,
+        "discarded_fraction_at6": 0.12102146655046202,
+        "discarded_fraction_at12": 0.008201887474071105,
+        "over6_tail_energy_fraction": {"n": 35, "median": 0.16651619512667204, "p90": 0.48003203285145396, "max": 0.6012063291009687},
+        "over6_tail_to_head_rms_ratio": {"n": 35, "median": 0.705929812406261, "p90": 1.046975354475385, "max": 1.1815410239007775},
+        "nonfinite_long_audio": 0,
+        "groups": {"weak_nonzero": {"n": 34, "over6": 7}, "other_nonzero": {"n": 182, "over6": 27}, "zero": {"n": 13, "over6": 1}, "strong": {"n": 82, "over6": 9}}
+      },
+      "cache": {
+        "audio_mask_difference_from_expected_token_count": {"0": 229},
+        "invalid_audio_masks": 0, "nonprefix_audio_masks": 0, "allzero_audio_masks": 0, "duplicate_ids": 0,
+        "finite_feature_sample": {"audio": {"rows": 6, "nonfinite_rows": 0}, "vision": {"rows": 6, "nonfinite_rows": 0}}
+      },
+      "vision": {
+        "readable_tracks": 229, "missing_tracks": 0, "invalid_tracks": 0,
+        "layout": "T x112 x112 x3 uint8",
+        "frame_count": {"min": 24, "median": 91.0, "p90": 203.00000000000017, "max": 447},
+        "repeated_uniform4_center_indices": 0,
+        "unique_indices_in12_context_slots": {"10": 229},
+        "clips_with_identical_pixel_center_pair": 0,
+        "sampled_center_frames": 916, "allblack_center_frames": 2, "pixel_std_under1_center_frames": 2,
+        "clips_with_black_centers": 2, "clips_all4_centers_black": 0,
+        "black_centers_per_affected_clip": [1, 1],
+        "affected_label_groups": {"zero": 0, "weak_nonzero": 0, "strong": 2}
+      },
+      "text": {
+        "missing": 0, "empty": 0, "texts_with_CJK": 0, "tokenizer_class": "RobertaTokenizer",
+        "token_length_median": 16.0, "token_length_max": 76, "over128": 0, "cached_mask_length_mismatches": 0
+      }
+    }
+  },
+  "limitations": [
+    "No GPU inference, fresh feature encoding or exact cache-feature comparison was performed.",
+    "Waveform energy is measured before preprocessing and does not identify speech or sentiment-bearing information.",
+    "Vision tests cover array readability and sampled center pixels, not all frames, detection quality or audio-video synchronization.",
+    "Twelve-second figures are counterfactual duration coverage calculations, not a rebuilt cache or a trained experiment.",
+    "Cached feature finiteness was sampled at six evenly spaced dataset positions per modality per audited split, not exhaustively checked.",
+    "Current tokenizer lengths matching cached masks does not establish token-ID equality or identical software across training environments."
+  ]
+}
