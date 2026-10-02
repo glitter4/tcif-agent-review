@@ -1,0 +1,123 @@
+{
+  "rows": [
+    {
+      "job_id": "352718",
+      "job_id_raw": "352718",
+      "job_name": "mosi-weak-reweight",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:03:14",
+      "allocated_cpus": "4",
+      "requested_memory": "72G",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352718.batch",
+      "job_id_raw": "352718.batch",
+      "job_name": "batch",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:03:14",
+      "allocated_cpus": "4",
+      "requested_memory": "",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352718.extern",
+      "job_id_raw": "352718.extern",
+      "job_name": "extern",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:03:14",
+      "allocated_cpus": "4",
+      "requested_memory": "",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352719_0",
+      "job_id_raw": "352720",
+      "job_name": "mosi-tcif-seeds",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:01:50",
+      "allocated_cpus": "4",
+      "requested_memory": "72G",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352719_0.batch",
+      "job_id_raw": "352720.batch",
+      "job_name": "batch",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:01:50",
+      "allocated_cpus": "4",
+      "requested_memory": "",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352719_0.extern",
+      "job_id_raw": "352720.extern",
+      "job_name": "extern",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:01:50",
+      "allocated_cpus": "4",
+      "requested_memory": "",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352719_1",
+      "job_id_raw": "352719",
+      "job_name": "mosi-tcif-seeds",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:00:18",
+      "allocated_cpus": "4",
+      "requested_memory": "72G",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352719_1.batch",
+      "job_id_raw": "352719.batch",
+      "job_name": "batch",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:00:18",
+      "allocated_cpus": "4",
+      "requested_memory": "",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    },
+    {
+      "job_id": "352719_1.extern",
+      "job_id_raw": "352719.extern",
+      "job_name": "extern",
+      "state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "03:00:18",
+      "allocated_cpus": "4",
+      "requested_memory": "",
+      "max_rss": "",
+      "total_cpu": "00:00:00",
+      "node": "gpu301"
+    }
+  ],
+  "units": "Slurm original values and units; blank means unavailable",
+  "scope": "job and step rows, not additive; elapsed includes initialization/training/evaluation/export, not pure training time"
+}

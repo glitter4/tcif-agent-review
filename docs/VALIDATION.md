@@ -81,3 +81,7 @@ python tools/check_transfer_followup.py通过七项200轮/98点、两源2044步/
 ## MOSI two-hot首阶段检查
 
 `python tools/check_mosi_twohot.py`检查初始28test+28val、配对顺序/mask、验证门槛、31视频组bootstrap和隐私路径。远程two-hot测试覆盖CPU/GPU float32/64非负/归一/期望/边界/越界拒绝/梯度，旧distance损失逐值不变；bootstrap测试验证相同模型零CI、指标相等、配对交换反号。check_bundle通过。整个多seed任务仍在进行。
+
+## c1过程记录核验
+
+`python tools/check_mosi_c1_process.py`核对三项200轮、8200更新、16200微批次全覆盖、末批4、795张量源初始化、精确选模epoch、42test+42val完整sweep、mask计数、200轮曲线与lambda记录；重加权每轮84弱正/88弱负/53零，固定trainmean及每批/每轮权重和验证通过。组实际更新仅首step抽样，日志曲线是打印精度。全包check_bundle同时通过。

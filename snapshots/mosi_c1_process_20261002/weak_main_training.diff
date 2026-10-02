@@ -1,0 +1,53 @@
+--- twohot/train_emotion.py
++++ reweight/train_emotion.py
+@@ -3006,6 +3006,21 @@
+         assert args.cls7_low_abs_sample_weight == 1. and args.cls7_low_abs_sample_weight_threshold == 0.
+         assert args.rdrop_views == 1
+     transfer_support.initialize(model,args)
++    if args.weak_main_weight != 1.:
++        assert args.weak_main_weight == 1.5 and args.dataset == 'cmumosi'
++        assert args.reg_loss_type == 'l1' and args.cls7_loss_type == 'soft_ce' and args.cls7_soft_target == 'distance'
++        assert args.cls7_class_weight_mode == 'none' and args.cls7_low_abs_sample_weight_threshold == 0.
++        assert args.cls7_low_abs_sample_weight == 1. and args.tcif_transition_gate_loss_weight == .05
++        from weak_main_loss import normalization_from_training_labels
++        labels = [float(train_dataset.labels[k]['val']) for k in train_dataset.ids]
++        args.weak_training_mean = normalization_from_training_labels(labels, split=train_dataset.split)
++        weak_count = sum(0 < abs(y) < .5 for y in labels)
++        from pathlib import Path
++        (Path(args.save_dir).parent/'weak_weighting.json').write_text(json.dumps(dict(
++            training_n=len(labels),weak_count=weak_count,mean_weight=args.weak_training_mean,
++            weak_normalized=1.5/args.weak_training_mean,other_normalized=1/args.weak_training_mean,
++            applies_to='training regression and classification only',gate_loss_weight=.05,
++            validation_loss='original unweighted task objective',normalization_split='train'),indent=2))
+     import rdrop_support
+     rdrop_control = rdrop_support.Controller(args,train_dataset.ids) if args.rdrop_views==2 else None
+     param_groups = _build_optimizer_param_groups(model, contrast_head, args)
+@@ -3368,6 +3383,20 @@
+                         args, device=cls7_logits.device, dtype=cls7_logits.dtype
+                     ),
+                 )
++                if args.weak_main_weight != 1.:
++                    from weak_main_loss import weighted_main_losses, sample_weights
++                    old_reg, old_cls = float(loss_reg.detach()), float(loss_cls7.detach())
++                    target_probs = continuous_to_cls7_soft(raw_valence, centers=_signed_centers(
++                        args,device=cls7_logits.device,dtype=cls7_logits.dtype),tau=args.cls7_soft_tau)
++                    loss_reg, loss_cls7 = weighted_main_losses(y_reg,cls7_logits,raw_valence,target_probs,args.weak_training_mean)
++                    weak_mask = (raw_valence.abs()>0)&(raw_valence.abs()<.5)
++                    with (Path(args.save_dir).parent/'weak_main_batches.jsonl').open('a') as weak_file:
++                        weak_file.write(json.dumps(dict(epoch=epoch+1,micro_step=step_idx+1,n=len(raw_valence),
++                            weak_positive=int(((raw_valence>0)&weak_mask).sum()),
++                            weak_negative=int(((raw_valence<0)&weak_mask).sum()),zero=int((raw_valence==0).sum()),
++                            weight_sum=float(sample_weights(raw_valence,args.weak_training_mean).sum()),
++                            original_reg=old_reg,original_cls=old_cls,weighted_reg=float(loss_reg.detach()),
++                            weighted_cls=float(loss_cls7.detach())),allow_nan=False)+'\n')
+                 sign_loss_logits = sign_logits if sign_logits is not None else y_reg
+                 loss_sign = _compute_sign_aux_loss(sign_loss_logits, raw_valence, args) if args.sign_aux_weight > 0 else y_reg.new_tensor(0.0)
+                 loss_hier_sign, loss_hier_mag = _compute_hier_sign_mag_losses(model_out, raw_valence)
+@@ -5162,6 +5191,7 @@
+     parser.add_argument("--ema_decay", type=float, default=.99)
+     parser.add_argument("--context_fusion", choices=["tcif","standard"], default="tcif")
+     parser.add_argument("--cls7_soft_target", choices=["distance","two_hot"], default="distance")
++    parser.add_argument("--weak_main_weight", type=float, choices=[1.,1.5], default=1.)
+     parser.add_argument("--neighbor_dropout", type=float, choices=[0.,.2], default=0.)
+     parser.add_argument("--rdrop_views",type=int,choices=[1,2],default=1)
+     parser.add_argument("--rdrop_kl_weight",type=float,default=0.)

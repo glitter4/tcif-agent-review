@@ -1,0 +1,77 @@
+[
+  {
+    "run": "REWEIGHT1P5",
+    "epoch": 64,
+    "checkpoint": "best_acc7_model",
+    "eta": 0.9,
+    "readout": "expected",
+    "T": 1,
+    "metrics": {
+      "Acc7": 46.06413994169096,
+      "Acc7_nearest_even": 45.77259475218659,
+      "MAE": 0.7204364598189065,
+      "Acc2": 82.6530612244898,
+      "Acc2non0": 84.45121951219512,
+      "F1_macro_all": 82.38258328639469,
+      "F1_macro_non0": 84.09628932432047,
+      "F1_weighted_all": 82.61169401042821,
+      "F1_weighted_non0": 84.46570645863899,
+      "num_samples_all": 686,
+      "num_samples_non0": 656
+    },
+    "A_star": 84.45121951219512,
+    "F_star": 84.09628932432047,
+    "A_source": "Acc2non0",
+    "F_source": "F1_macro_non0"
+  },
+  {
+    "run": "C1_V1_S40",
+    "epoch": 8,
+    "checkpoint": "best_acc7_model",
+    "eta": 0.8,
+    "readout": "expected",
+    "T": 1,
+    "metrics": {
+      "Acc7": 45.91836734693878,
+      "Acc7_nearest_even": 45.91836734693878,
+      "MAE": 0.7398753074817794,
+      "Acc2": 80.32069970845481,
+      "Acc2non0": 83.23170731707317,
+      "F1_macro_all": 79.84859793154921,
+      "F1_macro_non0": 82.74658326877649,
+      "F1_weighted_all": 80.17232486428448,
+      "F1_weighted_non0": 83.19642556810612,
+      "num_samples_all": 686,
+      "num_samples_non0": 656
+    },
+    "A_star": 83.23170731707317,
+    "F_star": 82.74658326877649,
+    "A_source": "Acc2non0",
+    "F_source": "F1_macro_non0"
+  },
+  {
+    "run": "C1_V1_S41",
+    "epoch": 117,
+    "checkpoint": "best_acc7_model",
+    "eta": 0.8,
+    "readout": "expected",
+    "T": 1,
+    "metrics": {
+      "Acc7": 46.06413994169096,
+      "Acc7_nearest_even": 45.77259475218659,
+      "MAE": 0.7319771257845505,
+      "Acc2": 81.19533527696792,
+      "Acc2non0": 83.07926829268293,
+      "F1_macro_all": 80.90212810037744,
+      "F1_macro_non0": 82.70103842233927,
+      "F1_weighted_all": 81.15049182643057,
+      "F1_weighted_non0": 83.09876467775219,
+      "num_samples_all": 686,
+      "num_samples_non0": 656
+    },
+    "A_star": 83.07926829268293,
+    "F_star": 82.70103842233927,
+    "A_source": "Acc2non0",
+    "F_source": "F1_macro_non0"
+  }
+]

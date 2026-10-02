@@ -1,0 +1,11 @@
+{
+  "training_n": 1284,
+  "weak_count": 172,
+  "mean_weight": 1.0669781931464175,
+  "weak_normalized": 1.405839416058394,
+  "other_normalized": 0.9372262773722627,
+  "applies_to": "training regression and classification only",
+  "gate_loss_weight": 0.05,
+  "validation_loss": "original unweighted task objective",
+  "normalization_split": "train"
+}

@@ -1,0 +1,9 @@
+{
+  "source": "completed train.log, selected epoch-level records only",
+  "precision": "printed/rounded metrics, usually4 decimal places; do not recompute exact checkpoint selection from these curves",
+  "units": "accuracy/F1 here are original log fractions; full sweep result.json uses percentages",
+  "raw_log_uploaded": false,
+  "training_forward": "stochastic train forward",
+  "validation_test": "deterministic eval; original unweighted validation/test task loss",
+  "visual_lambda": "per-epoch learned visual center/neighbor fusion statistics; not prediction eta"
+}

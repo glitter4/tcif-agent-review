@@ -84,3 +84,7 @@ GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/t
 ## MOSI代表结果综合比较（2026-10-02）
 
 [均衡候选、最高Acc7与MAE／极性取舍](results/mosi_best_summary_20261002/README.md)：邻居dropout均衡点46.793003%／.706336913／84.756098%／84.363082%；two-hot最高原规则Acc7为47.084548%，有其他指标退步。完整同点数值及双取整口径已列明，不固定eta、不拼接不同点，不替代各批次验收状态。
+
+## c1 MOSI重要过程数据补充（2026-10-02）
+
+[过程记录与核验](results/mosi_c1_process_20261002/README.md)：三项各200轮/8200更新/16200微批次，逐轮train/val/test曲线、裁剪/组LR/抽样更新、邻居mask、帧融合权重、弱重加权损失与选模元数据；保留完整42test+42val及跨环境限制。只归档已完成数据，不修改主任务或监控状态。

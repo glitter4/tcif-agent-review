@@ -1,0 +1,253 @@
+{
+  "files": [
+    {
+      "path": "audit_summary.json",
+      "bytes": 2249
+    },
+    {
+      "path": "completion_receipts.json",
+      "bytes": 286
+    },
+    {
+      "path": "highest_acc7_points.json",
+      "bytes": 2199
+    },
+    {
+      "path": "README.md",
+      "bytes": 7038
+    },
+    {
+      "path": "reweight_analysis.json",
+      "bytes": 370796
+    },
+    {
+      "path": "reweight_preflight.json",
+      "bytes": 477
+    },
+    {
+      "path": "reweight_trigger.json",
+      "bytes": 1183
+    },
+    {
+      "path": "runs/C1_V1_S40/checkpoints/best_acc7_model.json",
+      "bytes": 7096
+    },
+    {
+      "path": "runs/C1_V1_S40/checkpoints/best_mae_model.json",
+      "bytes": 7097
+    },
+    {
+      "path": "runs/C1_V1_S40/checkpoints/checkpoint_selection_summary.json",
+      "bytes": 6528
+    },
+    {
+      "path": "runs/C1_V1_S40/config.json",
+      "bytes": 3049
+    },
+    {
+      "path": "runs/C1_V1_S40/data_order.jsonl",
+      "bytes": 2102052
+    },
+    {
+      "path": "runs/C1_V1_S40/epoch_metrics.jsonl",
+      "bytes": 1544755
+    },
+    {
+      "path": "runs/C1_V1_S40/epoch_metrics_provenance.json",
+      "bytes": 581
+    },
+    {
+      "path": "runs/C1_V1_S40/final_lambda_distribution.json",
+      "bytes": 1621
+    },
+    {
+      "path": "runs/C1_V1_S40/initialization_audit.json",
+      "bytes": 373
+    },
+    {
+      "path": "runs/C1_V1_S40/lambda_history.jsonl",
+      "bytes": 252383
+    },
+    {
+      "path": "runs/C1_V1_S40/neighbor_dropout.jsonl",
+      "bytes": 2306629
+    },
+    {
+      "path": "runs/C1_V1_S40/optimizer_groups.json",
+      "bytes": 45265
+    },
+    {
+      "path": "runs/C1_V1_S40/optimizer_updates.jsonl",
+      "bytes": 2622465
+    },
+    {
+      "path": "runs/C1_V1_S40/regularization_protocol.jsonl",
+      "bytes": 436
+    },
+    {
+      "path": "runs/C1_V1_S40/result.json",
+      "bytes": 24029
+    },
+    {
+      "path": "runs/C1_V1_S40/scheduler_epochs.jsonl",
+      "bytes": 94076
+    },
+    {
+      "path": "runs/C1_V1_S40/study_complete.json",
+      "bytes": 68
+    },
+    {
+      "path": "runs/C1_V1_S41/checkpoints/best_acc7_model.json",
+      "bytes": 7098
+    },
+    {
+      "path": "runs/C1_V1_S41/checkpoints/best_mae_model.json",
+      "bytes": 7097
+    },
+    {
+      "path": "runs/C1_V1_S41/checkpoints/checkpoint_selection_summary.json",
+      "bytes": 6519
+    },
+    {
+      "path": "runs/C1_V1_S41/config.json",
+      "bytes": 3049
+    },
+    {
+      "path": "runs/C1_V1_S41/data_order.jsonl",
+      "bytes": 2102052
+    },
+    {
+      "path": "runs/C1_V1_S41/epoch_metrics.jsonl",
+      "bytes": 1544689
+    },
+    {
+      "path": "runs/C1_V1_S41/epoch_metrics_provenance.json",
+      "bytes": 581
+    },
+    {
+      "path": "runs/C1_V1_S41/final_lambda_distribution.json",
+      "bytes": 1616
+    },
+    {
+      "path": "runs/C1_V1_S41/initialization_audit.json",
+      "bytes": 373
+    },
+    {
+      "path": "runs/C1_V1_S41/lambda_history.jsonl",
+      "bytes": 252391
+    },
+    {
+      "path": "runs/C1_V1_S41/neighbor_dropout.jsonl",
+      "bytes": 2306566
+    },
+    {
+      "path": "runs/C1_V1_S41/optimizer_groups.json",
+      "bytes": 45265
+    },
+    {
+      "path": "runs/C1_V1_S41/optimizer_updates.jsonl",
+      "bytes": 2622363
+    },
+    {
+      "path": "runs/C1_V1_S41/regularization_protocol.jsonl",
+      "bytes": 436
+    },
+    {
+      "path": "runs/C1_V1_S41/result.json",
+      "bytes": 24023
+    },
+    {
+      "path": "runs/C1_V1_S41/scheduler_epochs.jsonl",
+      "bytes": 94068
+    },
+    {
+      "path": "runs/C1_V1_S41/study_complete.json",
+      "bytes": 68
+    },
+    {
+      "path": "runs/REWEIGHT1P5/checkpoints/best_acc7_model.json",
+      "bytes": 7141
+    },
+    {
+      "path": "runs/REWEIGHT1P5/checkpoints/best_mae_model.json",
+      "bytes": 7141
+    },
+    {
+      "path": "runs/REWEIGHT1P5/checkpoints/checkpoint_selection_summary.json",
+      "bytes": 6517
+    },
+    {
+      "path": "runs/REWEIGHT1P5/config.json",
+      "bytes": 3078
+    },
+    {
+      "path": "runs/REWEIGHT1P5/data_order.jsonl",
+      "bytes": 2102052
+    },
+    {
+      "path": "runs/REWEIGHT1P5/epoch_metrics.jsonl",
+      "bytes": 1544764
+    },
+    {
+      "path": "runs/REWEIGHT1P5/epoch_metrics_provenance.json",
+      "bytes": 581
+    },
+    {
+      "path": "runs/REWEIGHT1P5/final_lambda_distribution.json",
+      "bytes": 1614
+    },
+    {
+      "path": "runs/REWEIGHT1P5/initialization_audit.json",
+      "bytes": 373
+    },
+    {
+      "path": "runs/REWEIGHT1P5/lambda_history.jsonl",
+      "bytes": 252325
+    },
+    {
+      "path": "runs/REWEIGHT1P5/neighbor_dropout.jsonl",
+      "bytes": 2306586
+    },
+    {
+      "path": "runs/REWEIGHT1P5/optimizer_groups.json",
+      "bytes": 45265
+    },
+    {
+      "path": "runs/REWEIGHT1P5/optimizer_updates.jsonl",
+      "bytes": 2622240
+    },
+    {
+      "path": "runs/REWEIGHT1P5/regularization_protocol.jsonl",
+      "bytes": 436
+    },
+    {
+      "path": "runs/REWEIGHT1P5/result.json",
+      "bytes": 24057
+    },
+    {
+      "path": "runs/REWEIGHT1P5/scheduler_epochs.jsonl",
+      "bytes": 94084
+    },
+    {
+      "path": "runs/REWEIGHT1P5/study_complete.json",
+      "bytes": 68
+    },
+    {
+      "path": "runs/REWEIGHT1P5/weak_main_batches.jsonl",
+      "bytes": 4402594
+    },
+    {
+      "path": "runs/REWEIGHT1P5/weak_weighting.json",
+      "bytes": 358
+    },
+    {
+      "path": "seeds_preflight.json",
+      "bytes": 481
+    },
+    {
+      "path": "slurm_accounting.json",
+      "bytes": 3295
+    }
+  ],
+  "digest_used": false
+}

@@ -1,0 +1,71 @@
+{
+  "REWEIGHT1P5": {
+    "epochs": 200,
+    "updates": 8200,
+    "microbatches": 16200,
+    "center_exposures": 256800,
+    "clip_fraction": 1.0,
+    "mean_preclip_norm": 24.609990432553175,
+    "neighbor_drop_fraction": 0.2001663961038961,
+    "mean_sampled_relative_update": {
+      "head": 3.455623962108797e-05,
+      "tcif_transition_gate": 6.0368557568061534e-05,
+      "router": 0.0006408021020655214,
+      "bert_last_layers": 8.11524324002698e-06,
+      "backbone": 0.0
+    },
+    "checkpoint_epochs": {
+      "best_acc7_model": 64,
+      "best_mae_model": 12
+    },
+    "epoch_curve_precision": "printed rounded values; not exact checkpoint selection proof",
+    "weighting_verified": {
+      "mean": 1.0669781931464175,
+      "weak_per_epoch": 172,
+      "zero_per_epoch": 53,
+      "training_mean_normalized": true
+    }
+  },
+  "C1_V1_S40": {
+    "epochs": 200,
+    "updates": 8200,
+    "microbatches": 16200,
+    "center_exposures": 256800,
+    "clip_fraction": 1.0,
+    "mean_preclip_norm": 24.644323659059477,
+    "neighbor_drop_fraction": 0.20016233766233765,
+    "mean_sampled_relative_update": {
+      "head": 3.453519657121403e-05,
+      "tcif_transition_gate": 6.028299817579526e-05,
+      "router": 0.000621508185965683,
+      "bert_last_layers": 8.136155468794122e-06,
+      "backbone": 0.0
+    },
+    "checkpoint_epochs": {
+      "best_acc7_model": 8,
+      "best_mae_model": 58
+    },
+    "epoch_curve_precision": "printed rounded values; not exact checkpoint selection proof"
+  },
+  "C1_V1_S41": {
+    "epochs": 200,
+    "updates": 8200,
+    "microbatches": 16200,
+    "center_exposures": 256800,
+    "clip_fraction": 1.0,
+    "mean_preclip_norm": 24.477365100790816,
+    "neighbor_drop_fraction": 0.1999797077922078,
+    "mean_sampled_relative_update": {
+      "head": 3.4308924186379766e-05,
+      "tcif_transition_gate": 6.119511806612248e-05,
+      "router": 0.0006293387486546664,
+      "bert_last_layers": 8.109604224171783e-06,
+      "backbone": 0.0
+    },
+    "checkpoint_epochs": {
+      "best_acc7_model": 117,
+      "best_mae_model": 13
+    },
+    "epoch_curve_precision": "printed rounded values; not exact checkpoint selection proof"
+  }
+}

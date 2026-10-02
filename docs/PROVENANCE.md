@@ -94,3 +94,7 @@ results/mosi_regularization_20261001来自Lab三项200轮独立训练、EMA同ru
 ## MOSI two-hot首阶段增补
 
 results/mosi_twohot_20261001来自Lab初始V2/V3的28test+28val、8200更新/16200微批次各两组、strict767/795源初始化、固定验证条件决策、目标分布数学审计和seed123原视频组bootstrap。V0/V1复用既有记录。数值逐值保留，仅机器路径脱敏。无权重、cache、原数据/真实ID；视频组只用位置对应的顺序整数。源码快照含two_hot、普通融合接入、分支/视频组分析和测试，测试路径适配snapshot目录。seed40/41和后续条件重加权尚未完成，不将阶段发布当作任务终结。
+
+## c1过程补充包来源
+
+results/mosi_c1_process_20261002从c1已完成运行的显式文件清单只读取得，三项为REWEIGHT1P5、C1_V1_S40、C1_V1_S41。JSON/JSONL数值保持原值，仅机器路径脱敏。epoch_metrics由train.log白名单逐轮记录解析，保留打印精度和0–1单位，不重算精确选模；原始日志不上传。另有Slurm只读记账，空值不当0、job/step不相加。无权重/cache/原媒体/真实ID/原预测CSV。弱重加权源码和已有机制测试一并保存，未在本次同步中重训或运行GPU实验。

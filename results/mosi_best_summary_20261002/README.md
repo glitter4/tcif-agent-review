@@ -32,3 +32,4 @@
 - [two-hot完整14test＋14val及配置](../mosi_twohot_20261001/runs/V3_TCIF_TWOHOT/result.json)。其未通过预设验证扩展条件，最高测试Acc7不改变已记录的决策。
 - [普通融合＋dropout完整14test＋14val及配置](../mosi_twohot_20261001/runs/V2_STANDARD_DROP/result.json)，[首阶段报告与验证决策](../mosi_twohot_20261001/README.md)。
 - [本页精确数值与来源索引](selected_points.json)。本次只追加汇总，不改训练、实验状态、自动监控或主任务的后续验收记录。
+- [c1三项实验的重要过程数据补充包](../mosi_c1_process_20261002/README.md)：逐步优化器/采样/mask记录、逐轮曲线、弱重加权实际损失、精确选模与完整sweep，附独立核验脚本。

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "host": "c1.hpcmaster.com",
+  "torch": "2.1.2+cu118",
+  "names": [
+    "C1_V1_S40",
+    "C1_V1_S41"
+  ],
+  "source_epoch": 4,
+  "source_training_repeated": false,
+  "known_completed_experiments_repeated": false,
+  "rerun_authorization": "user requested rerun of experiments without obtained results; ordinary fusion skipped",
+  "original_Lab_status": "unverified while host unreachable; any recovered original results retained separately"
+}

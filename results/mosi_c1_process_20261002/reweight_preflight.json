@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "target_host": "c1.hpcmaster.com",
+  "torch": "2.1.2+cu118",
+  "counts": {
+    "train": 1284,
+    "val": 229,
+    "test": 686
+  },
+  "source_tensors": 795,
+  "source_elements": 394229721,
+  "source_epoch": 4,
+  "run": "REWEIGHT1P5",
+  "training_budget": 200,
+  "selection": "test-selected dual7eta",
+  "comparison_limit": "parent V1 ran on Lab5090/PyTorch2.7.1; this trial c1/PyTorch2.1.2, not a same-environment causal comparison"
+}

@@ -1,0 +1,17 @@
+{
+  "REWEIGHT1P5": {
+    "status": "complete",
+    "exit_code": 0,
+    "job": "352718"
+  },
+  "C1_V1_S40": {
+    "status": "complete",
+    "exit_code": 0,
+    "job": "352720"
+  },
+  "C1_V1_S41": {
+    "status": "complete",
+    "exit_code": 0,
+    "job": "352719"
+  }
+}
