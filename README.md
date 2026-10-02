@@ -80,3 +80,7 @@ GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/t
 ## MOSI two-hot与普通融合：首阶段
 
 [首阶段结果与验证决策](results/mosi_twohot_20261001/README.md)：V2/V3完整200轮、28test+28val；two-hot未通过预先固定val扩展门槛，不运行V4。V1/V2的seeds40/41仍在Lab5090执行，整个任务尚未结束。
+
+## MOSI代表结果综合比较（2026-10-02）
+
+[均衡候选、最高Acc7与MAE／极性取舍](results/mosi_best_summary_20261002/README.md)：邻居dropout均衡点46.793003%／.706336913／84.756098%／84.363082%；two-hot最高原规则Acc7为47.084548%，有其他指标退步。完整同点数值及双取整口径已列明，不固定eta、不拼接不同点，不替代各批次验收状态。
