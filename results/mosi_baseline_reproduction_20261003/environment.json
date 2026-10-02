@@ -1,0 +1,22 @@
+{
+  "python": "3.12.2",
+  "torch": "2.4.1+cu118",
+  "transformers": "4.40.2",
+  "numpy": "1.26.4",
+  "sklearn": "1.5.1",
+  "cuda_build": "11.8",
+  "target_host": "c1",
+  "compute_node": "gpu301",
+  "gpu": "NVIDIA GeForce RTX 4090 24GB",
+  "num_workers": 0,
+  "source": "https://github.com/fuyyyyy/EMOE/tree/main",
+  "source_retrieved": "2026-10-02",
+  "experiment_jobs": [
+    "353586_3",
+    "353586_4",
+    "353606_0",
+    "353606_1",
+    "353606_2",
+    "353606_5"
+  ]
+}

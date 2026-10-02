@@ -1,0 +1,121 @@
+{
+  "arguments": {
+    "model": "emoe",
+    "seed": 1113,
+    "data": "/path/to/user/datasets/MMSA/MOSI/Processed/unaligned_50.pkl",
+    "bert": "/path/to/user/models/bert-base-uncased",
+    "out": "runs/353606_2_emoe_s1113",
+    "epochs": null
+  },
+  "settings": {
+    "featurePath": "MOSI/Processed/unaligned_50.pkl",
+    "feature_dims": [
+      768,
+      5,
+      20
+    ],
+    "train_samples": 1284,
+    "num_classes": 3,
+    "language": "en",
+    "KeyEval": "Loss",
+    "need_data_aligned": false,
+    "need_model_aligned": true,
+    "early_stop": 10,
+    "use_bert": true,
+    "use_finetune": true,
+    "attn_mask": true,
+    "update_epochs": 10,
+    "fusion_method": "sum",
+    "temperature": 0.1,
+    "attn_dropout_a": 0.2,
+    "attn_dropout_v": 0.0,
+    "relu_dropout": 0.0,
+    "embed_dropout": 0.2,
+    "res_dropout": 0.0,
+    "dst_feature_dim_nheads": [
+      256,
+      8
+    ],
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "nlevels": 4,
+    "conv1d_kernel_size_l": 5,
+    "conv1d_kernel_size_a": 5,
+    "conv1d_kernel_size_v": 5,
+    "text_dropout": 0.5,
+    "attn_dropout": 0.3,
+    "output_dropout": 0.5,
+    "grad_clip": 0.6,
+    "patience": 5,
+    "weight_decay": 0.005,
+    "transformers": "bert",
+    "pretrained": "/path/to/user/models/bert-base-uncased",
+    "dataset_name": "mosi"
+  },
+  "data": {
+    "train": {
+      "text_bert": [
+        1284,
+        3,
+        50
+      ],
+      "audio": [
+        1284,
+        375,
+        5
+      ],
+      "vision": [
+        1284,
+        500,
+        20
+      ],
+      "regression_labels": [
+        1284
+      ]
+    },
+    "valid": {
+      "text_bert": [
+        229,
+        3,
+        50
+      ],
+      "audio": [
+        229,
+        375,
+        5
+      ],
+      "vision": [
+        229,
+        500,
+        20
+      ],
+      "regression_labels": [
+        229
+      ]
+    },
+    "test": {
+      "text_bert": [
+        686,
+        3,
+        50
+      ],
+      "audio": [
+        686,
+        375,
+        5
+      ],
+      "vision": [
+        686,
+        500,
+        20
+      ],
+      "regression_labels": [
+        686
+      ]
+    }
+  },
+  "torch": "2.4.1+cu118",
+  "parameters": 317334521,
+  "eta": "not applicable: scalar regression only; no classification/regression mixture",
+  "input_source": "MMSA standard MOSI mirror; FINE paper feature dimensions differ"
+}

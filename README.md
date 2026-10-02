@@ -92,3 +92,7 @@ GitHub 私有仓库：[glitter4/tcif-agent-review](https://github.com/glitter4/t
 ## MOSI 原始输入覆盖审计（2026-10-02）
 
 [dl01只读审计](results/mosi_input_audit_20261002/README.md)：原媒体齐备；训练/验证超6秒音频占17.45%/15.28%，音频mask长度逐条一致；少量全黑人脸采样帧、文本仅1条训练样本超过128 tokens。未重建缓存或训练，12秒覆盖数字不是性能结果。
+
+## MOSI EMOE/FINE复现与当前模型对比（2026-10-03）
+
+[完整比较、三seed统计和复现证据](results/mosi_baseline_reproduction_20261003/README.md)：六个种子完成、18个checkpoint重载核验通过。统一NumPy Acc7和nonzero weighted/macro-F1；TCIF均衡点46.501%/.706337/84.756%/84.363%，EMOE与FINE的best-Acc7三seed均值分别46.550%/.720709/85.061%/84.684%和48.445%/.727879/83.740%/83.398%（四项为Acc7/MAE/Acc2/macro-F1）。单seed与均值、跨环境TCIF三seed、额外MOSEI监督及FINE独立实现差异均单列；文献原表不变。

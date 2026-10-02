@@ -33,3 +33,7 @@
 - [普通融合＋dropout完整14test＋14val及配置](../mosi_twohot_20261001/runs/V2_STANDARD_DROP/result.json)，[首阶段报告与验证决策](../mosi_twohot_20261001/README.md)。
 - [本页精确数值与来源索引](selected_points.json)。本次只追加汇总，不改训练、实验状态、自动监控或主任务的后续验收记录。
 - [c1三项实验的重要过程数据补充包](../mosi_c1_process_20261002/README.md)：逐步优化器/采样/mask记录、逐轮曲线、弱重加权实际损失、精确选模与完整sweep，附独立核验脚本。
+
+## 2026-10-03复现基线对照
+
+新增[EMOE/FINE实际复现与本页候选同口径比较](../mosi_baseline_reproduction_20261003/README.md)，包含Acc7双取整、Acc2、weighted/macro-F1、MAE、逐seed结果及跨环境限制。本页既有代表点及来源不变。

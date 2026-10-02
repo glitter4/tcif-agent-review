@@ -1,0 +1,90 @@
+{
+  "arguments": {
+    "model": "fine",
+    "seed": 3585,
+    "data": "/path/to/user/datasets/MMSA/MOSI/Processed/unaligned_50.pkl",
+    "bert": "/path/to/user/models/bert-base-uncased",
+    "out": "runs/353586_3_fine_s3585",
+    "epochs": null
+  },
+  "settings": {
+    "batch_size": 32,
+    "main_lr": 6e-05,
+    "bert_lr": 4e-05,
+    "epochs": 100,
+    "experts": 4,
+    "queries": 4,
+    "top_k": 3,
+    "feature_dims": [
+      768,
+      5,
+      20
+    ]
+  },
+  "data": {
+    "train": {
+      "text_bert": [
+        1284,
+        3,
+        50
+      ],
+      "audio": [
+        1284,
+        375,
+        5
+      ],
+      "vision": [
+        1284,
+        500,
+        20
+      ],
+      "regression_labels": [
+        1284
+      ]
+    },
+    "valid": {
+      "text_bert": [
+        229,
+        3,
+        50
+      ],
+      "audio": [
+        229,
+        375,
+        5
+      ],
+      "vision": [
+        229,
+        500,
+        20
+      ],
+      "regression_labels": [
+        229
+      ]
+    },
+    "test": {
+      "text_bert": [
+        686,
+        3,
+        50
+      ],
+      "audio": [
+        686,
+        375,
+        5
+      ],
+      "vision": [
+        686,
+        500,
+        20
+      ],
+      "regression_labels": [
+        686
+      ]
+    }
+  },
+  "torch": "2.4.1+cu118",
+  "parameters": 135150976,
+  "eta": "not applicable: scalar regression only; no classification/regression mixture",
+  "input_source": "MMSA standard MOSI mirror; FINE paper feature dimensions differ"
+}
