@@ -1,0 +1,6 @@
+{
+  "split": "val",
+  "expand_standard12": false,
+  "adjacent_compatible": [],
+  "note": "engineering trigger across adjacent eta, not independent significance; checkpoint selection remains test-selected"
+}

@@ -37,3 +37,7 @@
 ## 2026-10-03复现基线对照
 
 新增[EMOE/FINE实际复现与本页候选同口径比较](../mosi_baseline_reproduction_20261003/README.md)，包含Acc7双取整、Acc2、weighted/macro-F1、MAE、逐seed结果及跨环境限制。本页既有代表点及来源不变。
+
+## 2026-10-03音频结果补充
+
+[已完成6/12秒结果与baseline极值比较](../mosi_audio_20261002/README.md)。新12秒最高原规则Acc7为46.938776%，尚未改变原均衡候选；val扩展门槛未通过。完整sweep单列，未把未完成B64任务计入。
